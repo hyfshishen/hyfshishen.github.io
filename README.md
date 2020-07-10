@@ -19,5 +19,6 @@
 - Class President, Campus Singer.
 
 ## __What does Yafan Huang look like?__
-![pic_hyf](pic_hyf.png)
-Sep. 2018 in Mid-playground of HUST, Wuhan, China
+<img src="pic_hyf.png" width="700">
+<p align="center">Sep. 2018 in Mid-playground of HUST, Wuhan, China</p>
+
