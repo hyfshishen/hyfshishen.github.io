@@ -18,6 +18,6 @@
 - Major GPA: __3.44__, Cumulative GPA: __3.39__
 - Class President, Campus Singer.
 
-## __What does me look like?__
+## __What does Yafan Huang look like?__
 ![pic_hyf](pic_hyf.png)
 Sep. 2018 in Mid-playground of HUST, Wuhan, China
