@@ -20,5 +20,5 @@
 
 ## __What does Yafan Huang look like?__
 <img src="pic_hyf.png" width="100%">
-<center>Sep. 2018 in Mid-playground of HUST, Wuhan, China</center>
+<p align="center">Sep. 2018 in Mid-playground of HUST, Wuhan, China</p>
 
