@@ -19,5 +19,5 @@
 - Class President, [Campus Singer](https://music.163.com/#/song?id=1296131496).
 
 ## __What does Yafan Huang look like?__
-<img src="pic_hyf.png" width="50%">
+<img src="assets/pic_hyf.png" width="50%">
 Sep. 2018 in Mid-playground of HUST, Wuhan, China
