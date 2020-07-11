@@ -18,6 +18,12 @@
 - Major GPA: __3.44__, Cumulative GPA: __3.39__
 - Class President, [Campus Singer](https://music.163.com/#/song?id=1296131496).
 
+## __Papers__
+
+- __Yafan Huang__, Feng Zhao†, Shihui Song, Xiangyu Gui, Hai Jin. “Path-enhanced Explainable Recommendation with Knowledge Graphs”, submitted to _CIKM 2020_
+- Feng Zhao†, Xiangyu Gui, __Yafan Huang__, Hai Jin, Laurence T. Yang. "Dynamic Entity-Based Named Entity Recognition Under Unconstrained Tagging Schemes", accpted by _IEEE Transactions on Big Data 2020_, [[PDF](10.1109/TBDATA.2020.2998770)]
+
 ## __What does Yafan Huang look like?__
-<img src="assets/pic_hyf.png" width="50%">
+
+<img src="assets/pic_hyf.png" width="30%" >
 Sep. 2018 in Mid-playground of HUST, Wuhan, China
