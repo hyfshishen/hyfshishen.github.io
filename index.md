@@ -2,7 +2,7 @@
 
 ## __Education__
 
-### __Huazhong University of Science and Technology__, Wuhan, China
+### <img src="assets/icon_hust.gif" width="30" >  __Huazhong University of Science and Technology__, Wuhan, China
 
 <p align="right"><i>Sep.2018 - Jun.2021</i></p>
 
@@ -10,14 +10,15 @@
 - Major GPA: __3.51__, Cumulative GPA: __3.43__
 - Knowledge Graph, Natural Language Processing.
 
-### __Hunan University__, Changsha, China
+### <img src="assets/icon_hnu.jpg" width="30" > __Hunan University__, Changsha, China
 
 <p align="right"><i>Sep.2014 - Jun.2018</i></p>
 
 - Bachelor in Software Engineering
 - Major GPA: __3.44__, Cumulative GPA: __3.39__
-- Class President, Campus Singer.
+- Class President, [Campus Singer](https://music.163.com/#/song?id=1296131496).
 
 ## __What does Yafan Huang look like?__
-<img src="pic_hyf.png" width="100%">
+<img src="assets/pic_hyf.png" width="50%" >
+
 <p align="center">Sep. 2018 in Mid-playground of HUST, Wuhan, China</p>
