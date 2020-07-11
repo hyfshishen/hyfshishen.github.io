@@ -1,4 +1,4 @@
-# __Yafan Huang__
+# __Yafan Huang__ 黄亚凡
 
 ## __Education__
 
@@ -19,6 +19,11 @@
 - Class President, [Campus Singer](https://music.163.com/#/song?id=1296131496).
 
 ## __What does Yafan Huang look like?__
+<<<<<<< HEAD
 <img src="assets/pic_hyf.png" width="50%" >
 
 <p align="center">Sep. 2018 in Mid-playground of HUST, Wuhan, China</p>
+=======
+<img src="pic_hyf.png" width="50%">
+Sep. 2018 in Mid-playground of HUST, Wuhan, China
+>>>>>>> c742e57d14bd4de6d2df1dfc5a0af5a4af44d518
