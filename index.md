@@ -26,7 +26,7 @@ submitted to _The Conference on Information and Knowledge Management (CIKM 2020)
 
 ### __Dynamic Entity-Based Named Entity Recognition Under Unconstrained Tagging Schemes__
 Feng Zhao†, Xiangyu Gui, __Yafan Huang__, Hai Jin, Laurence T. Yang.<br> 
-Accpted by _IEEE Transactions on Big Data (TBD 2020)_, [[PDF](https://doi.org/10.1109/TBDATA.2020.2998770)][[BibTex](assets/BibTex_of_TBD2020.txt)]
+Accpted by _IEEE Transactions on Big Data (TBD 2020)_, [[PDF](https://doi.org/10.1109/TBDATA.2020.2998770)][[BibTeX](assets/BibTex_of_TBD2020.txt)]
 
 
 ## __MISCELLANEOUS__
