@@ -22,7 +22,7 @@
 
 ### __Path-enhanced Explainable Recommendation with Knowledge Graphs__
 __Yafan Huang__, Feng Zhao†, Shihui Song, Xiangyu Gui, Hai Jin.<br>
-Under revision, early rejected by _IJCAI 2020_ and _CIKM 2020_, [[Slides]()]
+Under revision, early rejected by _IJCAI 2020_ and _CIKM 2020_, [[Slides](assets/Slides_of_PeRN.pdf)]
 
 ### __Dynamic Entity-Based Named Entity Recognition Under Unconstrained Tagging Schemes__
 Feng Zhao†, Xiangyu Gui, __Yafan Huang__, Hai Jin, Laurence T. Yang.<br> 
