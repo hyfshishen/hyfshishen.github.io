@@ -28,6 +28,49 @@ Under revision, early rejected by _IJCAI 2020_ and _CIKM 2020_, [[Slides](assets
 Feng Zhao†, Xiangyu Gui, __Yafan Huang__, Hai Jin, Laurence T. Yang.<br> 
 Accpted by _IEEE Transactions on Big Data (TBD 2020)_, [[PDF](https://doi.org/10.1109/TBDATA.2020.2998770)][[BibTeX](assets/BibTex_of_TBD2020.txt)]
 
+## __RESEARCH EXPERIENCE__
+
+### __Research on Fake Information Detection__
+<p align="right"><i>Jun.2020 - present</i></p>
+
+- __Research Objective__:<br>
+&emsp;Aim to establish an end-to-end fake information detection system with natural language processing approaches.
+- __Related Skills__:<br>
+&emsp;Python, pytorch, numpy, linux, graph convolutional network.
+- __Progress & Output__:<br>
+&emsp;In progress. 
+
+### __Research on Recommendation with Knowledge Graphs__
+<p align="right"><i>Nov.2019 - Apr.2020</i></p>
+
+- __Research Objective__:<br>
+&emsp;Aim to establish an end-to-end recommender system with machine learning approaches and knowledge graphs.
+- __Related Skills__:<br>
+&emsp;Python, C++, pytorch, numpy, multithreaded programming, linux, bi-directional LSTM.
+- __Progress & Output__:<br>
+&emsp;Paper "Path-enhanced Explainable Recommendation with Knowledge Graphs" under revision, early rejected by _CIKM 2020_ and _IJCAI 2020_.
+
+### __Research on Named Entity Recognition__
+
+<p align="right"><i>Jun.2019 - Oct.2019</i></p>
+
+- __Research Objective__:<br>
+&emsp;Aim to design a named entity recognition(NER) algorithm with natural language processing approaches.
+- __Related Skills__:<br>
+&emsp;Python, tensorflow, numpy, linux, bi-directional LSTM.
+- __Progress & Output__:<br>
+&emsp;Paper "Dynamic Entity-Based Named Entity Recognition Under Unconstrained Tagging Schemes" accpted by _IEEE Transactions on Big Data 2020_. 
+
+## __PRACTICAL EXPERIENCE__
+
+### __How to write this part???__
+
+## __AWARDS & HONORS__
+
+1st Scholarship for Academic Excellence, award by HUST, 2019<br>
+1st Scholarship for Academic Excellence, award by HUST, 2018<br>
+1st Scholarship for Academic Excellence, award by HNU, 2016
+
 
 ## __MISCELLANEOUS__
 
