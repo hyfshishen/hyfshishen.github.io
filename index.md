@@ -32,7 +32,7 @@ Accpted by _IEEE Transactions on Big Data (TBD 2020)_, [[PDF](https://doi.org/10
 
 ### __Research on Fake Information Detection__
 
-- __Research Period__: Jun.2020 - present
+- __Research Period__: _Jun.2020 - present_
 - __Research Objective__:<br>
 &emsp;Aim to establish an end-to-end fake information detection system with natural language processing approaches.
 - __Related Skills__:<br>
@@ -42,7 +42,7 @@ Accpted by _IEEE Transactions on Big Data (TBD 2020)_, [[PDF](https://doi.org/10
 
 ### __Research on Recommendation with Knowledge Graphs__
 
-- __Research Period__: Nov.2019 - Apr.2020
+- __Research Period__: _Nov.2019 - Apr.2020_
 - __Research Objective__:<br>
 &emsp;Aim to establish an end-to-end recommender system with machine learning approaches and knowledge graphs.
 - __Related Skills__:<br>
@@ -52,7 +52,7 @@ Accpted by _IEEE Transactions on Big Data (TBD 2020)_, [[PDF](https://doi.org/10
 
 ### __Research on Named Entity Recognition__
 
-- __Research Period__: Jun.2019 - Oct.2019
+- __Research Period__: _Jun.2019 - Oct.2019_
 - __Research Objective__:<br>
 &emsp;Aim to design a named entity recognition(NER) algorithm with natural language processing approaches.
 - __Related Skills__:<br>
