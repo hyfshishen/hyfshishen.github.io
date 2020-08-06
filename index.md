@@ -2,7 +2,7 @@
 
 ## __EDUCATION__
 
-### <img src="assets/icon_hust.gif" width="30" >  __Huazhong University of Science and Technology__, Wuhan, China
+### <img src="assets/icon_hust.jpg" width="30" >  __Huazhong University of Science and Technology__, Wuhan, China
 
 <p align="right"><i>Sep.2018 - Jun.2021</i></p>
 
