@@ -1,8 +1,0 @@
-@ARTICLE{9104891,  
-author={F. {Zhao} and X. {Gui} and Y. {Huang} and H. {Jin} and L. T. {Yang}},  
-journal={IEEE Transactions on Big Data},   
-title={Dynamic Entity-based Named Entity Recognition Under Unconstrained Tagging Schemes},   
-year={2020},  
-volume={},  
-number={},  
-pages={1-1},}
