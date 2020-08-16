@@ -78,12 +78,27 @@
   </url>
   
   <url>
-    <loc>https://hyfshishen.github.io/project/resource-pool/</loc>
+    <loc>https://hyfshishen.github.io/project/resource_pool/</loc>
     <lastmod>2016-04-27T00:00:00+00:00</lastmod>
   </url>
   
   <url>
     <loc>https://hyfshishen.github.io/project/</loc>
+    <lastmod>2016-04-27T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://hyfshishen.github.io/project/ner/</loc>
+    <lastmod>2016-04-27T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://hyfshishen.github.io/project/recommender_system/</loc>
+    <lastmod>2016-04-27T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://hyfshishen.github.io/project/rumor_detection/</loc>
     <lastmod>2016-04-27T00:00:00+00:00</lastmod>
   </url>
   
