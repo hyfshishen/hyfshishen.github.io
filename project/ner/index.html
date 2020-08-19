@@ -254,9 +254,9 @@
   <meta property="twitter:image" content="https://hyfshishen.github.io/project/ner/featured.jpg"><meta property="og:locale" content="en-us">
   
     
-      <meta property="article:published_time" content="2016-04-27T00:00:00&#43;00:00">
+      <meta property="article:published_time" content="2019-06-27T00:00:00&#43;00:00">
     
-    <meta property="article:modified_time" content="2016-04-27T00:00:00&#43;00:00">
+    <meta property="article:modified_time" content="2019-06-27T00:00:00&#43;00:00">
   
 
   
@@ -286,8 +286,8 @@
     "https://hyfshishen.github.io/project/ner/featured.jpg"
   ],
   
-  "datePublished": "2016-04-27T00:00:00Z",
-  "dateModified": "2016-04-27T00:00:00Z",
+  "datePublished": "2019-06-27T00:00:00Z",
+  "dateModified": "2019-06-27T00:00:00Z",
   
   "author": {
     "@type": "Person",
@@ -716,7 +716,7 @@
     
       
     
-    Apr 27, 2016
+    Jun 27, 2019
   </span>
   
 
@@ -796,11 +796,11 @@
   <div class="article-container">
 
     <div class="article-style">
-      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis posuere tellus ac convallis placerat. Proin tincidunt magna sed ex sollicitudin condimentum. Sed ac faucibus dolor, scelerisque sollicitudin nisi. Cras purus urna, suscipit quis sapien eu, pulvinar tempor diam. Quisque risus orci, mollis id ante sit amet, gravida egestas nisl. Sed ac tempus magna. Proin in dui enim. Donec condimentum, sem id dapibus fringilla, tellus enim condimentum arcu, nec volutpat est felis vel metus. Vestibulum sit amet erat at nulla eleifend gravida.</p>
-<p>Nullam vel molestie justo. Curabitur vitae efficitur leo. In hac habitasse platea dictumst. Sed pulvinar mauris dui, eget varius purus congue ac. Nulla euismod, lorem vel elementum dapibus, nunc justo porta mi, sed tempus est est vel tellus. Nam et enim eleifend, laoreet sem sit amet, elementum sem. Morbi ut leo congue, maximus velit ut, finibus arcu. In et libero cursus, rutrum risus non, molestie leo. Nullam congue quam et volutpat malesuada. Sed risus tortor, pulvinar et dictum nec, sodales non mi. Phasellus lacinia commodo laoreet. Nam mollis, erat in feugiat consectetur, purus eros egestas tellus, in auctor urna odio at nibh. Mauris imperdiet nisi ac magna convallis, at rhoncus ligula cursus.</p>
-<p>Cras aliquam rhoncus ipsum, in hendrerit nunc mattis vitae. Duis vitae efficitur metus, ac tempus leo. Cras nec fringilla lacus. Quisque sit amet risus at ipsum pharetra commodo. Sed aliquam mauris at consequat eleifend. Praesent porta, augue sed viverra bibendum, neque ante euismod ante, in vehicula justo lorem ac eros. Suspendisse augue libero, venenatis eget tincidunt ut, malesuada at lorem. Donec vitae bibendum arcu. Aenean maximus nulla non pretium iaculis. Quisque imperdiet, nulla in pulvinar aliquet, velit quam ultrices quam, sit amet fringilla leo sem vel nunc. Mauris in lacinia lacus.</p>
-<p>Suspendisse a tincidunt lacus. Curabitur at urna sagittis, dictum ante sit amet, euismod magna. Sed rutrum massa id tortor commodo, vitae elementum turpis tempus. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean purus turpis, venenatis a ullamcorper nec, tincidunt et massa. Integer posuere quam rutrum arcu vehicula imperdiet. Mauris ullamcorper quam vitae purus congue, quis euismod magna eleifend. Vestibulum semper vel augue eget tincidunt. Fusce eget justo sodales, dapibus odio eu, ultrices lorem. Duis condimentum lorem id eros commodo, in facilisis mauris scelerisque. Morbi sed auctor leo. Nullam volutpat a lacus quis pharetra. Nulla congue rutrum magna a ornare.</p>
-<p>Aliquam in turpis accumsan, malesuada nibh ut, hendrerit justo. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Quisque sed erat nec justo posuere suscipit. Donec ut efficitur arcu, in malesuada neque. Nunc dignissim nisl massa, id vulputate nunc pretium nec. Quisque eget urna in risus suscipit ultricies. Pellentesque odio odio, tincidunt in eleifend sed, posuere a diam. Nam gravida nisl convallis semper elementum. Morbi vitae felis faucibus, vulputate orci placerat, aliquet nisi. Aliquam erat volutpat. Maecenas sagittis pulvinar purus, sed porta quam laoreet at.</p>
+      <h2 id="abstract">Abstract</h2>
+<p>As increasingly more textual information becomes available, named entity recognition (NER) systems are thriving, benefiting from powerful models and expressive tagging schemes that promote the full use of diverse features at different levels. To improve performance, traditional approaches have focused mainly on changing the structures of NER models but have always ignored the hard constraints and left the NER tagging schemes unchanged. To solve this problem, we proposes a dynamic entity-based NER approach under unconstrained tagging schemes. To eliminate the constraints, we reorganize widely used tagging schemes and propose two novel unconstrained schemes: one in which tags are assigned to words and entities separately, and one where words and entities are labeled indiscriminately by uniformly taking them as chunks. Associated with the unconstrained tagging schemes, two entity-based neural architectures are also presented that recognize entities at the same time that the sentence is dynamically segmented. Unlike other static NER models that process all the tags after labeling each word, our models address the inputs dynamically by the interactions between the input text and the output labels. The dynamic mechanism can ensure that the entity-level features are included in the NER system, which is helpful for correctly recognizing entities. Except for word embeddings pretrained from unlabeled corpora, no external language-specific knowledge or other resources such as gazetteers are used. We conduct extensive experiments with English, German, Dutch, and Spanish datasets show that our methods can perform very well with different languages. Particularly, the results of the recall rate against the entity’s length reveal that the proposed entity-basedmodels are suitable for recognizing entities with long lengths. Picture below illustrates our proposed dynamic NER model under unconstrained tagging schemes: <br>
+<img src="featured.jpg" alt="dynamic_NER_model"></p>
+<h2 id="result">Result</h2>
+<p>This paper &ldquo;Dynamic Entity-Based Named Entity Recognition Under Unconstrained Tagging Schemes&rdquo; is accpted by <em>IEEE Transactions on Big Data (TBD)</em> and now avalible in Early Access area on IEEE Xplore.</p>
 
     </div>
 
@@ -813,7 +813,11 @@
 
 <div class="article-tags">
   
-  <a class="badge badge-light" href="/tag/deep-learning/">Deep Learning</a>
+  <a class="badge badge-light" href="/tag/natural-language-processing/">Natural Language Processing</a>
+  
+  <a class="badge badge-light" href="/tag/named-entity-recognition/">Named Entity Recognition</a>
+  
+  <a class="badge badge-light" href="/tag/recurrent-neural-networks/">Recurrent Neural Networks</a>
   
 </div>
 
@@ -938,7 +942,7 @@
       <div class="media-body">
         <h5 class="card-title"><a href="https://hyfshishen.github.io">Yafan Huang</a></h5>
         <h6 class="card-subtitle">Master Student</h6>
-        <p class="card-text">My research interests include distributed robotics, mobile computing and programmable matter.</p>
+        <p class="card-text">My research interests include natural language processing, knowledge graph and recommender system.</p>
         <ul class="network-icon" aria-hidden="true">
   
     
@@ -1032,11 +1036,9 @@
     <h3>Related</h3>
     <ul>
       
-      <li><a href="/project/resource_pool/">Project on Sci. &amp; Tech. resource pool based on Knowledge Graph.</a></li>
+      <li><a href="/project/rumor_detection/">Research on Rumor Detection.</a></li>
       
       <li><a href="/project/recommender_system/">Research on Recommendation via Knowledge Graphs.</a></li>
-      
-      <li><a href="/project/rumor_detection/">Research on Rumor Detection.</a></li>
       
     </ul>
   </div>
