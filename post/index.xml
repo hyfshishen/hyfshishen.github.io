@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Posts | Yafan Huang</title>
+    <link>https://hyfshishen.github.io/post/</link>
+      <atom:link href="https://hyfshishen.github.io/post/index.xml" rel="self" type="application/rss+xml" />
+    <description>Posts</description>
+    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><lastBuildDate>Tue, 25 Feb 2020 00:00:00 +0000</lastBuildDate>
+    <image>
+      <url>https://hyfshishen.github.io/images/icon_hu2f8f35f095e990ef474dcd9a28312ba3_69115_512x512_fill_lanczos_center_2.png</url>
+      <title>Posts</title>
+      <link>https://hyfshishen.github.io/post/</link>
+    </image>
+    
+    <item>
+      <title>Say something about me</title>
+      <link>https://hyfshishen.github.io/post/introduce_myself/</link>
+      <pubDate>Tue, 25 Feb 2020 00:00:00 +0000</pubDate>
+      <guid>https://hyfshishen.github.io/post/introduce_myself/</guid>
+      <description>&lt;p&gt;Outside the research, I&amp;rsquo;m an outgoing person who is easy to get along with. I have various interests such as jogging, playing basketball, and computer games (such as LOL and Steam games). I am also a music-lover who likes composing songs 
+&lt;a href=&#34;https://music.163.com/#/song?id=1296131496&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;♫&lt;/a&gt; in my spare time and can play several instruments like Erhu, Guitar, and Piano.&lt;/p&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>

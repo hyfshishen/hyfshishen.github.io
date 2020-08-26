@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Graph Neural Networks | Yafan Huang</title>
+    <link>https://hyfshishen.github.io/tag/graph-neural-networks/</link>
+      <atom:link href="https://hyfshishen.github.io/tag/graph-neural-networks/index.xml" rel="self" type="application/rss+xml" />
+    <description>Graph Neural Networks</description>
+    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><lastBuildDate>Wed, 01 Jul 2020 00:00:00 +0000</lastBuildDate>
+    <image>
+      <url>https://hyfshishen.github.io/images/icon_hu2f8f35f095e990ef474dcd9a28312ba3_69115_512x512_fill_lanczos_center_2.png</url>
+      <title>Graph Neural Networks</title>
+      <link>https://hyfshishen.github.io/tag/graph-neural-networks/</link>
+    </image>
+    
+    <item>
+      <title>Research on Inductive Rumor Detection in Large Graphs via Centrality Measures.</title>
+      <link>https://hyfshishen.github.io/project/rumor_detection/</link>
+      <pubDate>Wed, 01 Jul 2020 00:00:00 +0000</pubDate>
+      <guid>https://hyfshishen.github.io/project/rumor_detection/</guid>
+      <description>&lt;p&gt;To be updated.&lt;/p&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>

@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Projects | Yafan Huang</title>
+    <link>https://hyfshishen.github.io/project/</link>
+      <atom:link href="https://hyfshishen.github.io/project/index.xml" rel="self" type="application/rss+xml" />
+    <description>Projects</description>
+    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><lastBuildDate>Wed, 01 Jul 2020 00:00:00 +0000</lastBuildDate>
+    <image>
+      <url>https://hyfshishen.github.io/images/icon_hu2f8f35f095e990ef474dcd9a28312ba3_69115_512x512_fill_lanczos_center_2.png</url>
+      <title>Projects</title>
+      <link>https://hyfshishen.github.io/project/</link>
+    </image>
+    
+    <item>
+      <title>Research on Inductive Rumor Detection in Large Graphs via Centrality Measures.</title>
+      <link>https://hyfshishen.github.io/project/rumor_detection/</link>
+      <pubDate>Wed, 01 Jul 2020 00:00:00 +0000</pubDate>
+      <guid>https://hyfshishen.github.io/project/rumor_detection/</guid>
+      <description>&lt;p&gt;To be updated.&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Research on Path-enhanced Explainable Recommendation with Knowledge Graphs.</title>
+      <link>https://hyfshishen.github.io/project/recommender_system/</link>
+      <pubDate>Fri, 01 Nov 2019 00:00:00 +0000</pubDate>
+      <guid>https://hyfshishen.github.io/project/recommender_system/</guid>
+      <description>&lt;h2 id=&#34;abstract&#34;&gt;Abstract&lt;/h2&gt;
+&lt;p&gt;Recommender systems, in order to predict user requirements precisely, act as a vital role in modern internet industry. As an effective tool with rich semantics, knowledge graph has captured growing research attention in enhancing recommendation results recently. By mining multi-hop relations (&lt;em&gt;aka.&lt;/em&gt; paths) between user-item interactions within knowledge graph, implicit user preference and other side information can be clearly uncovered.  Nevertheless, existing knowledge graph-based recommendation methods have two fundamental limitations: Firstly, the indiscriminate utilization of user-item path sets conveys unclear information and negatively influence the explainability. Moreover, reliable recommendation results with these methods require massive prior knowledge, which indicates they show poor performance in accuracy and handling cold-start issues. To address these issues, we propose a novel model named &lt;em&gt;Path-enhanced Recurrent Network&lt;/em&gt; (PeRN). Specifically, PeRN integrates a recurrent neural network encoder with a meta-path-based entropy encoder to further increase explainability, accuracy and reduce cold-start costs. Recurrent network encoder has a strong ability to represent sequential path semantics in knowledge graph, while entropy encoder, as an efficient statistical analysis approach, leverage meta path information to differentiate paths in one user-item interaction. A path extraction algorithm with a bidirectional scheme is also proposed to make PeRN more feasible. Experimental results on two real-world datasets demonstrate our significant improvements with reasonable explanations, promising accuracy and minimal amount of prior knowledge compared with several state-of-the-art baselines. Picture below illustrates the overall framework of our proposed model:&lt;br&gt;
+&lt;img src=&#34;framwork_of_PeRN.jpg&#34; alt=&#34;framwork_of_PeRN&#34;&gt;&lt;/p&gt;
+&lt;h2 id=&#34;progress&#34;&gt;Progress&lt;/h2&gt;
+&lt;p&gt;Now under revision. Early rejected by &lt;em&gt;IJCAI 2020&lt;/em&gt; with 1a, 1wa, 1wr, 1r and &lt;em&gt;CIKM 2020&lt;/em&gt; with 1wa, 1r, 1wr.&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Research on Dynamic Entity-Based Named Entity Recognition Under Unconstrained Tagging Schemes.</title>
+      <link>https://hyfshishen.github.io/project/ner/</link>
+      <pubDate>Thu, 27 Jun 2019 00:00:00 +0000</pubDate>
+      <guid>https://hyfshishen.github.io/project/ner/</guid>
+      <description>&lt;h2 id=&#34;abstract&#34;&gt;Abstract&lt;/h2&gt;
+&lt;p&gt;As increasingly more textual information becomes available, named entity recognition (NER) systems are thriving, benefiting from powerful models and expressive tagging schemes that promote the full use of diverse features at different levels. To improve performance, traditional approaches have focused mainly on changing the structures of NER models but have always ignored the hard constraints and left the NER tagging schemes unchanged. To solve this problem, we proposes a dynamic entity-based NER approach under unconstrained tagging schemes. To eliminate the constraints, we reorganize widely used tagging schemes and propose two novel unconstrained schemes: one in which tags are assigned to words and entities separately, and one where words and entities are labeled indiscriminately by uniformly taking them as chunks. Associated with the unconstrained tagging schemes, two entity-based neural architectures are also presented that recognize entities at the same time that the sentence is dynamically segmented. Unlike other static NER models that process all the tags after labeling each word, our models address the inputs dynamically by the interactions between the input text and the output labels. The dynamic mechanism can ensure that the entity-level features are included in the NER system, which is helpful for correctly recognizing entities. Except for word embeddings pretrained from unlabeled corpora, no external language-specific knowledge or other resources such as gazetteers are used. We conduct extensive experiments with English, German, Dutch, and Spanish datasets show that our methods can perform very well with different languages. Particularly, the results of the recall rate against the entity’s length reveal that the proposed entity-basedmodels are suitable for recognizing entities with long lengths. Picture below illustrates our proposed dynamic NER model under unconstrained tagging schemes: &lt;br&gt;
+&lt;img src=&#34;featured.jpg&#34; alt=&#34;dynamic_NER_model&#34;&gt;&lt;/p&gt;
+&lt;h2 id=&#34;result&#34;&gt;Result&lt;/h2&gt;
+&lt;p&gt;This paper &amp;ldquo;Dynamic Entity-Based Named Entity Recognition Under Unconstrained Tagging Schemes&amp;rdquo; is accpted by &lt;em&gt;IEEE Transactions on Big Data (TBD)&lt;/em&gt; and now avalible in Early Access area on IEEE Xplore.&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Project on Sci. &amp; Tech. Resource Pool based on Knowledge Graph.</title>
+      <link>https://hyfshishen.github.io/project/resource_pool/</link>
+      <pubDate>Sat, 27 Apr 2019 00:00:00 +0000</pubDate>
+      <guid>https://hyfshishen.github.io/project/resource_pool/</guid>
+      <description>&lt;h2 id=&#34;background&#34;&gt;Background&lt;/h2&gt;
+&lt;p&gt;In Hubei, Hunan and Jiangxi province of China, there are massive of science and technology resource data. Take Hubei for example, 129 universities in Hubei creates plenty of papers, patents and etc. every year. On the one hand, these data belong to different technology departments and cause information barriers for users. On the other hand, these data management systems are less intelligent, which indicates they show poor performance in processing large amounts of data and reasoning.&lt;/p&gt;
+&lt;h2 id=&#34;purpose&#34;&gt;Purpose&lt;/h2&gt;
+&lt;p&gt;Aiming to build a information management system that includes all the science and technology resource (such as papers, patents, etc.) of Hubei, Hunan and Jiangxi province of China. This project requires: (1) a visualization interface via Knowledge Graph, (2) some intelligent data analysis functions.&lt;/p&gt;
+&lt;h2 id=&#34;method&#34;&gt;Method&lt;/h2&gt;
+&lt;p&gt;(1) Project framework via maven + sprintMVC. &lt;br&gt;
+(2) Create and apply Knowlege graph engine via Java. &lt;br&gt;
+(3) Design and create web-interface via 
+&lt;a href=&#34;https://getbootstrap.com/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Bootstrap&lt;/a&gt;-based HTML and CSS. &lt;br&gt;
+(4) Visualize knowledge graph via 
+&lt;a href=&#34;https://visjs.org/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;vis.js&lt;/a&gt;-based JavaScript. &lt;br&gt;
+(5) Data analysis algorithms written via Java, visualized via 
+&lt;a href=&#34;https://echarts.apache.org/en/index.html&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;ECharts&lt;/a&gt; and 
+&lt;a href=&#34;https://www.chartjs.org/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Chart.js&lt;/a&gt;-based JavaScript . &lt;br&gt;
+(6) Project deployed on a Linux server.&lt;/p&gt;
+&lt;h2 id=&#34;results&#34;&gt;Results&lt;/h2&gt;
+&lt;p&gt;The main part of the project has been developed and is in the testing phase. Pictures below are several project interfaces (with demo data).&lt;br&gt;
+&lt;img src=&#34;featured.jpg&#34; alt=&#34;knowledge graph&#34;&gt;
+&lt;img src=&#34;data_analysis_1.jpg&#34; alt=&#34;data_analysis_1&#34;&gt;
+&lt;img src=&#34;data_analysis_2.jpg&#34; alt=&#34;data_analysis_2&#34;&gt;&lt;/p&gt;
+&lt;h2 id=&#34;acknowledgements&#34;&gt;Acknowledgements&lt;/h2&gt;
+&lt;p&gt;This project relies on 长江中游城市群综合科技服务平台 (National Key R&amp;amp;D Program of China No.2018YFB1404302), cooperated with 
+&lt;a href=&#34;http://kjt.hubei.gov.cn/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Science and Technology Department of Hubei Province&lt;/a&gt;, 
+&lt;a href=&#34;https://en.whu.edu.cn/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Wuhan University&lt;/a&gt;, 
+&lt;a href=&#34;http://english.whut.edu.cn/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Wuhan University of Technology&lt;/a&gt;, etc.&lt;/p&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>
