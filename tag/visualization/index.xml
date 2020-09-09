@@ -22,7 +22,7 @@
 &lt;h2 id=&#34;purpose&#34;&gt;Purpose&lt;/h2&gt;
 &lt;p&gt;Aiming to build a information management system that includes all the science and technology resource (such as papers, patents, etc.) of Hubei, Hunan and Jiangxi province of China. This project requires: (1) a visualization interface via Knowledge Graph, (2) some intelligent data analysis functions.&lt;/p&gt;
 &lt;h2 id=&#34;method&#34;&gt;Method&lt;/h2&gt;
-&lt;p&gt;(1) Project framework via maven + sprintMVC. &lt;br&gt;
+&lt;p&gt;(1) Project framework via maven + SpringMVC. &lt;br&gt;
 (2) Create and apply Knowlege graph engine via Java. &lt;br&gt;
 (3) Design and create web-interface via 
 &lt;a href=&#34;https://getbootstrap.com/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Bootstrap&lt;/a&gt;-based HTML and CSS. &lt;br&gt;
