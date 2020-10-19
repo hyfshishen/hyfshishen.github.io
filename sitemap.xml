@@ -3,6 +3,21 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
+    <loc>https://hyfshishen.github.io/post/</loc>
+    <lastmod>2020-10-19T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://hyfshishen.github.io/post/gre/</loc>
+    <lastmod>2020-10-19T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://hyfshishen.github.io/</loc>
+    <lastmod>2020-10-19T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://hyfshishen.github.io/publication-type/1/</loc>
     <lastmod>2020-08-19T00:00:00+00:00</lastmod>
   </url>
@@ -58,11 +73,6 @@
   </url>
   
   <url>
-    <loc>https://hyfshishen.github.io/</loc>
-    <lastmod>2020-08-19T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
     <loc>https://hyfshishen.github.io/author/yafan-huang/</loc>
     <lastmod>2020-08-19T00:00:00+00:00</lastmod>
   </url>
@@ -110,11 +120,6 @@
   <url>
     <loc>https://hyfshishen.github.io/tag/tbd/</loc>
     <lastmod>2020-06-01T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://hyfshishen.github.io/post/</loc>
-    <lastmod>2020-02-25T00:00:00+00:00</lastmod>
   </url>
   
   <url>
