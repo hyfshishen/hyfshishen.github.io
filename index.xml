@@ -5,12 +5,21 @@
     <link>https://hyfshishen.github.io/</link>
       <atom:link href="https://hyfshishen.github.io/index.xml" rel="self" type="application/rss+xml" />
     <description>Yafan Huang</description>
-    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><lastBuildDate>Mon, 19 Oct 2020 00:00:00 +0000</lastBuildDate>
+    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><lastBuildDate>Thu, 11 Feb 2021 00:00:00 +0000</lastBuildDate>
     <image>
       <url>https://hyfshishen.github.io/images/icon_hu2f8f35f095e990ef474dcd9a28312ba3_69115_512x512_fill_lanczos_center_2.png</url>
       <title>Yafan Huang</title>
       <link>https://hyfshishen.github.io/</link>
     </image>
+    
+    <item>
+      <title>Rumor Detection on Social Media with Out-In-Degree Graph Convolutional Networks</title>
+      <link>https://hyfshishen.github.io/publication/03.oid-gcn/</link>
+      <pubDate>Thu, 11 Feb 2021 00:00:00 +0000</pubDate>
+      <guid>https://hyfshishen.github.io/publication/03.oid-gcn/</guid>
+      <description>&lt;p&gt;This paper is now submitted to IJCNN 2021.&lt;/p&gt;
+</description>
+    </item>
     
     <item>
       <title>Thoughts after GRE test</title>
@@ -42,11 +51,11 @@
     </item>
     
     <item>
-      <title>Research on Inductive Rumor Detection in Large Graphs via Centrality Measures.</title>
+      <title>Research on Rumor Detection on Social Media with Out-In-Degree Graph Convolutional Networks</title>
       <link>https://hyfshishen.github.io/project/rumor_detection/</link>
       <pubDate>Wed, 01 Jul 2020 00:00:00 +0000</pubDate>
       <guid>https://hyfshishen.github.io/project/rumor_detection/</guid>
-      <description>&lt;p&gt;To be updated.&lt;/p&gt;
+      <description>&lt;p&gt;With the tremendous development in hardware computing and the widespread use of mobile terminal devices, there are increasingly more people who prefer to share their lives and opinions on social media. Though social media platforms allow everyone to express their opinions freely, they create convenience for rumor propagation in the meantime, which brings huge negative influence on the public and makes rumor detection extremely necessary. Currently, the most effective methods regard rumor propagation network as a graph and adopt graph convolutional networks (GCN) to detect rumor automatically. Such methods achieve promising performance in rumor detection, however, we argue that they have two critical defects: 1) they neglect the position contributions of rumor nodes in a graph, reducing the accuracy of rumor detection results; 2) they are inadequate in dealing with imbalanced data, which also indicates the inflexibility and the poor generalization ability of the model. To overcome these issues, we incorporate Katz centrality into spectral-domain graph convolution and propose a novel model named Out-In-Degree Graph Convolutional Networks (OIDGCN). Specifically, besides enhancing accuracy, Katz centrality can efficiently capture the position information of nodes, while the rest structure of OID-GCN shows a superb ability in dealing with imbalanced data. Comprehensive experimental results on two real-world datasets Twitter-15 and Twitter-16 demonstrate our OID-GCN outperforms existing methods.&lt;/p&gt;
 </description>
     </item>
     
