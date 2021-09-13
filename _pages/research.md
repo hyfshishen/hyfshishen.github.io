@@ -1,5 +1,5 @@
 ---
-title: "HPC Lab - Research"
+title: "UI-HPC Lab - Research"
 layout: textlay
 excerpt: "HPC Lab -- Research"
 sitemap: false

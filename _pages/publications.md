@@ -1,5 +1,5 @@
 ---
-title: "HPC Lab - Publications"
+title: "UI-HPC Lab - Publications"
 layout: gridlay
 excerpt: "HPC Lab -- Publications."
 sitemap: false

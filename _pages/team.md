@@ -1,14 +1,14 @@
 ---
-title: "HPC Lab - Team"
+title: "UI-HPC Lab - Team"
 layout: gridlay
 excerpt: "HPC Lab: Team members"
 sitemap: false
 permalink: /team/
 ---
 
-# Group Members
+# Team Members
 
- **We are looking for new PhD students, Postdocs, and Master students to join the team** [(see openings)]({{ site.url }}{{ site.baseurl }}/openings) **!**
+ **We are looking for new PhD students, Postdocs, and MS students to join the team** [(see openings)]({{ site.url }}{{ site.baseurl }}/openings) **!**
 
 ## Faculty
 {% assign number_printed = 0 %}
@@ -137,7 +137,7 @@ permalink: /team/
 
 
 
-## Master and Bachelor Students
+## MS and Bachelor Students
 {% assign number_printed = 0 %}
 {% for member in site.data.students %}
 

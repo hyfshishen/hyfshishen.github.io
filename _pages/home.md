@@ -1,5 +1,5 @@
 ---
-title: "HPC Lab - Home"
+title: "UI-HPC Lab - Home"
 layout: homelay
 excerpt: "HPC Lab at University of Iowa."
 sitemap: false
@@ -47,7 +47,7 @@ permalink: /
 
 We are the HPC system group in the [Department of Computer Science](https://cs.uiowa.edu/) at the [University of Iowa](https://uiowa.edu/). Overall, our mission is to improve performance and reliability in HPC systems. University of Iowa is ranked 38th in United States based on [CSRankings](http://csrankings.org/#/index?hpc&us) in the area of HPC. 
 
- **We are always looking for passionate and self-motivated new PhD students, Postdocs, and Master students to join the team** [(more info)]({{ site.url }}{{ site.baseurl }}/openings) **!**
+ **We are always looking for passionate and self-motivated new PhD students, Postdocs, and MS students to join the team** [(more info)]({{ site.url }}{{ site.baseurl }}/openings) **!**
 
 <!-- 
 We are grateful for funding from Leiden University, [NWO](www.nwo.nl) ([Vidi talent scheme](http://www.nwo.nl/en/research-and-results/programmes/Talent+Scheme) and the [Frontiers in Nanoscience program](https://www.universiteitleiden.nl/en/research/research-projects/science/frontiers-of-nanoscience-nanofront)), and from an [ERC starting grant](https://erc.europa.eu/funding/starting-grants). -->
