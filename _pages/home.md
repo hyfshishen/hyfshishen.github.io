@@ -11,8 +11,8 @@ permalink: /
         <li data-target="#carousel" data-slide-to="0" class="active"></li>
         <li data-target="#carousel" data-slide-to="1"></li>
         <li data-target="#carousel" data-slide-to="2"></li>
-        <li data-target="#carousel" data-slide-to="3"></li>
-        <!-- <li data-target="#carousel" data-slide-to="4"></li>
+        <!-- <li data-target="#carousel" data-slide-to="3"></li>
+        <li data-target="#carousel" data-slide-to="4"></li>
         <li data-target="#carousel" data-slide-to="5"></li>
         <li data-target="#carousel" data-slide-to="6"></li> -->
     </ol>
@@ -23,10 +23,10 @@ permalink: /
             <img src="{{ site.url }}{{ site.baseurl }}/images/research-pics/university-pic3.jfif" alt="Slide 1" />
         </div>
         <div class="item">
-            <img src="{{ site.url }}{{ site.baseurl }}/images/research-pics/university-pic0.jpg" alt="Slide 2" />
+            <img src="{{ site.url }}{{ site.baseurl }}/images/research-pics/university-pic4.jpg" alt="Slide 2" />
         </div>
         <div class="item">
-            <img src="{{ site.url }}{{ site.baseurl }}/images/research-pics/university-pic2.jfif" alt="Slide 3" />
+            <img src="{{ site.url }}{{ site.baseurl }}/images/research-pics/university-pic1.jpg" alt="Slide 3" />
         </div>
         <div class="item">
             <img src="{{ site.url }}{{ site.baseurl }}/images/research-pics/university-pic1.jpg" alt="Slide 4" />

@@ -6,7 +6,7 @@ sitemap: false
 permalink: /openings
 ---
 
-<span style="color:red">**We have multiple openings for post-docs, PhDs, and MS students. Please contact Prof. Jiang or Prof. Li if you are interested in their research.**</span>
+<span style="color:red">**We have multiple openings for Postdocs, PhDs, and MS students. Please contact Prof. Jiang or Prof. Li if you are interested in their research.**</span>
 
 To join our research group, you should have a bachelors/masters degree in computer science/engineering/mathematics, and have performed well academically. Further, you should have the following skills:
 1. Good command over the English language (both spoken and written).
