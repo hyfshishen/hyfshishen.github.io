@@ -8,7 +8,7 @@ permalink: /team/
 
 # Group Members
 
- **We are looking for new PhD students, Postdocs, and Master students to join the team** [(see openings)]({{ site.url }}{{ site.baseurl }}/vacancies) **!**
+ **We are looking for new PhD students, Postdocs, and Master students to join the team** [(see openings)]({{ site.url }}{{ site.baseurl }}/openings) **!**
 
 ## Faculty
 {% assign number_printed = 0 %}
@@ -194,7 +194,11 @@ permalink: /team/
 
 ## Alumni
 
-{% assign number_printed = 0 %}
+[Aabid Shamji](http://www.aabidshamji.com/) (MS, Spring 2021)
+
+[Masuma Akter Rumi](https://www.linkedin.com/in/masuma-akter-rumi-10a382102/) (MS, Spring 2021)
+
+<!-- {% assign number_printed = 0 %}
 {% for member in site.data.alumni_members %}
 
 {% assign even_odd = number_printed | modulo: 2 %}
@@ -249,7 +253,7 @@ permalink: /team/
 {% endfor %}
 </div>
 
-</div>
+</div> -->
 
 <!-- 
 ## Administrative Support
