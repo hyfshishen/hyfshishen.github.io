@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Visualization | Yafan Huang</title>
+    <link>https://hyfshishen.github.io/tag/visualization/</link>
+      <atom:link href="https://hyfshishen.github.io/tag/visualization/index.xml" rel="self" type="application/rss+xml" />
+    <description>Visualization</description>
+    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><lastBuildDate>Sat, 27 Apr 2019 00:00:00 +0000</lastBuildDate>
+    <image>
+      <url>https://hyfshishen.github.io/images/icon_hu2f8f35f095e990ef474dcd9a28312ba3_69115_512x512_fill_lanczos_center_2.png</url>
+      <title>Visualization</title>
+      <link>https://hyfshishen.github.io/tag/visualization/</link>
+    </image>
+    
+    <item>
+      <title>Project on Sci. &amp; Tech. Resource Pool based on Knowledge Graph.</title>
+      <link>https://hyfshishen.github.io/project/resource_pool/</link>
+      <pubDate>Sat, 27 Apr 2019 00:00:00 +0000</pubDate>
+      <guid>https://hyfshishen.github.io/project/resource_pool/</guid>
+      <description>&lt;h2 id=&#34;background&#34;&gt;Background&lt;/h2&gt;
+&lt;p&gt;In Hubei, Hunan and Jiangxi province of China, there are massive of science and technology resource data. Take Hubei for example, 129 universities in Hubei creates plenty of papers, patents and etc. every year. On the one hand, these data belong to different technology departments and cause information barriers for users. On the other hand, these data management systems are less intelligent, which indicates they show poor performance in processing large amounts of data and reasoning.&lt;/p&gt;
+&lt;h2 id=&#34;purpose&#34;&gt;Purpose&lt;/h2&gt;
+&lt;p&gt;Aiming to build a information management system that includes all the science and technology resource (such as papers, patents, etc.) of Hubei, Hunan and Jiangxi province of China. This project requires: (1) a visualization interface via Knowledge Graph, (2) some intelligent data analysis functions.&lt;/p&gt;
+&lt;h2 id=&#34;method&#34;&gt;Method&lt;/h2&gt;
+&lt;p&gt;(1) Project framework via maven + SpringMVC. &lt;br&gt;
+(2) Create and apply Knowlege graph engine via Java. &lt;br&gt;
+(3) Design and create web-interface via 
+&lt;a href=&#34;https://getbootstrap.com/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Bootstrap&lt;/a&gt;-based HTML and CSS. &lt;br&gt;
+(4) Visualize knowledge graph via 
+&lt;a href=&#34;https://visjs.org/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;vis.js&lt;/a&gt;-based JavaScript. &lt;br&gt;
+(5) Data analysis algorithms written via Java, visualized via 
+&lt;a href=&#34;https://echarts.apache.org/en/index.html&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;ECharts&lt;/a&gt; and 
+&lt;a href=&#34;https://www.chartjs.org/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Chart.js&lt;/a&gt;-based JavaScript . &lt;br&gt;
+(6) Project deployed on a Linux server.&lt;/p&gt;
+&lt;h2 id=&#34;results&#34;&gt;Results&lt;/h2&gt;
+&lt;p&gt;The main part of the project has been developed and is in the testing phase. Pictures below are several project interfaces (with demo data).&lt;br&gt;
+&lt;img src=&#34;featured.jpg&#34; alt=&#34;knowledge graph&#34;&gt;
+&lt;img src=&#34;data_analysis_1.jpg&#34; alt=&#34;data_analysis_1&#34;&gt;
+&lt;img src=&#34;data_analysis_2.jpg&#34; alt=&#34;data_analysis_2&#34;&gt;&lt;/p&gt;
+&lt;h2 id=&#34;acknowledgements&#34;&gt;Acknowledgements&lt;/h2&gt;
+&lt;p&gt;This project relies on 长江中游城市群综合科技服务平台 (National Key R&amp;amp;D Program of China No.2018YFB1404302), cooperated with 
+&lt;a href=&#34;http://kjt.hubei.gov.cn/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Science and Technology Department of Hubei Province&lt;/a&gt;, 
+&lt;a href=&#34;https://en.whu.edu.cn/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Wuhan University&lt;/a&gt;, 
+&lt;a href=&#34;http://english.whut.edu.cn/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Wuhan University of Technology&lt;/a&gt;, etc.&lt;/p&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>
