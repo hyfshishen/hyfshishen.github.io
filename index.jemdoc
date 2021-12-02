@@ -1,0 +1,41 @@
+# jemdoc: menu{MENU}{index.html}
+= Yafan Huang (黄亚凡)
+
+~~~
+{}{img_left}{image/yafan_huang.jpeg}{alt text}{215px}{220px}
+I am a PhD student in the [https://cs.uiowa.edu/ Computer Science Department] at the [https://uiowa.edu/ University of Iowa].
+I am a member of [https://iowa-hpc.github.io/ IOWA-HPC Group] and advised by [https://homepage.divms.uiowa.edu/~guanpli/ Dr. Guanpeng Li].
+I am also a research intern in [https://www.anl.gov/mcs Argonne National Laboratory] and supervised by [https://www.mcs.anl.gov/~shdi/ Dr. Sheng Di].
+
+Before coming to UIowa, I received my Master's degree (Sep.2018-Jun.2021, major: Computer Science) at [http://english.hust.edu.cn/ Huazhong University of Science and Technology], Wuhan.
+I was a member of [http://grid.hust.edu.cn/ Cluster and Grid Computing Lab (CGCL)] and advised by [http://faculty.hust.edu.cn/zhaofeng1/en/index.htm Dr. Feng Zhao].
+
+I received my Bachelor's degree (Sep.2014-Jun.2018, major: Software Engineering) at [http://www-en.hnu.edu.cn/ Hunan Unversity], Changsha.
+I spent a happy time there :)
+
+- Email: yafan-huang /at/ uiowa /dot/ edu
+- Office: Maclean Hall 317, Iowa City, IA
+- [file/yafan_cv.pdf Curriculem Vitae]
+~~~
+
+== Research Interests
+- Error Resilience
+- Lossy Compression
+- Natural Language Processing
+
+== News in 2021 ([news.html More])
+- 11/2021: Serve as subreviewer of IEEE Transactions on Dependable and Secure Computing.
+- 11/2021: Our paper, Sentinel, is accepted as a poster paper by PPoPP'22.
+- 10/2021: Join Argonne National Lab as a research intern!
+- 09/2021: Serve as subreviewer of QRS'21, HPCC'21, and PRDC'21.
+- 08/2021: Join IOWA-HPC Group as a research assistant!
+- 07/2021: Our paper, Our-In-Degree Graph Convolutional Network, is accepted by SMC'21.
+- 06/2021: Our paper, Path-enhanced Recurrent Network, is accepted by WWW Journal. 
+- 06/2021: Serve as reviewer of SMC'21.
+- 05/2021: Serve as subreviewer of ISSRE'21.
+- 04/2021: Serve as subreviewer of IEEE Transactions on Emerging Topics in Computing.
+- 02/2020: Our paper, Dynamic Entity-based Named Entity Recognition, is accepted by IEEE Transactions on Big Data.
+
+
+
+== Selected Publications ([publications.html Full List])
