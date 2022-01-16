@@ -1,0 +1,21 @@
+# jemdoc: menu{MENU}{tech-blogs.html}
+= Tech Blogs
+
+== Courses at UIowa
+- Fall21, CS:4330:0001, Theory of Computation\n
+  -- Final Report - Universal Turing Machine \[[file/yhuang203-ssong10-TOC-CourseReport.pdf PDF]\]
+
+- Fall21, CS:4980:0003, Topics in Computer Science II: High Performance Computing\n
+  -- Final Report - Resiliency of Machine Learning Applications in CPU and GPU \[[file/Yafan&Hasan-HPC-CourseReport.pdf PDF]\]
+
+- Spring21, CS:4980:0002, Topics in Computer Science II: Dependable System Design\n
+  -- Tutorial - A Brief Introduction of LLVM Compiler Structure, IR, and Pass \[[ Link]\]\n
+  -- Tutorial - Getting Started with *LL*VM *F*ault *I*njector (LLFI) \[[ Link]\]
+   
+
+
+== Machine Learning (in Chinese)
+[https://hyfshishen.notion.site/a9cd735ae1d64a1e8323266e352c0484 Click here].
+
+== General Computer Skills (in Chinese)
+[https://hyfshishen.notion.site/c827e4e09099436bb763c8ce4bd65ab0 Click here].
