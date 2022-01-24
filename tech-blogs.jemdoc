@@ -11,7 +11,8 @@
 - Spring21, CS:4980:0002, Topics in Computer Science II: Dependable System Design\n
   -- Tutorial - A Brief Introduction of LLVM Compiler Structure, IR, and Pass \[[ Link]\]\n
   -- Tutorial - LLFI: LLVM IR Level Fault Injector \[[ Link]\]\n
-  -- Tutorial - PINFI: Assembly Code Level Fault Injector \[[ Link]\]
+  -- Tutorial - PINFI: Assembly Code Level Fault Injector \[[ Link]\]\n
+  -- Tutorial - NVBitFI: Nvidia GPU Binary Level Fault Injector \[[ Link]\]
    
 
 
