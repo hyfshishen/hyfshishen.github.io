@@ -1,0 +1,205 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN"
+  "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+<head>
+<meta name="generator" content="jemdoc, see http://jemdoc.jaboc.net/" />
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<link rel="stylesheet" href="jemdoc.css" type="text/css" />
+<title>LLVM: Low-Level Virtual Machine</title>
+</head>
+<body>
+<table summary="Table for page layout." id="tlayout">
+<tr valign="top">
+<td id="layout-menu">
+<div class="menu-category">Yafan Huang</div>
+<div class="menu-item"><a href="index.html">Home</a></div>
+<div class="menu-item"><a href="news.html">News</a></div>
+<div class="menu-category">Research &amp; Experiences</div>
+<div class="menu-item"><a href="publications.html">Publications</a></div>
+<div class="menu-item"><a href="research-uiowa.html">Research@UIowa</a></div>
+<div class="menu-item"><a href="research-hust.html">Research@HUST</a></div>
+<div class="menu-item"><a href="experiences.html">Experiences</a></div>
+<div class="menu-category">Links</div>
+<div class="menu-item"><a href="tech-blogs.html">Tech&nbsp;Blogs</a></div>
+<div class="menu-item"><a href="https://github.com/hyfshishen">Github</a></div>
+<div class="menu-item"><a href="https://scholar.google.com/citations?user=r8qwkW8AAAAJ&hl=en&oi=sra">Google&nbsp;Scholar</a></div>
+<div class="menu-item"><a href="https://www.semanticscholar.org/author/2108587365">Semantic&nbsp;Scholar</a></div>
+<div class="menu-item"><a href="https://cn.linkedin.com/in/yafan-huang-2471181a0">LinkedIn</a></div>
+<div class="menu-item"><a href="image/wechat.jpeg">WeChat</a></div>
+<div class="menu-item"><a href="">Miscellaneous</a></div>
+</td>
+<td id="layout-content">
+<div id="toptitle">
+<h1>LLVM: Low-Level Virtual Machine</h1>
+</div>
+<h2>About</h2>
+<p>This tutorial provides a very basic and brief introduction about LLVM 
+which is used in UIowa:CS:4980:0002, Topics in Computer Science II: Dependable System Design instructed by Dr. <a href="https://homepage.divms.uiowa.edu/~guanpli/index.html">Guanpeng Li</a>).<br />
+Specifically, this tutorial targets to provide concise descriptions of following contents:</p>
+<ul>
+<li><p>How to Install LLVM?</p>
+</li>
+<li><p>What is LLVM?</p>
+</li>
+<li><p>What is LLVM IR? How to read LLVM IR?</p>
+</li>
+<li><p>What is LLVM Pass? How to write and compile an LLVM Pass?</p>
+</li>
+<li><p>Some useful LLVM Tools.</p>
+</li>
+</ul>
+<h2>LLVM Installation</h2>
+<div class="codeblock">
+<div class="blocktitle">Following commands show how to install LLVM 3.4 on a Ubuntu 16.04 machine.</div>
+<div class="blockcontent"><pre>
+$ <span class = "comment"># Note that LLVM source code of other versions can be found at https://github.com/llvm/llvm-project.</span>
+$ https://github.com/zjuacompiler/llvm.git                    <span class = "comment"># git clone LLVM 3.4 source code</span>
+$ cd llvm                                                     <span class = "comment"># change directory to uncompressed folder</span>
+$ ./configure --enable-optimized --disable-assertions --enable-targets=host --with-python=“/usr/bin/python2”
+                                                              <span class = "comment"># configure dependencies before you build LLVM</span>
+$ mkdir build &amp;&amp; cd build                                     <span class = "comment"># "build" folder is for release</span>
+$ cmake ..                                                    <span class = "comment"># prepare cmake file, ".." indicates the path to source code</span>
+$ make -j$(nproc)                                             <span class = "comment"># make install LLVM with multi-threads</span>
+</pre></div></div>
+<div class="codeblock">
+<div class="blocktitle">Check if installation successful.</div>
+<div class="blockcontent"><pre>
+$ cd $YOUR-LOCAL-PATH$/llvm/build/bin/ &amp;&amp; ls                  <span class = "comment"># list all compiled LLVM binaries</span>
+bugpoint   FileUpdate  lli-child-target  llvm-bcanalyzer  llvm-c-test  llvm-dwarfdump  llvm-lit  llvm-mcmarkup  llvm-ranlib   llvm-size        llvm-tblgen  obj2yaml  yaml-bench
+count      llc         llvm-ar           llvm-config      llvm-diff    llvm-extract    llvm-lto  llvm-nm        llvm-readobj  llvm-stress      macho-dump   opt
+FileCheck  lli         llvm-as           llvm-cov         llvm-dis     llvm-link       llvm-mc   llvm-objdump   llvm-rtdyld   llvm-symbolizer  not          yaml2obj
+$ <span class = "comment"># It indicates LLVM-3.4 is successfully installed to your machine :)</span>
+</pre></div></div>
+<h2>LLVM</h2>
+<table class="imgtable"><tr><td>
+<img src="image/llvm-structure.png" alt="alt text" width="600px" height="220px" />&nbsp;</td>
+<td align="left"><p>Low-Level Virtual Machine (LLVM) actually is a compiler architecture [<a href="https://llvm.org/">1</a>], shown as left picture.
+The main use of LLVM is that it can be the Optimizer (language-agnostic Optimization) and Backend (Machine Code Generation) of multiple programming languages.</p>
+<p>Compared with the traditional compiler (Frontend, Optimizer, Backend), the design of LLVM is very flexible for different programming languages. 
+Supporting a new language only needs a new frontend. 
+Supporting a new hardware device only needs a new backend. 
+LLVM Optimizer is a general module — it provides a common standard and its optimization is based on well-structured LLVM IR (Intermediate Representation). </p>
+<p>Besides, LLVM contains a lot of sub-projects including Clang (a lightweight compiler frontend for C, C<tt></tt>, Objective-C, and Objective-C<tt></tt>. You may frequently see it in your MacBooks)</p>
+</td></tr></table>
+<h2>LLVM IR</h2>
+<table class="imgtable"><tr><td>
+<img src="image/llvm-IR.jpeg" alt="alt text" width="600px" height="220px" />&nbsp;</td>
+<td align="left"><p>LLVM IR is a low-level intermediate representation used by LLVM compiler framework [<a href="https://blog.gopheracademy.com/advent-2018/llvm-ir-and-go/">2</a>], shown as left picture.
+LLVM-based compilers here can be splited into three components, the front-end, middle-end, and back-end; each with a specific task that takes IR as input and/or produces IR as output.</p>
+<ul>
+<li><p><b>Front-end</b>: compiles source language to IR.</p>
+</li>
+<li><p><b>Middle-end</b>: optimizes IR, this step is very powerful and you can do a lot of interesting code transformations and program analysis here.</p>
+</li>
+<li><p><b>Back-end</b>: compiles IR to machine code.</p>
+</li>
+</ul>
+<p>You can think of LLVM IR a as platform-independent assembly language with an infinite number of function local registers.
+However, LLVM IR is not machine code, but sort of the step just above assembly. 
+So some things look more like a high-level language (like functions and the strong typing). 
+Other looks more like low-level assembly (e.g. branching, basic-blocks, instructions).</p>
+</td></tr></table>
+<table class="imgtable"><tr><td>
+<img src="image/cfg.jpeg" alt="alt text" width="300px" height="200px" />&nbsp;</td>
+<td align="left"><p>LLVM IR has both human-readable (<tt>.ll</tt>) and binary versions (<tt>.bc</tt>, bitcode format).
+These two formats can be transformed easily, and we mainly focus on <tt>.ll</tt> here.</p>
+<p>LLVM IR has three major components, function, basic-block (BB), and instruction.</p>
+<ul>
+<li><p><b>Function</b>: One LLVM IR has several functions, such as one function shown in left picture.
+Note that the function name is LLVM-level and can not be mapped with source code (except main function).</p>
+</li>
+<li><p><b>Basic-Block</b>: One function contains several basic-blocks, and each node in the left picture represents a basic-block. 
+Basic-block is also the minimum unit to record the dynamic footprint of one program execution.</p>
+</li>
+<li><p><b>Instruction</b>: One basic-block contains several instructions. Every instruction has its own instruction type and variables.</p>
+</li>
+</ul>
+</td></tr></table>
+<p>Here is a toy example of compiling C code to LLVM IR.
+This IR has only one <tt>main()</tt> function.
+This function has only one basic-block.
+This basic-block has four instructions, of which types are &ldquo;load&rdquo;, &ldquo;mul&rdquo;, &ldquo;store&rdquo;, and &ldquo;ret&rdquo;.</p>
+<div class="codeblock">
+<div class="blocktitle">Original C code</div>
+<div class="blockcontent"><pre>
+int variable = 21;
+
+int main()
+{
+    variable = variable * 2;
+    return variable;
+}
+</pre></div></div>
+<div class="codeblock">
+<div class="blocktitle">LLVM IR (readable format)</div>
+<div class="blockcontent"><pre>
+@variable = global i32 21          ; define global variable, in LLVM IR global variable starts with '@'
+
+define i32 @main() {
+    %1 = load i32, i32* @variable  ; load the global variable, in LLVM IR local variable starts with '%'
+    %2 = mul i32 %1, 2
+    store i32 %2, i32* @variable   ; store instruction to write to global variable
+    ret i32 %2
+}
+</pre></div></div>
+<p>To know more about LLVM IR grammar, please see this document [<a href="https://mapping-high-level-constructs-to-llvm-ir.readthedocs.io/en/latest/README.html">3</a>].</p>
+<h2>LLVM Pass</h2>
+<p>To be updated.</p>
+<h2>Some Useful LLVM Tools</h2>
+<div class="codeblock">
+<div class="blocktitle">clang: LLVM C compiler</div>
+<div class="blockcontent"><pre>
+$ clang hello-world.c -o hello-world                                     <span class = "comment"># Compile C code to executable binary</span>
+$ clang -S -emit-llvm hello-world.c -o hello-world.ll                    <span class = "comment"># Compile C code to readable IR</span>
+</pre></div></div>
+<div class="codeblock">
+<div class="blocktitle">clang<tt></tt>: LLVM C<tt></tt> compiler</div>
+<div class="blockcontent"><pre>
+$ clang++ hello-world.cpp -o hello-world                                 <span class = "comment"># Compile C++ code to executable binary</span>
+$ clang++ -S -emit-llvm hello-world.cpp -o hello-world.ll                <span class = "comment"># Compile C++ code to readable IR</span>
+</pre></div></div>
+<div class="codeblock">
+<div class="blocktitle">llvm-as: Assembler</div>
+<div class="blockcontent"><pre>
+$ llvm-as hello-world.ll -o hello-world.bc                               <span class = "comment"># Compile readable IR to bitcode format</span>
+</pre></div></div>
+<div class="codeblock">
+<div class="blocktitle">llvm-dis: Disassembler</div>
+<div class="blockcontent"><pre>
+$ llvm-dis hello-world.bc -o hello-world.ll                              <span class = "comment"># Compile bitcode format to readable IR</span>
+</pre></div></div>
+<div class="codeblock">
+<div class="blocktitle">llvm-link: Linker</div>
+<div class="blockcontent"><pre>
+$ llvm-link hello.ll world.ll -o hello-world.ll                          <span class = "comment"># Link two IR</span>
+</pre></div></div>
+<div class="codeblock">
+<div class="blocktitle">llc: Static compiler</div>
+<div class="blockcontent"><pre>
+$ llc hello-world.ll -o hello-world.s                                    <span class = "comment"># Compile IR into assembly code for a specified architecture</span>
+</pre></div></div>
+<div class="codeblock">
+<div class="blocktitle">lli: Directly execute IR</div>
+<div class="blockcontent"><pre>
+$ lli pathfinder.ll 1000 10                                              <span class = "comment"># Directly execute Rodinia-pathfinder IR with input "1000 10" using a just-in-time compiler</span>
+                                                                         <span class = "comment"># This IR can be found at https://github.com/hyfshishen/LLFI-Tutorial-Pathfinder.</span>
+</pre></div></div>
+<div class="codeblock">
+<div class="blocktitle">opt: Optimizer</div>
+<div class="blockcontent"><pre>
+$ <span class = "comment"># This command shows how to load a LLVM pass. Will be updated in the future.</span>
+</pre></div></div>
+<h2>References</h2>
+<p>[1]  LLVM Documents<br />
+[2]  https:<i></i>blog.gopheracademy.com<i>advent-2018</i>llvm-ir-and-go/<br />
+[3]  Mapping High Level Constructs to LLVM IR</p>
+<div id="footer">
+<div id="footer-text">
+Page generated 2022-01-31 03:18:34 CST, by <a href="http://jemdoc.jaboc.net/">jemdoc</a>.
+</div>
+</div>
+</td>
+</tr>
+</table>
+</body>
+</html>

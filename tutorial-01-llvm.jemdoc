@@ -1,0 +1,153 @@
+# jemdoc: menu{MENU}{tutorial-01-llvm.html}
+= LLVM: Low-Level Virtual Machine
+
+== About
+This tutorial provides a very basic and brief introduction about LLVM 
+which is used in UIowa:CS:4980:0002, Topics in Computer Science II: Dependable System Design instructed by Dr. [https://homepage.divms.uiowa.edu/~guanpli/index.html Guanpeng Li]).\n
+Specifically, this tutorial targets to provide concise descriptions of following contents:
+- How to Install LLVM?
+- What is LLVM?
+- What is LLVM IR? How to read LLVM IR?
+- What is LLVM Pass? How to write and compile an LLVM Pass?
+- Some useful LLVM Tools.
+
+== LLVM Installation
+~~~
+{Following commands show how to install LLVM 3.4 on a Ubuntu 16.04 machine.}{pyint}
+$ # Note that LLVM source code of other versions can be found at https://github.com/llvm/llvm-project.
+$ https://github.com/zjuacompiler/llvm.git                    # git clone LLVM 3.4 source code
+$ cd llvm                                                     # change directory to uncompressed folder
+$ ./configure --enable-optimized --disable-assertions --enable-targets=host --with-python=“/usr/bin/python2”
+                                                              # configure dependencies before you build LLVM
+$ mkdir build && cd build                                     # "build" folder is for release
+$ cmake ..                                                    # prepare cmake file, ".." indicates the path to source code
+$ make -j$(nproc)                                             # make install LLVM with multi-threads
+~~~
+
+~~~
+{Check if installation successful.}{pyint}
+$ cd $YOUR-LOCAL-PATH$/llvm/build/bin/ && ls                  # list all compiled LLVM binaries
+bugpoint   FileUpdate  lli-child-target  llvm-bcanalyzer  llvm-c-test  llvm-dwarfdump  llvm-lit  llvm-mcmarkup  llvm-ranlib   llvm-size        llvm-tblgen  obj2yaml  yaml-bench
+count      llc         llvm-ar           llvm-config      llvm-diff    llvm-extract    llvm-lto  llvm-nm        llvm-readobj  llvm-stress      macho-dump   opt
+FileCheck  lli         llvm-as           llvm-cov         llvm-dis     llvm-link       llvm-mc   llvm-objdump   llvm-rtdyld   llvm-symbolizer  not          yaml2obj
+$ # It indicates LLVM-3.4 is successfully installed to your machine :)
+~~~
+
+
+== LLVM
+~~~
+{}{img_left}{image/llvm-structure.png}{alt text}{600px}{220px}
+Low-Level Virtual Machine (LLVM) actually is a compiler architecture \[[https://llvm.org/ 1]\], shown as left picture.
+The main use of LLVM is that it can be the Optimizer (language-agnostic Optimization) and Backend (Machine Code Generation) of multiple programming languages.
+
+Compared with the traditional compiler (Frontend, Optimizer, Backend), the design of LLVM is very flexible for different programming languages. 
+Supporting a new language only needs a new frontend. 
+Supporting a new hardware device only needs a new backend. 
+LLVM Optimizer is a general module — it provides a common standard and its optimization is based on well-structured LLVM IR (Intermediate Representation). 
+
+Besides, LLVM contains a lot of sub-projects including Clang (a lightweight compiler frontend for C, C++, Objective-C, and Objective-C++. You may frequently see it in your MacBooks)
+~~~
+
+== LLVM IR
+~~~
+{}{img_left}{image/llvm-IR.jpeg}{alt text}{600px}{220px}
+LLVM IR is a low-level intermediate representation used by LLVM compiler framework \[[https://blog.gopheracademy.com/advent-2018/llvm-ir-and-go/ 2]\], shown as left picture.
+LLVM-based compilers here can be splited into three components, the front-end, middle-end, and back-end; each with a specific task that takes IR as input and/or produces IR as output.
+
+- *Front-end*: compiles source language to IR.
+- *Middle-end*: optimizes IR, this step is very powerful and you can do a lot of interesting code transformations and program analysis here.
+- *Back-end*: compiles IR to machine code.
+
+You can think of LLVM IR a as platform-independent assembly language with an infinite number of function local registers.
+However, LLVM IR is not machine code, but sort of the step just above assembly. 
+So some things look more like a high-level language (like functions and the strong typing). 
+Other looks more like low-level assembly (e.g. branching, basic-blocks, instructions).
+~~~
+
+~~~
+{}{img_left}{image/cfg.jpeg}{alt text}{300px}{200px}
+LLVM IR has both human-readable (+.ll+) and binary versions (+.bc+, bitcode format).
+These two formats can be transformed easily, and we mainly focus on +.ll+ here.
+
+LLVM IR has three major components, function, basic-block (BB), and instruction.
+- *Function*: One LLVM IR has several functions, such as one function shown in left picture.
+Note that the function name is LLVM-level and can not be mapped with source code (except main function).
+- *Basic-Block*: One function contains several basic-blocks, and each node in the left picture represents a basic-block. 
+Basic-block is also the minimum unit to record the dynamic footprint of one program execution.
+- *Instruction*: One basic-block contains several instructions. Every instruction has its own instruction type and variables.
+~~~
+
+Here is a toy example of compiling C code to LLVM IR.
+This IR has only one +main()+ function.
+This function has only one basic-block.
+This basic-block has four instructions, of which types are "load", "mul", "store", and "ret".
+
+~~~
+{Original C code}{pyint}
+int variable = 21;
+
+int main()
+{
+    variable = variable * 2;
+    return variable;
+}
+~~~
+
+~~~
+{LLVM IR (readable format)}{pyint}
+@variable = global i32 21          ; define global variable, in LLVM IR global variable starts with '@'
+
+define i32 @main() {
+    %1 = load i32, i32* @variable  ; load the global variable, in LLVM IR local variable starts with '%' 
+    %2 = mul i32 %1, 2
+    store i32 %2, i32* @variable   ; store instruction to write to global variable
+    ret i32 %2
+}
+~~~
+
+To know more about LLVM IR grammar, please see this document \[[https://mapping-high-level-constructs-to-llvm-ir.readthedocs.io/en/latest/README.html 3]\].
+
+== LLVM Pass
+To be updated.
+
+== Some Useful LLVM Tools
+~~~
+{clang: LLVM C compiler}{pyint}
+$ clang hello-world.c -o hello-world                                     # Compile C code to executable binary
+$ clang -S -emit-llvm hello-world.c -o hello-world.ll                    # Compile C code to readable IR
+~~~
+~~~
+{clang++: LLVM C++ compiler}{pyint}
+$ clang++ hello-world.cpp -o hello-world                                 # Compile C++ code to executable binary
+$ clang++ -S -emit-llvm hello-world.cpp -o hello-world.ll                # Compile C++ code to readable IR
+~~~
+~~~
+{llvm-as: Assembler}{pyint}
+$ llvm-as hello-world.ll -o hello-world.bc                               # Compile readable IR to bitcode format
+~~~
+~~~
+{llvm-dis: Disassembler}{pyint}
+$ llvm-dis hello-world.bc -o hello-world.ll                              # Compile bitcode format to readable IR
+~~~
+~~~
+{llvm-link: Linker}{pyint}
+$ llvm-link hello.ll world.ll -o hello-world.ll                          # Link two IR
+~~~
+~~~
+{llc: Static compiler}{pyint}
+$ llc hello-world.ll -o hello-world.s                                    # Compile IR into assembly code for a specified architecture
+~~~
+~~~
+{lli: Directly execute IR}{pyint}
+$ lli pathfinder.ll 1000 10                                              # Directly execute Rodinia-pathfinder IR with input "1000 10" using a just-in-time compiler
+                                                                         # This IR can be found at https://github.com/hyfshishen/LLFI-Tutorial-Pathfinder.
+~~~
+~~~
+{opt: Optimizer}{pyint}
+$ # This command shows how to load a LLVM pass. Will be updated in the future.
+~~~
+
+== References
+\[1\]  LLVM Documents\n
+\[2\]  https://blog.gopheracademy.com/advent-2018/llvm-ir-and-go/\n
+\[3\]  Mapping High Level Constructs to LLVM IR
