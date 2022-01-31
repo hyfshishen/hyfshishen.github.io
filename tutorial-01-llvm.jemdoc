@@ -149,5 +149,5 @@ $ # This command shows how to load a LLVM pass. Will be updated in the future.
 
 == References
 \[1\]  LLVM Documents\n
-\[2\]  https://blog.gopheracademy.com/advent-2018/llvm-ir-and-go/\n
+\[2\]  https:\/\/blog.gopheracademy.com\/advent\-2018\/llvm\-ir\-and\-go\/\n
 \[3\]  Mapping High Level Constructs to LLVM IR
