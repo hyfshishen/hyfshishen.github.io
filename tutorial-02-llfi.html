@@ -5,7 +5,7 @@
 <meta name="generator" content="jemdoc, see http://jemdoc.jaboc.net/" />
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <link rel="stylesheet" href="jemdoc.css" type="text/css" />
-<title>LLFI</title>
+<title>LLFI: LLVM-based Fault Injection Tool</title>
 </head>
 <body>
 <table summary="Table for page layout." id="tlayout">
@@ -30,12 +30,76 @@
 </td>
 <td id="layout-content">
 <div id="toptitle">
-<h1>LLFI</h1>
-<div id="subtitle"></div>
+<h1>LLFI: LLVM-based Fault Injection Tool</h1>
 </div>
+<h2>About</h2>
+<p>This tutorial targets to provide a consise instruction on using LLFI to perform fault injection experiments.
+Also, it is used in UIowa:CS:4980:0002, Topics in Computer Science II: Dependable System Design instructed by Dr. <a href="https://homepage.divms.uiowa.edu/~guanpli/index.html">Guanpeng Li</a>).
+The main contents of this tutorial are shown as below:</p>
+<ul>
+<li><p>How to install LLFI?</p>
+</li>
+<li><p>What is LLFI? Why we use it?</p>
+</li>
+<li><p>How to use LLFI?</p>
+</li>
+</ul>
+<h2>LLFI Quick Installation</h2>
+<p>Before you install LLFI, make sure your environment has <tt>python3</tt> and its package <tt>pyyaml</tt>. For <tt>pyyaml</tt>, version 4x is okay and 4.2b1 is highly recommended.
+Other dependencies can be found at [<a href="https://github.com/DependableSystemsLab/LLFI">1</a>].</p>
+<div class="codeblock">
+<div class="blocktitle">Following commands show how to install LLFI on a Ubuntu 16.04 machine.</div>
+<div class="blockcontent"><pre>
+$ git clone https://github.com/DependableSystemsLab/LLFI.git                           <span class = "comment"># download LLFI repository</span>
+$ cd LLFI/installer                                                                    <span class = "comment"># change directory to quick installation folder</span>
+$ python3 InstallLLFI.py --noGUI                                                       <span class = "comment"># quickly install command-line-version LLFI with python driver</span>
+</pre></div></div>
+<p><tt>python3 InstallLLFI.py --noGUI</tt> contains building LLVM, so it might be slow.
+If you want to speed up this process, please replace <b>InstallLLFI.py:line 328</b> with <tt>p = subprocess.call(["make", "-j16"])</tt>. 
+&ldquo;16&rdquo; indicates the maximum thread number per user in your OS. You can use command <tt>nproc</tt> to check it out.</p>
+<div class="codeblock">
+<div class="blocktitle">Setting up local environment for LLFI</div>
+<div class="blockcontent"><pre>
+$ echo "export PATH=YOUR-LOCAL-PATH/LLFI/installer/llfi/bin:\$PATH" &gt;&gt; ~.bashrc        <span class = "comment"># adding LLFI executable binary path variables to local environment</span>
+$ source ~/.bashrc                                                                     <span class = "comment"># activate environment</span>
+</pre></div></div>
+<div class="codeblock">
+<div class="blocktitle">Checking if installation is successful.</div>
+<div class="blockcontent"><pre>
+$ instrument
+ERROR: No input IR file specified
+
+
+instrument takes a single IR file as input and generates IR files (and executables, depending on the -IRonly option) with instrumented profiling and fault injection function calls
+
+Usage: instrument [OPTIONS] &lt;source IR file&gt;
+
+List of options:
+
+--dir &lt;relative directory&gt;: Generate the instrumented IRs and executables to '&lt;directory of source IR file&gt;/&lt;relative directory&gt;', default: llfi
+-L &lt;library directory&gt;:     Add &lt;library directory&gt; to the search directories for -l
+-l&lt;library&gt;:                link &lt;library&gt;
+--readable:                 Generate human-readable IR files
+--IRonly:                   Only generate the instrumented IR files, and you will do the linking and create the executables manually
+--verbose:                  Show verbose information
+--help(-h):                 Show help information
+
+Prerequisite:
+You need to have 'input.yaml' under the same directory as &lt;source IR file&gt;, which contains appropriate options for LLFI
+$ <span class = "comment"># It indicates LLFI is successfully installed to your machine :)</span>
+</pre></div></div>
+<h2>LLFI</h2>
+<p>LLFI (Low-Level Fault Injector) is an LLVM based fault injection tool, which injects faults into the LLVM IR (human-readable one) of a specified program.
+LLFI is mainly implemented by several LLVM 3.4 passes and driven by python script.
+The fault injection (FI) campaign of LLFI is driven by <tt>input.yaml</tt> and very flexible.</p>
+<h2>LLFI Usage</h2>
+<h3>Preprocess and Compile</h3>
+<h3>Per-Instruction FI</h3>
+<h3>Random FI</h3>
+<h3>Post-analysis</h3>
 <div id="footer">
 <div id="footer-text">
-Page generated 2022-01-31 05:22:43 CST, by <a href="http://jemdoc.jaboc.net/">jemdoc</a>.
+Page generated 2022-01-31 15:44:18 CST, by <a href="http://jemdoc.jaboc.net/">jemdoc</a>.
 </div>
 </div>
 </td>

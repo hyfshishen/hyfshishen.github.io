@@ -53,7 +53,7 @@ Specifically, this tutorial targets to provide concise descriptions of following
 <div class="blocktitle">Following commands show how to install LLVM 3.4 on a Ubuntu 16.04 machine.</div>
 <div class="blockcontent"><pre>
 $ <span class = "comment"># Note that LLVM source code of other versions can be found at https://github.com/llvm/llvm-project.</span>
-$ https://github.com/zjuacompiler/llvm.git                    <span class = "comment"># git clone LLVM 3.4 source code</span>
+$ git clone https://github.com/zjuacompiler/llvm.git          <span class = "comment"># download LLVM 3.4 source code</span>
 $ cd llvm                                                     <span class = "comment"># change directory to uncompressed folder</span>
 $ ./configure --enable-optimized --disable-assertions --enable-targets=host --with-python=“/usr/bin/python2”
                                                               <span class = "comment"># configure dependencies before you build LLVM</span>
@@ -62,7 +62,7 @@ $ cmake ..                                                    <span class = "com
 $ make -j$(nproc)                                             <span class = "comment"># make install LLVM with multi-threads</span>
 </pre></div></div>
 <div class="codeblock">
-<div class="blocktitle">Check if installation successful.</div>
+<div class="blocktitle">Check if installation is successful.</div>
 <div class="blockcontent"><pre>
 $ cd $YOUR-LOCAL-PATH$/llvm/build/bin/ &amp;&amp; ls                  <span class = "comment"># list all compiled LLVM binaries</span>
 bugpoint   FileUpdate  lli-child-target  llvm-bcanalyzer  llvm-c-test  llvm-dwarfdump  llvm-lit  llvm-mcmarkup  llvm-ranlib   llvm-size        llvm-tblgen  obj2yaml  yaml-bench
@@ -195,7 +195,7 @@ $ <span class = "comment"># This command shows how to load a LLVM pass. Will be 
 [3]  Mapping High Level Constructs to LLVM IR</p>
 <div id="footer">
 <div id="footer-text">
-Page generated 2022-01-31 05:22:43 CST, by <a href="http://jemdoc.jaboc.net/">jemdoc</a>.
+Page generated 2022-01-31 15:44:18 CST, by <a href="http://jemdoc.jaboc.net/">jemdoc</a>.
 </div>
 </div>
 </td>

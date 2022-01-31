@@ -1,2 +1,69 @@
 # jemdoc: menu{MENU}{tutorial-02-llfi.html}
-= LLFI
+= LLFI: LLVM-based Fault Injection Tool
+
+== About
+This tutorial targets to provide a consise instruction on using LLFI to perform fault injection experiments.
+Also, it is used in UIowa:CS:4980:0002, Topics in Computer Science II: Dependable System Design instructed by Dr. [https://homepage.divms.uiowa.edu/~guanpli/index.html Guanpeng Li]).
+The main contents of this tutorial are shown as below:
+- How to install LLFI?
+- What is LLFI? Why we use it?
+- How to use LLFI?
+
+== LLFI Quick Installation
+Before you install LLFI, make sure your environment has +python3+ and its package +pyyaml+. For +pyyaml+, version 4x is okay and 4.2b1 is highly recommended.
+Other dependencies can be found at \[[https://github.com/DependableSystemsLab/LLFI 1]\].
+~~~
+{Following commands show how to install LLFI on a Ubuntu 16.04 machine.}{pyint}
+$ git clone https://github.com/DependableSystemsLab/LLFI.git                           # download LLFI repository
+$ cd LLFI/installer                                                                    # change directory to quick installation folder
+$ python3 InstallLLFI.py --noGUI                                                       # quickly install command-line-version LLFI with python driver
+~~~
++python3 InstallLLFI.py \-\-noGUI+ contains building LLVM, so it might be slow.
+If you want to speed up this process, please replace *InstallLLFI.py:line 328* with +p = subprocess.call(\[\"make\", \"-j16\"\])+. 
+"16" indicates the maximum thread number per user in your OS. You can use command +nproc+ to check it out.
+~~~
+{Setting up local environment for LLFI}{pyint}
+$ echo "export PATH=YOUR-LOCAL-PATH/LLFI/installer/llfi/bin:\$PATH" >> ~.bashrc        # adding LLFI executable binary path variables to local environment
+$ source ~/.bashrc                                                                     # activate environment
+~~~
+~~~
+{Checking if installation is successful.}{pyint}
+$ instrument
+ERROR: No input IR file specified
+
+
+instrument takes a single IR file as input and generates IR files (and executables, depending on the -IRonly option) with instrumented profiling and fault injection function calls
+
+Usage: instrument [OPTIONS] <source IR file>
+
+List of options:
+
+--dir <relative directory>: Generate the instrumented IRs and executables to '<directory of source IR file>/<relative directory>', default: llfi
+-L <library directory>:     Add <library directory> to the search directories for -l
+-l<library>:                link <library>
+--readable:                 Generate human-readable IR files
+--IRonly:                   Only generate the instrumented IR files, and you will do the linking and create the executables manually
+--verbose:                  Show verbose information
+--help(-h):                 Show help information
+
+Prerequisite:
+You need to have 'input.yaml' under the same directory as <source IR file>, which contains appropriate options for LLFI
+$ # It indicates LLFI is successfully installed to your machine :)
+~~~
+
+== LLFI
+LLFI (Low-Level Fault Injector) is an LLVM based fault injection tool, which injects faults into the LLVM IR (human-readable one) of a specified program.
+LLFI is mainly implemented by several LLVM 3.4 passes and driven by python script.
+The fault injection (FI) campaign of LLFI is driven by +input.yaml+ and very flexible.
+
+
+
+== LLFI Usage
+
+=== Preprocess and Compile
+
+=== Per-Instruction FI
+
+=== Random FI
+
+=== Post-analysis

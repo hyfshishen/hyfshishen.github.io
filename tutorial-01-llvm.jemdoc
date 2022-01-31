@@ -15,7 +15,7 @@ Specifically, this tutorial targets to provide concise descriptions of following
 ~~~
 {Following commands show how to install LLVM 3.4 on a Ubuntu 16.04 machine.}{pyint}
 $ # Note that LLVM source code of other versions can be found at https://github.com/llvm/llvm-project.
-$ https://github.com/zjuacompiler/llvm.git                    # git clone LLVM 3.4 source code
+$ git clone https://github.com/zjuacompiler/llvm.git          # download LLVM 3.4 source code
 $ cd llvm                                                     # change directory to uncompressed folder
 $ ./configure --enable-optimized --disable-assertions --enable-targets=host --with-python=“/usr/bin/python2”
                                                               # configure dependencies before you build LLVM
@@ -25,7 +25,7 @@ $ make -j$(nproc)                                             # make install LLV
 ~~~
 
 ~~~
-{Check if installation successful.}{pyint}
+{Check if installation is successful.}{pyint}
 $ cd $YOUR-LOCAL-PATH$/llvm/build/bin/ && ls                  # list all compiled LLVM binaries
 bugpoint   FileUpdate  lli-child-target  llvm-bcanalyzer  llvm-c-test  llvm-dwarfdump  llvm-lit  llvm-mcmarkup  llvm-ranlib   llvm-size        llvm-tblgen  obj2yaml  yaml-bench
 count      llc         llvm-ar           llvm-config      llvm-diff    llvm-extract    llvm-lto  llvm-nm        llvm-readobj  llvm-stress      macho-dump   opt
