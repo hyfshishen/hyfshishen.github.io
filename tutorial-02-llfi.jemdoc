@@ -23,7 +23,7 @@ If you want to speed up this process, please replace *InstallLLFI.py:line 328* w
 "16" indicates the maximum thread number per user in your OS. You can use command +nproc+ to check it out.
 ~~~
 {Setting up local environment for LLFI}{pyint}
-$ echo "export PATH=YOUR-LOCAL-PATH/LLFI/installer/llfi/bin:\$PATH" >> ~.bashrc        # adding LLFI executable binary path variables to local environment
+$ echo "export PATH=YOUR-LOCAL-PATH/LLFI/installer/llfi/bin:\$PATH" >> ~/.bashrc       # adding LLFI executable binary path variables to local environment
 $ source ~/.bashrc                                                                     # activate environment
 ~~~
 ~~~
