@@ -91,15 +91,50 @@ $ <span class = "comment"># It indicates LLFI is successfully installed to your 
 <h2>LLFI</h2>
 <p>LLFI (Low-Level Fault Injector) is an LLVM based fault injection tool, which injects faults into the LLVM IR (human-readable one) of a specified program.
 LLFI is mainly implemented by several LLVM 3.4 passes and driven by python script.
-The fault injection (FI) campaign of LLFI is driven by <tt>input.yaml</tt> and very flexible.</p>
+The fault injection (FI) campaign of LLFI is defined by <tt>input.yaml</tt> and very flexible.</p>
+<p>We have already known FI is commonly used for testing program resiliency against soft errors. But why we use LLFI? (or why we injection faults on LLVM IR) There are several reasons:</p>
+<ul>
+<li><p>Hardware FI is hard to pinpoint a certain location (imagine you want to flip a certain bit in a hardware device >_<). The analysis is also very hard in hardware. Beam test is even radio active.</p>
+</li>
+<li><p>Architecture FI can be conducted by simulator, but it is very slow. Some architecture designs (such as Intel) are not publicly available, making it hard to develop simulator.</p>
+</li>
+<li><p>Thus, application-level FI is flexible and easy to develop and post-analyze. Besides, Wei et al [<a href="http://blogs.ubc.ca/karthik/files/2014/04/DSN-Jiesheng.pdf">2</a>] have demonstrated FIs on binary (PINFI) and LLVM (LLFI) can produce similar results.</p>
+</li>
+<li><p>In LLVM-level FIs, because of its Optimizer and standard IR, we can easily perform a lot of code transformations and program analysis by developing LLVM Passes. Here tracking error propagation is also possible.</p>
+</li>
+</ul>
+<p>To use LLFI, there are three major steps. We use pathfinder from Rodinia benchmark suite [<a href="http://www.cs.virginia.edu/rodinia/doku.php">3</a>] for example.</p>
+<div class="codeblock">
+<div class="blocktitle">1. Instrumentation: instrumenting functional code in given program IR</div>
+<div class="blockcontent"><pre>
+$ <span class = "comment"># command example</span>
+$ <span class = "comment"># note that you should have LLFI configure file called input.yaml in the same path before you run this command.</span>
+$ <span class = "comment"># details can be found in LLFI Usage section.</span>
+$ instrument --readable pathfinder.ll
+</pre></div></div>
+<div class="codeblock">
+<div class="blocktitle">2. Profile: a fault-free program execution</div>
+<div class="blockcontent"><pre>
+$ <span class = "comment"># command example</span>
+$ <span class = "comment"># note that this command should be executed after "instrument"</span>
+$ profile ./llfi/pathfinder-profiling.exe 1000 10                                      <span class = "comment"># "1000 10" is the program input of pathfinder</span>
+</pre></div></div>
+<div class="codeblock">
+<div class="blocktitle">3. Fault Injection: program executions with faults</div>
+<div class="blockcontent"><pre>
+$ <span class = "comment"># command example</span>
+$ <span class = "comment"># note that this command should be executed after "profile"</span>
+$ injectfault ./llfi/pathfinder-faultinjection.exe 1000 10                             <span class = "comment"># "1000 10" is the program input of pathfinder</span>
+</pre></div></div>
 <h2>LLFI Usage</h2>
 <h3>Preprocess and Compile</h3>
 <h3>Per-Instruction FI</h3>
 <h3>Random FI</h3>
 <h3>Post-analysis</h3>
+<h2>References</h2>
 <div id="footer">
 <div id="footer-text">
-Page generated 2022-01-31 15:44:18 CST, by <a href="http://jemdoc.jaboc.net/">jemdoc</a>.
+Page generated 2022-02-01 02:09:07 CST, by <a href="http://jemdoc.jaboc.net/">jemdoc</a>.
 </div>
 </div>
 </td>

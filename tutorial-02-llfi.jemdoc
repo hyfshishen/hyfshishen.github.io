@@ -54,8 +54,34 @@ $ # It indicates LLFI is successfully installed to your machine :)
 == LLFI
 LLFI (Low-Level Fault Injector) is an LLVM based fault injection tool, which injects faults into the LLVM IR (human-readable one) of a specified program.
 LLFI is mainly implemented by several LLVM 3.4 passes and driven by python script.
-The fault injection (FI) campaign of LLFI is driven by +input.yaml+ and very flexible.
+The fault injection (FI) campaign of LLFI is defined by +input.yaml+ and very flexible.
 
+We have already known FI is commonly used for testing program resiliency against soft errors. But why we use LLFI? (or why we injection faults on LLVM IR) There are several reasons:
+- Hardware FI is hard to pinpoint a certain location (imagine you want to flip a certain bit in a hardware device \>\_\<). The analysis is also very hard in hardware. Beam test is even radio active.
+- Architecture FI can be conducted by simulator, but it is very slow. Some architecture designs (such as Intel) are not publicly available, making it hard to develop simulator.
+- Thus, application-level FI is flexible and easy to develop and post-analyze. Besides, Wei et al \[[http://blogs.ubc.ca/karthik/files/2014/04/DSN-Jiesheng.pdf 2]\] have demonstrated FIs on binary (PINFI) and LLVM (LLFI) can produce similar results.
+- In LLVM-level FIs, because of its Optimizer and standard IR, we can easily perform a lot of code transformations and program analysis by developing LLVM Passes. Here tracking error propagation is also possible.
+
+To use LLFI, there are three major steps. We use pathfinder from Rodinia benchmark suite \[[http://www.cs.virginia.edu/rodinia/doku.php 3]\] for example.
+~~~
+{1. Instrumentation: instrumenting functional code in given program IR}{pyint}
+$ # command example
+$ # note that you should have LLFI configure file called input.yaml in the same path before you run this command.
+$ # details can be found in LLFI Usage section.
+$ instrument --readable pathfinder.ll       
+~~~
+~~~
+{2. Profile: a fault-free program execution}{pyint}
+$ # command example
+$ # note that this command should be executed after "instrument"
+$ profile ./llfi/pathfinder-profiling.exe 1000 10                                      # "1000 10" is the program input of pathfinder 
+~~~
+~~~
+{3. Fault Injection: program executions with faults}{pyint}
+$ # command example
+$ # note that this command should be executed after "profile"
+$ injectfault ./llfi/pathfinder-faultinjection.exe 1000 10                             # "1000 10" is the program input of pathfinder 
+~~~
 
 
 == LLFI Usage
@@ -67,3 +93,5 @@ The fault injection (FI) campaign of LLFI is driven by +input.yaml+ and very fle
 === Random FI
 
 === Post-analysis
+
+== References
