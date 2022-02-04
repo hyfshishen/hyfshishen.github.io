@@ -171,7 +171,7 @@ $ llvm-dis hello-world.bc -o hello-world.ll                              <span c
 <div class="codeblock">
 <div class="blocktitle">llvm-link: Linker</div>
 <div class="blockcontent"><pre>
-$ llvm-link hello.ll world.ll -o hello-world.ll                          <span class = "comment"># Link two IR</span>
+$ llvm-link -S hello.ll world.ll -o hello-world.ll                       <span class = "comment"># Link two IR</span>
 </pre></div></div>
 <div class="codeblock">
 <div class="blocktitle">llc: Static compiler</div>
@@ -195,7 +195,7 @@ $ <span class = "comment"># This command shows how to load a LLVM pass. Will be 
 [3]  Mapping High Level Constructs to LLVM IR</p>
 <div id="footer">
 <div id="footer-text">
-Page generated 2022-02-03 14:43:04 CST, by <a href="http://jemdoc.jaboc.net/">jemdoc</a>.
+Page generated 2022-02-03 19:44:09 CST, by <a href="http://jemdoc.jaboc.net/">jemdoc</a>.
 </div>
 </div>
 </td>

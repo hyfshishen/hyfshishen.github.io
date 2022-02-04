@@ -131,7 +131,7 @@ $ llvm-dis hello-world.bc -o hello-world.ll                              # Compi
 ~~~
 ~~~
 {llvm-link: Linker}{pyint}
-$ llvm-link hello.ll world.ll -o hello-world.ll                          # Link two IR
+$ llvm-link -S hello.ll world.ll -o hello-world.ll                       # Link two IR
 ~~~
 ~~~
 {llc: Static compiler}{pyint}
