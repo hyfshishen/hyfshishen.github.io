@@ -26,7 +26,7 @@ $ make -j$(nproc)                                             # make install LLV
 
 ~~~
 {Check if installation is successful.}{pyint}
-$ cd $YOUR-LOCAL-PATH$/llvm/build/bin/ && ls                  # list all compiled LLVM binaries
+$ cd $YOUR-LOCAL-PATH$/llvm/build/bin/ && ls                  # list all compiled LLVM executable binaries
 bugpoint   FileUpdate  lli-child-target  llvm-bcanalyzer  llvm-c-test  llvm-dwarfdump  llvm-lit  llvm-mcmarkup  llvm-ranlib   llvm-size        llvm-tblgen  obj2yaml  yaml-bench
 count      llc         llvm-ar           llvm-config      llvm-diff    llvm-extract    llvm-lto  llvm-nm        llvm-readobj  llvm-stress      macho-dump   opt
 FileCheck  lli         llvm-as           llvm-cov         llvm-dis     llvm-link       llvm-mc   llvm-objdump   llvm-rtdyld   llvm-symbolizer  not          yaml2obj

@@ -66,26 +66,9 @@ $ source ~/.bashrc                                                              
 <div class="codeblock">
 <div class="blocktitle">Checking if installation is successful.</div>
 <div class="blockcontent"><pre>
-$ instrument
-ERROR: No input IR file specified
-
-
-instrument takes a single IR file as input and generates IR files (and executables, depending on the -IRonly option) with instrumented profiling and fault injection function calls
-
-Usage: instrument [OPTIONS] &lt;source IR file&gt;
-
-List of options:
-
---dir &lt;relative directory&gt;: Generate the instrumented IRs and executables to '&lt;directory of source IR file&gt;/&lt;relative directory&gt;', default: llfi
--L &lt;library directory&gt;:     Add &lt;library directory&gt; to the search directories for -l
--l&lt;library&gt;:                link &lt;library&gt;
---readable:                 Generate human-readable IR files
---IRonly:                   Only generate the instrumented IR files, and you will do the linking and create the executables manually
---verbose:                  Show verbose information
---help(-h):                 Show help information
-
-Prerequisite:
-You need to have 'input.yaml' under the same directory as &lt;source IR file&gt;, which contains appropriate options for LLFI
+$ cd $YOUR-LOCAL-PATH$/LLFI/installer/llfi/bin &amp;&amp; ls                                   <span class = "comment"># list all compiled LLFI executable binaries</span>
+batchInjectfault  batchProfile  cmake_install.cmake      injectfault       instrument  Makefile  SoftwareFailureAutoScan
+batchInstrument   CMakeFiles    HardwareFailureAutoScan  InjectorAutoScan  llfi-gui    profile
 $ <span class = "comment"># It indicates LLFI is successfully installed to your machine :)</span>
 </pre></div></div>
 <h2>LLFI</h2>
@@ -134,7 +117,7 @@ $ injectfault ./llfi/pathfinder-faultinjection.exe 1000 10                      
 <h2>References</h2>
 <div id="footer">
 <div id="footer-text">
-Page generated 2022-02-03 19:44:09 CST, by <a href="http://jemdoc.jaboc.net/">jemdoc</a>.
+Page generated 2022-02-11 11:09:44 CST, by <a href="http://jemdoc.jaboc.net/">jemdoc</a>.
 </div>
 </div>
 </td>
