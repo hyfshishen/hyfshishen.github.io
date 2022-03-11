@@ -1,6 +1,13 @@
 # jemdoc: menu{MENU}{tech-blogs.html}
 = Tech Blogs
 
+== Knowledge Portal
+Some good tutorials that help me a lot. 
+- Mapping High Level Constructs to LLVM IR \[[https://mapping-high-level-constructs-to-llvm-ir.readthedocs.io/en/latest/README.html Link]\]
+- Using OpenMP with C \[[https://curc.readthedocs.io/en/latest/programming/OpenMP-C.html Link]\]
+- Using MPI with C \[[https://curc.readthedocs.io/en/latest/programming/MPI-C.html Link]\]
+
+
 == Courses at UIowa
 - Fall21, CS:4330:0001, Theory of Computation\n
   -- Final Report - Universal Turing Machine \[[file/yhuang203-ssong10-TOC-CourseReport.pdf PDF]\]
