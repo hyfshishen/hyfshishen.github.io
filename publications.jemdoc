@@ -5,12 +5,12 @@
 - Hardening Selective Protection across Multiple Program Inputs for HPC Applications\n
 *Yafan Huang*, Shengjian Guo, Sheng Di, Guanpeng Li\*, and Franck Cappello\n
 *\[PPoPP'22\]*: ACM SIGPLAN Symposium on Principles and Practice of Parallel Programming, 2022 (Poster)\n
-\[[ Paper]\] \[[ Slides]\] \[[https://www.youtube.com/watch?v=zZa8ZIS1DOo Video]\] \[[ Code]\]
+\[[publications/PPoPP'22-Paper.pdf Paper]\] \[[publications/PPoPP'22-Slides.pdf Slides]\] \[[https://www.youtube.com/watch?v=zZa8ZIS1DOo Video]\] \[[ Code]\]
 
 - Rumor Detection on Social Media with Out-In-Degree Graph Convolutional Networks\n
 Shihui Song, *Yafan Huang*, Hongwei Lu\*\n
 *\[SMC'21\]*: IEEE International Conference on Systems, Man and Cybernetics, 2021\n
-\[[ Paper]\] \[[ Slides]\] \[[https://www.youtube.com/watch?v=zZa8ZIS1DOo Video]\]
+\[[publications/SMC'21-Paper.pdf Paper]\] \[[ Slides]\] \[[ Video]\]
 
 == Journal
 - Dynamic Entity-Based Named Entity Recognition Under Unconstrained Tagging Schemes\n
@@ -21,7 +21,7 @@ Feng Zhao\*, Xiangyu Gui, *Yafan Huang*, Hai Jin, and Laurence T. Yang\n
 - Path-enhanced Explainable Recommendation with Knowledge Graphs\n
 *Yafan Huang*, Feng Zhao\*, Xiangyu Gui, Hai Jin\n
 *\[WWWJ'21\]*: World Wide Web, 2021\n
-\[[ Paper]\] \[[ Slides]\]
+\[[publications/WWWJ'21-Paper.pdf Paper]\] \[[https://pdfs.semanticscholar.org/adad/9fa021d638f6f4d47ab537adb0bce7efc035.pdf Slides]\]
 
 == In Submission
 - Optimizing Reverse Time Migration Performance for Seismic Imaging by High-speed Lossy Compression\n
