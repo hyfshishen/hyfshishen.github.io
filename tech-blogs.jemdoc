@@ -6,6 +6,7 @@ Some good tutorials that help me a lot.
 - Mapping High Level Constructs to LLVM IR \[[https://mapping-high-level-constructs-to-llvm-ir.readthedocs.io/en/latest/README.html Link]\]
 - Using OpenMP with C \[[https://curc.readthedocs.io/en/latest/programming/OpenMP-C.html Link]\]
 - Using MPI with C \[[https://curc.readthedocs.io/en/latest/programming/MPI-C.html Link]\]
+- Simple CUDA Programming \[[https://cuda-tutorial.readthedocs.io/en/latest/ Link]\]
 
 
 == Courses at UIowa

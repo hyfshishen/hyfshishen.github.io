@@ -30,7 +30,7 @@ I spent a happy time there :)
 == Selected Publications ([publications.html Full List])
 
 {{
-<div id="member-container">
+<div class="center" id="member-container">
     <div id="member">
         <img src="image/icons/uiowa.png" width="150" height="150">
         <img src="image/icons/anl.png" width="260" height="130">
@@ -39,4 +39,6 @@ I spent a happy time there :)
     </div>
 </div>
 }}
+
+
 

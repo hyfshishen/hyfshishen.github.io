@@ -365,3 +365,9 @@ table.imgtable, table.imgtable td {
     border: none;
     text-align: left;
 }
+
+.center {
+	border: 0px solid #FFFF00;
+	display: flex;
+	justify-content: center;
+}
