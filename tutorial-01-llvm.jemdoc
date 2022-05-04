@@ -3,7 +3,7 @@
 
 == About
 This tutorial provides a very basic and brief introduction about LLVM 
-which is used in UIowa:CS:4980:0002, Topics in Computer Science II: Dependable System Design instructed by Dr. [https://homepage.divms.uiowa.edu/~guanpli/index.html Guanpeng Li]).\n
+which is used in UIowa:CS:4980:0002, Topics in Computer Science II: Dependable System Design instructed by Dr. [https://homepage.divms.uiowa.edu/~guanpli/index.html Guanpeng Li].\n
 Specifically, this tutorial targets to provide concise descriptions of following contents:
 - How to Install LLVM?
 - What is LLVM?
@@ -49,6 +49,7 @@ Besides, LLVM contains a lot of sub-projects including Clang (a lightweight comp
 ~~~
 
 == LLVM IR
+=== What is LLVM IR?
 ~~~
 {}{img_left}{image/llvm-IR.jpeg}{alt text}{600px}{220px}
 LLVM IR is a low-level intermediate representation used by LLVM compiler framework \[[https://blog.gopheracademy.com/advent-2018/llvm-ir-and-go/ 2]\], shown as left picture.
@@ -64,6 +65,7 @@ So some things look more like a high-level language (like functions and the stro
 Other looks more like low-level assembly (e.g. branching, basic-blocks, instructions).
 ~~~
 
+=== How to read LLVM IR?
 ~~~
 {}{img_left}{image/cfg.jpeg}{alt text}{300px}{200px}
 LLVM IR has both human-readable (+.ll+) and binary versions (+.bc+, bitcode format).
@@ -108,7 +110,156 @@ define i32 @main() {
 To know more about LLVM IR grammar, please see this document \[[https://mapping-high-level-constructs-to-llvm-ir.readthedocs.io/en/latest/README.html 3]\].
 
 == LLVM Pass
-To be updated.
+=== What is LLVM Pass?
+LLVM Pass framework is an important component of LLVM infrastructure, and it performs *code transformations and optimizations* at LLVM IR level. 
+You may have already noticed that in the pictures above: LLVM Passes can be executed via the +optimizer+.
+In fact, you can conduct any transformations on a given LLVM IR code via LLVM Passes, even converting one IR (e.g. bubble sort) to a totally another one (e.g. quick sort) as long as you can realize the functions.
+As a result, LLVM Pass is a very efficient tool for analyzing the program code.
+
+=== How to write and compile an LLVM Pass?
+Let's start writing an LLVM Pass by conducting some simple program analysis: calculating the number of "Call" type instructions in program IR.
+~~~
+{1. Create LLVM Pass Folder}{pyint}
+$ # We assume that you have already installed LLVM 3.4 via above guidance.
+$ cd $YOUR-LOCAL-PATH$/llvm/lib/Transforms                               # change directory to the main folder that contains the LLVM Passes
+$ ls                                                                     # list files and folders in current path
+CMakeLists.txt  InstCombine      IPO            Makefile  Scalar  Vectorize
+Hello           Instrumentation  LLVMBuild.txt  ObjCARC   Utils
+$ # Except file CMakeList.txt, LLVMBuild.txt, and Makefile. Each of the rest folders denotes an individual LLVM Pass.
+$ mkdir CallCount                                                        # create folder for our target LLVM Pass
+~~~
+Next, add path of folder CallCount into current CMakeLists.txt, so that it can be recognized during the LLVM compilation.
+The content of modified CMakeList.txt can be shown as below:
+~~~
+{}{pyint}
+add_subdirectory(Utils)
+add_subdirectory(Instrumentation)
+add_subdirectory(InstCombine)
+add_subdirectory(Scalar)
+add_subdirectory(IPO)
+add_subdirectory(Vectorize)
+add_subdirectory(Hello)
+add_subdirectory(ObjCARC)
+add_subdirectory(CallCount)                                              # add path of folder that contains our target LLVM Pass
+~~~
+
+~~~
+{2. Write LLVM Pass}{pyint}
+$ cd CallCount                                                           # change directory to target folder
+$ touch Hello.cpp                                                        # create C++ source file of target LLVM Pass
+~~~
+Hello.cpp defines the logic of our pass, which is calculating the number of "Call" type instructions in program IR.
+The content of Hello.cpp can be shown as below:
+~~~
+{}{pyint}
+#include "llvm/ADT/Statistic.h"
+#include "llvm/IR/Function.h"
+#include "llvm/Pass.h"
+#include "llvm/Support/raw_ostream.h"
+#include "llvm/IR/Module.h"
+#include "llvm/IR/Type.h"
+#include "llvm/IR/Instructions.h"
+#include "llvm/IR/Instruction.h"
+#include "llvm/IR/IRBuilder.h"
+#include "llvm/Support/InstIterator.h"
+
+#include <iostream>
+#include <map>
+#include <list>
+#include <vector>
+#include <set>
+
+using namespace llvm;
+
+namespace{
+
+    /****** analysis pass ********/
+    struct CallCount : public ModulePass{                                                       # This pass is developed based on ModulePass.
+                                                                                                # There are also some other LLVM classes, such as:
+                                                                                                #     CallGraphSCCPass, FunctionPass, LoopPass, and RegionPass.
+        static char ID;
+        int call_count = 0;                                                                     # Global variable that records the number of call type instructions.
+
+        CallCount() : ModulePass(ID) {}
+
+        virtual bool runOnModule(Module &M){                                                    # For each program IR, load it as a Module. 
+                                                                                                # Besides, you can regard this as the Main Function of this Pass.
+            for(Module::iterator F = M.begin(), E = M.end(); F!= E; ++F){                       # Iterate each function in this Module.
+                for(Function::iterator BB = F->begin(), E = F->end(); BB != E; ++BB){           # Iterate each basic-block in current function.
+                    CallCount::runOnBasicBlock(BB, M.getContext());                             # Iterate each instructions in current basic-block.
+                }
+            }
+            return false;
+        }
+
+        virtual bool runOnBasicBlock(Function::iterator &BB, LLVMContext &context){             # The function that is used above, input is current basic-block.
+            for(BasicBlock::iterator BI = BB->begin(), BE = BB->end(); BI != BE; ++BI){         # Interate each instructions in current basic-block.
+                int opcode = BI->getOpcode();                                                   # Get opcode of current instruction:
+                                                                                                #     Opcode is the unique number for each instruction type.
+                                                                                                #     More details can be found at $YOUR-LOCAL-PATH$/llvm/include/llvm/IR/instruction.def
+                if(opcode == 49){                                                               # Record if the type of current instruction is "call".
+                    call_count++;
+                    outs() << call_count << '\n';
+                }
+            }           
+            return true;
+        }  
+    };
+}
+char CallCount::ID = 0;
+static RegisterPass<CallCount> X("CallCount", "Count call type instructions in given program IR", false, false);
+                                                                                                # "CallCount" is the unique flag of this pass while being loaded by opt command.
+~~~
+
+~~~
+{3. Prepare for LLVM Pass Compilation}{pyint}
+$ # Usually, the pass folder (i.e. CallCount here) should contain three files:
+$ #     Hello.cpp       --  The souce code of this LLVM Pass. Of course, you can give it another name. We have wrote as above.
+$ #     CMakeLists.txt  --  Link the source code with the compiled LLVM Pass. The LLVM Pass is .so format. 
+$ #     Makefile        --  The compilation logic under this whole LLVM project.
+$ # So let's create the CMakeLists.txt and Makefile.
+$ touch CMakeLists.txt Makefile
+~~~
+We first modify CMakeLists.txt, of which content can be shown as below:
+~~~
+{}{pyint}
+add_llvm_loadable_module(CallCount      # The name of compiled LLVM Pass. So the output will be CallCount.so after the compilation.
+    Hello.cpp                           # The source code of LLVM Pass.
+)
+~~~
+Then, we modify Makefile, of which content can be shown as below:
+~~~
+{}{pyint}
+LEVEL = ../../..
+LIBRARYNAME = CallCount                 # Also the name of compiled LLVM Pass. This should be consistent with the name in CMakeLists.txt.
+LOADABLE_MODULE = 1
+USEDLIBS =
+
+# If we don't need RTTI or EH, there's no reason to export anything
+# from the hello plugin.
+ifneq ($(REQUIRES_RTTI), 1)
+ifneq ($(REQUIRES_EH), 1)
+EXPORTED_SYMBOL_FILE = $(PROJ_SRC_DIR)/Hello.exports
+endif
+endif
+
+include $(LEVEL)/Makefile.common
+~~~
+Right now, we are almost done and the LLVM Pass is ready for compilation.
+
+~~~
+{4. Compile LLVM Pass}{pyint}
+$ cd $YOUR-LOCAL-PATH$/llvm/build                                        # change directory to where we build this LLVM project
+$ make -j$(nproc)                                                        # compile LLVM with multi-threads
+~~~
+Once the compilation is done, the target LLVM Pass +CallCount.so+ can be found at \$YOUR-LOCAL-PATH\$\/llvm\/build\/lib\/.\n 
+To load the LLVM Pass for analyzing a program IR (e.g. pathfinder.ll), you can execute the following commands:
+~~~
+{}{pyint}
+$ YOUR-LOCAL-PATH$/llvm/build/bin/ -load $YOUT-LOCAL-PATH$/llvm/build/lib/CallCount.so pathfinder.ll -CallCount -o output.ll
+$ # You can know how many "call" type instructions are in pathfinder.ll :)
+~~~
+The source folder of this LLVM Pass can be found at git repository \[[https://github.com/hyfshishen/LLFI-Quick-Start 4]\].
 
 == Some Useful LLVM Tools
 ~~~
@@ -131,7 +282,7 @@ $ llvm-dis hello-world.bc -o hello-world.ll                              # Compi
 ~~~
 ~~~
 {llvm-link: Linker}{pyint}
-$ llvm-link -S hello.ll world.ll -o hello-world.ll                       # Link two IR
+$ llvm-link -S hello.ll world.ll -o hello-world.ll                       # Link two IRs into a unified one
 ~~~
 ~~~
 {llc: Static compiler}{pyint}
@@ -140,14 +291,21 @@ $ llc hello-world.ll -o hello-world.s                                    # Compi
 ~~~
 {lli: Directly execute IR}{pyint}
 $ lli pathfinder.ll 1000 10                                              # Directly execute Rodinia-pathfinder IR with input "1000 10" using a just-in-time compiler
-                                                                         # This IR can be found at https://github.com/hyfshishen/LLFI-Tutorial-Pathfinder.
+                                                                         # This IR can be found at git repository [4].
 ~~~
 ~~~
-{opt: Optimizer}{pyint}
-$ # This command shows how to load a LLVM pass. Will be updated in the future.
+{opt: Optimizer ()}{pyint}
+$ opt -load ./CallCount.so pathfinder.ll -CallCount -o output.ll         # Load LLVM Pass for code transformation and optimization.
+                                                                         # CallCount.so is the LLVM Pass we want to load.
+                                                                         # -CallCount is the unique flag of this Pass registered in current LLVM project.
+                                                                         # The output.ll is bitcode format, which can be disassembler to readable IR via llvm-dis.
 ~~~
 
+== Contributing
+This document is written by [https://hyfshishen.github.io/ Yafan Huang]. If you have any questions after reading this document, please feel free to email him at yafan-huang@uiowa.edu.
+
 == References
-\[1\]  LLVM Documents\n
-\[2\]  https:\/\/blog.gopheracademy.com\/advent\-2018\/llvm\-ir\-and\-go\/\n
-\[3\]  Mapping High Level Constructs to LLVM IR
+\[1\]  *LLVM Documents*: \[[https://llvm.org/ Link]\]\n
+\[2\]  *Blog: LLVM IR and Go:* \[[https://blog.gopheracademy.com/advent-2018/llvm-ir-and-go/ Link]\]\n
+\[3\]  *Mapping High Level Constructs to LLVM IR*: \[[https://mapping-high-level-constructs-to-llvm-ir.readthedocs.io/en/latest/README.html Link]\]\n
+\[4\]  *LLFI Quick Start:* \[[https://github.com/hyfshishen/LLFI-Quick-Start Link]\]

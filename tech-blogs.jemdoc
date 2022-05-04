@@ -20,6 +20,7 @@ Some good tutorials that help me a lot.
   -- Tutorial - A Brief Introduction of LLVM Compiler Structure, IR, and Pass \[[tutorial-01-llvm.html Link]\]\n
   -- Tutorial - LLFI: LLVM IR Level Fault Injector \[[tutorial-02-llfi.html Link]\]\n
   -- Tutorial - PINFI: Assembly Code Level Fault Injector \[[tutorial-03-pinfi.html Link]\]\n
+  -- Tutorial - LLFI-GPU: LLVM IR Level Fault Injector of Application Source Code of GPU CUDA Kernels \[[ Link]\]
   -- Tutorial - NVBitFI: Nvidia GPU Binary Level Fault Injector \[[tutorial-04-nvbitfi.html Link]\]
    
 

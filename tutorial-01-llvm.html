@@ -34,7 +34,7 @@
 </div>
 <h2>About</h2>
 <p>This tutorial provides a very basic and brief introduction about LLVM 
-which is used in UIowa:CS:4980:0002, Topics in Computer Science II: Dependable System Design instructed by Dr. <a href="https://homepage.divms.uiowa.edu/~guanpli/index.html">Guanpeng Li</a>).<br />
+which is used in UIowa:CS:4980:0002, Topics in Computer Science II: Dependable System Design instructed by Dr. <a href="https://homepage.divms.uiowa.edu/~guanpli/index.html">Guanpeng Li</a>.<br />
 Specifically, this tutorial targets to provide concise descriptions of following contents:</p>
 <ul>
 <li><p>How to Install LLVM?</p>
@@ -82,6 +82,7 @@ LLVM Optimizer is a general module — it provides a common standard and its opt
 <p>Besides, LLVM contains a lot of sub-projects including Clang (a lightweight compiler frontend for C, C<tt></tt>, Objective-C, and Objective-C<tt></tt>. You may frequently see it in your MacBooks)</p>
 </td></tr></table>
 <h2>LLVM IR</h2>
+<h3>What is LLVM IR?</h3>
 <table class="imgtable"><tr><td>
 <img src="image/llvm-IR.jpeg" alt="alt text" width="600px" height="220px" />&nbsp;</td>
 <td align="left"><p>LLVM IR is a low-level intermediate representation used by LLVM compiler framework [<a href="https://blog.gopheracademy.com/advent-2018/llvm-ir-and-go/">2</a>], shown as left picture.
@@ -99,6 +100,7 @@ However, LLVM IR is not machine code, but sort of the step just above assembly.
 So some things look more like a high-level language (like functions and the strong typing). 
 Other looks more like low-level assembly (e.g. branching, basic-blocks, instructions).</p>
 </td></tr></table>
+<h3>How to read LLVM IR?</h3>
 <table class="imgtable"><tr><td>
 <img src="image/cfg.jpeg" alt="alt text" width="300px" height="200px" />&nbsp;</td>
 <td align="left"><p>LLVM IR has both human-readable (<tt>.ll</tt>) and binary versions (<tt>.bc</tt>, bitcode format).
@@ -144,7 +146,156 @@ define i32 @main() {
 </pre></div></div>
 <p>To know more about LLVM IR grammar, please see this document [<a href="https://mapping-high-level-constructs-to-llvm-ir.readthedocs.io/en/latest/README.html">3</a>].</p>
 <h2>LLVM Pass</h2>
-<p>To be updated.</p>
+<h3>What is LLVM Pass?</h3>
+<p>LLVM Pass framework is an important component of LLVM infrastructure, and it performs <b>code transformations and optimizations</b> at LLVM IR level. 
+You may have already noticed that in the pictures above: LLVM Passes can be executed via the <tt>optimizer</tt>.
+In fact, you can conduct any transformations on a given LLVM IR code via LLVM Passes, even converting one IR (e.g. bubble sort) to a totally another one (e.g. quick sort) as long as you can realize the functions.
+As a result, LLVM Pass is a very efficient tool for analyzing the program code.</p>
+<h3>How to write and compile an LLVM Pass?</h3>
+<p>Let's start writing an LLVM Pass by conducting some simple program analysis: calculating the number of &ldquo;Call&rdquo; type instructions in program IR.</p>
+<div class="codeblock">
+<div class="blocktitle">1. Create LLVM Pass Folder</div>
+<div class="blockcontent"><pre>
+$ <span class = "comment"># We assume that you have already installed LLVM 3.4 via above guidance.</span>
+$ cd $YOUR-LOCAL-PATH$/llvm/lib/Transforms                               <span class = "comment"># change directory to the main folder that contains the LLVM Passes</span>
+$ ls                                                                     <span class = "comment"># list files and folders in current path</span>
+CMakeLists.txt  InstCombine      IPO            Makefile  Scalar  Vectorize
+Hello           Instrumentation  LLVMBuild.txt  ObjCARC   Utils
+$ <span class = "comment"># Except file CMakeList.txt, LLVMBuild.txt, and Makefile. Each of the rest folders denotes an individual LLVM Pass.</span>
+$ mkdir CallCount                                                        <span class = "comment"># create folder for our target LLVM Pass</span>
+</pre></div></div>
+<p>Next, add path of folder CallCount into current CMakeLists.txt, so that it can be recognized during the LLVM compilation.
+The content of modified CMakeList.txt can be shown as below:</p>
+<div class="codeblock">
+<div class="blockcontent"><pre>
+add_subdirectory(Utils)
+add_subdirectory(Instrumentation)
+add_subdirectory(InstCombine)
+add_subdirectory(Scalar)
+add_subdirectory(IPO)
+add_subdirectory(Vectorize)
+add_subdirectory(Hello)
+add_subdirectory(ObjCARC)
+add_subdirectory(CallCount)                                              <span class = "comment"># add path of folder that contains our target LLVM Pass</span>
+</pre></div></div>
+<div class="codeblock">
+<div class="blocktitle">2. Write LLVM Pass</div>
+<div class="blockcontent"><pre>
+$ cd CallCount                                                           <span class = "comment"># change directory to target folder</span>
+$ touch Hello.cpp                                                        <span class = "comment"># create C++ source file of target LLVM Pass</span>
+</pre></div></div>
+<p>Hello.cpp defines the logic of our pass, which is calculating the number of &ldquo;Call&rdquo; type instructions in program IR.
+The content of Hello.cpp can be shown as below:</p>
+<div class="codeblock">
+<div class="blockcontent"><pre>
+<span class = "comment">#include "llvm/ADT/Statistic.h"</span>
+<span class = "comment">#include "llvm/IR/Function.h"</span>
+<span class = "comment">#include "llvm/Pass.h"</span>
+<span class = "comment">#include "llvm/Support/raw_ostream.h"</span>
+<span class = "comment">#include "llvm/IR/Module.h"</span>
+<span class = "comment">#include "llvm/IR/Type.h"</span>
+<span class = "comment">#include "llvm/IR/Instructions.h"</span>
+<span class = "comment">#include "llvm/IR/Instruction.h"</span>
+<span class = "comment">#include "llvm/IR/IRBuilder.h"</span>
+<span class = "comment">#include "llvm/Support/InstIterator.h"</span>
+
+<span class = "comment">#include &lt;iostream&gt;</span>
+<span class = "comment">#include &lt;map&gt;</span>
+<span class = "comment">#include &lt;list&gt;</span>
+<span class = "comment">#include &lt;vector&gt;</span>
+<span class = "comment">#include &lt;set&gt;</span>
+
+using namespace llvm;
+
+namespace{
+
+    /****** analysis pass ********/
+    struct CallCount : public ModulePass{                                                       <span class = "comment"># This pass is developed based on ModulePass.</span>
+                                                                                                <span class = "comment"># There are also some other LLVM classes, such as:</span>
+                                                                                                <span class = "comment">#     CallGraphSCCPass, FunctionPass, LoopPass, and RegionPass.</span>
+        static char ID;
+        int call_count = 0;                                                                     <span class = "comment"># Global variable that records the number of call type instructions.</span>
+
+        CallCount() : ModulePass(ID) {}
+
+        virtual bool runOnModule(Module &amp;M){                                                    <span class = "comment"># For each program IR, load it as a Module.</span>
+                                                                                                <span class = "comment"># Besides, you can regard this as the Main Function of this Pass.</span>
+            for(Module::iterator F = M.begin(), E = M.end(); F!= E; ++F){                       <span class = "comment"># Iterate each function in this Module.</span>
+                for(Function::iterator BB = F-&gt;begin(), E = F-&gt;end(); BB != E; ++BB){           <span class = "comment"># Iterate each basic-block in current function.</span>
+                    CallCount::runOnBasicBlock(BB, M.getContext());                             <span class = "comment"># Iterate each instructions in current basic-block.</span>
+                }
+            }
+            return false;
+        }
+
+        virtual bool runOnBasicBlock(Function::iterator &amp;BB, LLVMContext &amp;context){             <span class = "comment"># The function that is used above, input is current basic-block.</span>
+            for(BasicBlock::iterator BI = BB-&gt;begin(), BE = BB-&gt;end(); BI != BE; ++BI){         <span class = "comment"># Interate each instructions in current basic-block.</span>
+                int opcode = BI-&gt;getOpcode();                                                   <span class = "comment"># Get opcode of current instruction:</span>
+                                                                                                <span class = "comment">#     Opcode is the unique number for each instruction type.</span>
+                                                                                                <span class = "comment">#     More details can be found at $YOUR-LOCAL-PATH$/llvm/include/llvm/IR/instruction.def</span>
+                if(opcode == 49){                                                               <span class = "comment"># Record if the type of current instruction is "call".</span>
+                    call_count++;
+                    outs() &lt;&lt; call_count &lt;&lt; '\n';
+                }
+            }
+            return true;
+        }
+    };
+}
+char CallCount::ID = 0;
+static RegisterPass&lt;CallCount&gt; X("CallCount", "Count call type instructions in given program IR", false, false);
+                                                                                                <span class = "comment"># "CallCount" is the unique flag of this pass while being loaded by opt command.</span>
+</pre></div></div>
+<div class="codeblock">
+<div class="blocktitle">3. Prepare for LLVM Pass Compilation</div>
+<div class="blockcontent"><pre>
+$ <span class = "comment"># Usually, the pass folder (i.e. CallCount here) should contain three files:</span>
+$ <span class = "comment">#     Hello.cpp       --  The souce code of this LLVM Pass. Of course, you can give it another name. We have wrote as above.</span>
+$ <span class = "comment">#     CMakeLists.txt  --  Link the source code with the compiled LLVM Pass. The LLVM Pass is .so format.</span>
+$ <span class = "comment">#     Makefile        --  The compilation logic under this whole LLVM project.</span>
+$ <span class = "comment"># So let's create the CMakeLists.txt and Makefile.</span>
+$ touch CMakeLists.txt Makefile
+</pre></div></div>
+<p>We first modify CMakeLists.txt, of which content can be shown as below:</p>
+<div class="codeblock">
+<div class="blockcontent"><pre>
+add_llvm_loadable_module(CallCount      <span class = "comment"># The name of compiled LLVM Pass. So the output will be CallCount.so after the compilation.</span>
+    Hello.cpp                           <span class = "comment"># The source code of LLVM Pass.</span>
+)
+</pre></div></div>
+<p>Then, we modify Makefile, of which content can be shown as below:</p>
+<div class="codeblock">
+<div class="blockcontent"><pre>
+LEVEL = ../../..
+LIBRARYNAME = CallCount                 <span class = "comment"># Also the name of compiled LLVM Pass. This should be consistent with the name in CMakeLists.txt.</span>
+LOADABLE_MODULE = 1
+USEDLIBS =
+
+<span class = "comment"># If we don't need RTTI or EH, there's no reason to export anything</span>
+<span class = "comment"># from the hello plugin.</span>
+ifneq ($(REQUIRES_RTTI), 1)
+ifneq ($(REQUIRES_EH), 1)
+EXPORTED_SYMBOL_FILE = $(PROJ_SRC_DIR)/Hello.exports
+endif
+endif
+
+include $(LEVEL)/Makefile.common
+</pre></div></div>
+<p>Right now, we are almost done and the LLVM Pass is ready for compilation.</p>
+<div class="codeblock">
+<div class="blocktitle">4. Compile LLVM Pass</div>
+<div class="blockcontent"><pre>
+$ cd $YOUR-LOCAL-PATH$/llvm/build                                        <span class = "comment"># change directory to where we build this LLVM project</span>
+$ make -j$(nproc)                                                        <span class = "comment"># compile LLVM with multi-threads</span>
+</pre></div></div>
+<p>Once the compilation is done, the target LLVM Pass <tt>CallCount.so</tt> can be found at $YOUR-LOCAL-PATH$/llvm/build/lib/.<br /> 
+To load the LLVM Pass for analyzing a program IR (e.g. pathfinder.ll), you can execute the following commands:</p>
+<div class="codeblock">
+<div class="blockcontent"><pre>
+$ YOUR-LOCAL-PATH$/llvm/build/bin/ -load $YOUT-LOCAL-PATH$/llvm/build/lib/CallCount.so pathfinder.ll -CallCount -o output.ll
+$ <span class = "comment"># You can know how many "call" type instructions are in pathfinder.ll :)</span>
+</pre></div></div>
+<p>The source folder of this LLVM Pass can be found at git repository [<a href="https://github.com/hyfshishen/LLFI-Quick-Start">4</a>].</p>
 <h2>Some Useful LLVM Tools</h2>
 <div class="codeblock">
 <div class="blocktitle">clang: LLVM C compiler</div>
@@ -171,7 +322,7 @@ $ llvm-dis hello-world.bc -o hello-world.ll                              <span c
 <div class="codeblock">
 <div class="blocktitle">llvm-link: Linker</div>
 <div class="blockcontent"><pre>
-$ llvm-link -S hello.ll world.ll -o hello-world.ll                       <span class = "comment"># Link two IR</span>
+$ llvm-link -S hello.ll world.ll -o hello-world.ll                       <span class = "comment"># Link two IRs into a unified one</span>
 </pre></div></div>
 <div class="codeblock">
 <div class="blocktitle">llc: Static compiler</div>
@@ -182,20 +333,26 @@ $ llc hello-world.ll -o hello-world.s                                    <span c
 <div class="blocktitle">lli: Directly execute IR</div>
 <div class="blockcontent"><pre>
 $ lli pathfinder.ll 1000 10                                              <span class = "comment"># Directly execute Rodinia-pathfinder IR with input "1000 10" using a just-in-time compiler</span>
-                                                                         <span class = "comment"># This IR can be found at https://github.com/hyfshishen/LLFI-Tutorial-Pathfinder.</span>
+                                                                         <span class = "comment"># This IR can be found at git repository [4].</span>
 </pre></div></div>
 <div class="codeblock">
-<div class="blocktitle">opt: Optimizer</div>
+<div class="blocktitle">opt: Optimizer ()</div>
 <div class="blockcontent"><pre>
-$ <span class = "comment"># This command shows how to load a LLVM pass. Will be updated in the future.</span>
+$ opt -load ./CallCount.so pathfinder.ll -CallCount -o output.ll         <span class = "comment"># Load LLVM Pass for code transformation and optimization.</span>
+                                                                         <span class = "comment"># CallCount.so is the LLVM Pass we want to load.</span>
+                                                                         <span class = "comment"># -CallCount is the unique flag of this Pass registered in current LLVM project.</span>
+                                                                         <span class = "comment"># The output.ll is bitcode format, which can be disassembler to readable IR via llvm-dis.</span>
 </pre></div></div>
+<h2>Contributing</h2>
+<p>This document is written by <a href="https://hyfshishen.github.io/">Yafan Huang</a>. If you have any questions after reading this document, please feel free to email him at yafan-huang@uiowa.edu.</p>
 <h2>References</h2>
-<p>[1]  LLVM Documents<br />
-[2]  https://blog.gopheracademy.com/advent-2018/llvm-ir-and-go/<br />
-[3]  Mapping High Level Constructs to LLVM IR</p>
+<p>[1]  <b>LLVM Documents</b>: [<a href="https://llvm.org/">Link</a>]<br />
+[2]  <b>Blog: LLVM IR and Go:</b> [<a href="https://blog.gopheracademy.com/advent-2018/llvm-ir-and-go/">Link</a>]<br />
+[3]  <b>Mapping High Level Constructs to LLVM IR</b>: [<a href="https://mapping-high-level-constructs-to-llvm-ir.readthedocs.io/en/latest/README.html">Link</a>]<br />
+[4]  <b>LLFI Quick Start:</b> [<a href="https://github.com/hyfshishen/LLFI-Quick-Start">Link</a>]</p>
 <div id="footer">
 <div id="footer-text">
-Page generated 2022-04-16 04:53:06 CDT, by <a href="http://jemdoc.jaboc.net/">jemdoc</a>.
+Page generated 2022-05-04 03:53:18 CDT, by <a href="http://jemdoc.jaboc.net/">jemdoc</a>.
 </div>
 </div>
 </td>
