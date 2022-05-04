@@ -294,7 +294,7 @@ $ lli pathfinder.ll 1000 10                                              # Direc
                                                                          # This IR can be found at git repository [4].
 ~~~
 ~~~
-{opt: Optimizer ()}{pyint}
+{opt: Optimizer}{pyint}
 $ opt -load ./CallCount.so pathfinder.ll -CallCount -o output.ll         # Load LLVM Pass for code transformation and optimization.
                                                                          # CallCount.so is the LLVM Pass we want to load.
                                                                          # -CallCount is the unique flag of this Pass registered in current LLVM project.
