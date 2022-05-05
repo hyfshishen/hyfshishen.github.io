@@ -6,8 +6,8 @@ This tutorial targets to provide a consise instruction on using LLFI to perform 
 Also, it is used in UIowa:CS:4980:0002, Topics in Computer Science II: Dependable System Design instructed by Dr. [https://homepage.divms.uiowa.edu/~guanpli/index.html Guanpeng Li]).
 The main contents of this tutorial are shown as below:
 - How to install LLFI?
-- What is LLFI? Why we use it?
-- How to use LLFI?
+- What is LLFI? Why we use it? What is its basic usage?
+- How to use LLFI for analyzing program resiliency?
 
 == LLFI Quick Installation
 Before you install LLFI, make sure your environment has +python3+ and its package +pyyaml+. For +pyyaml+, version 4x is okay and 4.2b1 is highly recommended.
@@ -35,16 +35,19 @@ $ # It indicates LLFI is successfully installed to your machine :)
 ~~~
 
 == LLFI
+=== What is LLFI?
 LLFI (Low-Level Fault Injector) is an LLVM based fault injection tool, which injects faults into the LLVM IR (human-readable one) of a specified program.
 LLFI is mainly implemented by several LLVM 3.4 passes and driven by python script.
 The fault injection (FI) campaign of LLFI is defined by +input.yaml+ and very flexible.
 
+=== Why we use LLFI?
 We have already known FI is commonly used for testing program resiliency against soft errors. But why we use LLFI? (or why we injection faults on LLVM IR) There are several reasons:
 - Hardware FI is hard to pinpoint a certain location (imagine you want to flip a certain bit in a hardware device \>\_\<). The analysis is also very hard in hardware. Beam test is even radio active.
 - Architecture FI can be conducted by simulator, but it is very slow. Some architecture designs (such as Intel) are not publicly available, making it hard to develop simulator.
 - Thus, application-level FI is flexible and easy to develop and post-analyze. Besides, Wei et al \[[http://blogs.ubc.ca/karthik/files/2014/04/DSN-Jiesheng.pdf 2]\] have demonstrated FIs on binary (PINFI) and LLVM (LLFI) can produce similar results.
 - In LLVM-level FIs, because of its Optimizer and standard IR, we can easily perform a lot of code transformations and program analysis by developing LLVM Passes. Here tracking error propagation is also possible.
 
+=== LLFI Basic Usage
 To use LLFI, there are three major steps. We use pathfinder from Rodinia benchmark suite \[[http://www.cs.virginia.edu/rodinia/doku.php 3]\] for example.
 ~~~
 {1. Instrumentation: instrumenting functional code in given program IR}{pyint}
@@ -65,9 +68,9 @@ $ # command example
 $ # note that this command should be executed after "profile"
 $ injectfault ./llfi/pathfinder-faultinjection.exe 1000 10                             # "1000 10" is the program input of pathfinder 
 ~~~
+Making sure the program input for +Profile+ phase is the same as +Fault Injection+ phase. In this way we compare the results are meaningful.
 
-
-== LLFI Usage
+== Analyze Program Resiliency with LLFI
 
 === Preprocess and Compile
 
