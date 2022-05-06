@@ -302,7 +302,7 @@ $ opt -load ./CallCount.so pathfinder.ll -CallCount -o output.ll         # Load 
 ~~~
 
 == Contributing
-This document is written by [https://hyfshishen.github.io/ Yafan Huang]. If you have any questions after reading this document, please feel free to email him at yafan-huang@uiowa.edu.
+This document is written by [https://hyfshishen.github.io/ Yafan Huang]. If you have any questions after reading this document, please feel free to email him at *yafan-huang@uiowa.edu*.
 
 == References
 \[1\]  *LLVM Documents*: \[[https://llvm.org/ Link]\]\n

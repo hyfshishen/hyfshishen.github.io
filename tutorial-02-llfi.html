@@ -41,7 +41,7 @@ The main contents of this tutorial are shown as below:</p>
 </li>
 <li><p>What is LLFI? Why we use it? What is its basic usage?</p>
 </li>
-<li><p>How to use LLFI for analyzing program resiliency?</p>
+<li><p>How to use LLFI for analyzing program resilience?</p>
 </li>
 </ul>
 <h2>LLFI Quick Installation</h2>
@@ -77,7 +77,7 @@ $ <span class = "comment"># It indicates LLFI is successfully installed to your 
 LLFI is mainly implemented by several LLVM 3.4 passes and driven by python script.
 The fault injection (FI) campaign of LLFI is defined by <tt>input.yaml</tt> and very flexible.</p>
 <h3>Why we use LLFI?</h3>
-<p>We have already known FI is commonly used for testing program resiliency against soft errors. But why we use LLFI? (or why we injection faults on LLVM IR) There are several reasons:</p>
+<p>We have already known FI is commonly used for testing program resilience against soft errors. But why we use LLFI? (or why we injection faults on LLVM IR) There are several reasons:</p>
 <ul>
 <li><p>Hardware FI is hard to pinpoint a certain location (imagine you want to flip a certain bit in a hardware device >_<). The analysis is also very hard in hardware. Beam test is even radio active.</p>
 </li>
@@ -113,15 +113,36 @@ $ <span class = "comment"># note that this command should be executed after "pro
 $ injectfault ./llfi/pathfinder-faultinjection.exe 1000 10                             <span class = "comment"># "1000 10" is the program input of pathfinder</span>
 </pre></div></div>
 <p>Making sure the program input for <tt>Profile</tt> phase is the same as <tt>Fault Injection</tt> phase. In this way we compare the results are meaningful.</p>
-<h2>Analyze Program Resiliency with LLFI</h2>
+<h2>Analyze Program Resilience with LLFI</h2>
 <h3>Preprocess and Compile</h3>
+<p>To analyze the program resilience, we make to make sure the program results are deterministic under each input. 
+So that comparing the results between fault-free (i.e. profile phase) and fault-injected program executions is meaningful.
+In order to make the results deterministic, we have to remove all randomenss in the raw code, such as <tt>CPU time</tt> and <tt>random numbers/arrays</tt>.</p>
+<p>After preprocessing the codes, we can compile the program source code into an LLVM IR (readable format [<a href="https://hyfshishen.github.io/tutorial-01-llvm.html">4</a>]).
+In studying program resilience against soft errors, the programs we evaluate are always implemented via C/C++.
+Here we provide an example to show how to compile a C<tt></tt> project into a readable LLVM IR.
+The code can be found at [<a href="https://github.com/hyfshishen/LLFI-Complicated-Project">5</a>].
+Specifically, its compile commands can be found as below:</p>
+<div class="codeblock">
+<div class="blockcontent"><pre>
+$                                                                                      <span class = "comment"># Compile commands:</span>
+$ clang++ -S -emit-llvm *.cpp                                                          <span class = "comment">#     Compile all .cpp file into .ll</span>
+$ llvm-link -S -o hpccg.ll *.ll                                                        <span class = "comment">#     Link all .ll into a single IR</span>
+                                                                                       <span class = "comment"># Optional:</span>
+$ clang++ hpccg.ll -o hpccg                                                            <span class = "comment">#     Compile to executable binary</span>
+$ ./hpccg 64 64 64                                                                     <span class = "comment">#     check if its execution is normal</span>
+
+</pre></div></div>
+<p>You can follow this pattern to preprocess and compile other C/C++ projects before evaluating resilience.</p>
 <h3>Per-Instruction FI</h3>
 <h3>Random FI</h3>
 <h3>Post-analysis</h3>
+<h2>Contributing</h2>
+<p>This document is written by <a href="https://hyfshishen.github.io/">Yafan Huang</a>. If you have any questions after reading this document, please feel free to email him at <b>yafan-huang@uiowa.edu</b>.</p>
 <h2>References</h2>
 <div id="footer">
 <div id="footer-text">
-Page generated 2022-05-05 04:47:30 CDT, by <a href="http://jemdoc.jaboc.net/">jemdoc</a>.
+Page generated 2022-05-06 01:18:40 CDT, by <a href="http://jemdoc.jaboc.net/">jemdoc</a>.
 </div>
 </div>
 </td>
