@@ -44,6 +44,7 @@ The main contents of this tutorial are shown as below:</p>
 <li><p>How to use LLFI for analyzing program resilience?</p>
 </li>
 </ul>
+<p>The video of this document can be found at [<a href="https://youtu.be/41pk25OAees">youtube</a>]</p>
 <h2>LLFI Quick Installation</h2>
 <p>Before you install LLFI, make sure your environment has <tt>python3</tt> and its package <tt>pyyaml</tt>. For <tt>pyyaml</tt>, version 4x is okay and 4.2b1 is highly recommended.
 Other dependencies can be found at [<a href="https://github.com/DependableSystemsLab/LLFI">1</a>].</p>
@@ -89,7 +90,9 @@ The fault injection (FI) campaign of LLFI is defined by <tt>input.yaml</tt> and 
 </li>
 </ul>
 <h3>LLFI Basic Usage</h3>
-<p>To use LLFI, there are three major steps. We use pathfinder from Rodinia benchmark suite [<a href="http://www.cs.virginia.edu/rodinia/doku.php">3</a>] for example.</p>
+<p>There are three major steps to use LLFI. and we use pathfinder [<a href="http://www.cs.virginia.edu/rodinia/doku.php">3</a>] for example.
+Note that <b>these commands can only be executed with <tt>input.yaml</tt> under the same path with compiled <tt>pathfinder.ll</tt>.</b>
+More information of input.yaml format can be checked at the [<a href="">WIKI</a>].</p>
 <div class="codeblock">
 <div class="blocktitle">1. Instrumentation: instrumenting functional code in given program IR</div>
 <div class="blockcontent"><pre>
@@ -135,14 +138,94 @@ $ ./hpccg 64 64 64                                                              
 </pre></div></div>
 <p>You can follow this pattern to preprocess and compile other C/C++ projects before evaluating resilience.</p>
 <h3>Per-Instruction FI</h3>
+<p>We provide an example of performing per-instruction FI experiments via LLFI. The code of this example can be found at link [<a href="haha">link</a>].
+Note that the &ldquo;instruction&rdquo; here we mentioned are <b>LLVM IR instruction</b>.</p>
+<div class="codeblock">
+<div class="blocktitle">1. Download and Prepare</div>
+<div class="blockcontent"><pre>
+$ git clone https://github.com/hyfshishen/LLFI-Quick-Start.git                         <span class = "comment"># download code from github</span>
+$ cd perInstFI                                                                         <span class = "comment"># change directory to target folder</span>
+$ clang -emit-llvm -S *.c                                                              <span class = "comment"># compile demo C code to readable LLVM IR</span>
+</pre></div></div>
+<div class="codeblock">
+<div class="blocktitle">2. Check input.yaml</div>
+<div class="blockcontent"><pre>
+defaultTimeOut: 500                                                                    <span class = "comment"># if program with injected fault execute more than 500 seconds</span>
+                                                                                       <span class = "comment">#     it will be terminated and recorded as "hang".</span>
+compileOption:
+    instSelMethod:                                                                     <span class = "comment"># how we select instruction to inject fault in each program execution</span>
+      - customInstselector:
+          include:
+            - llfiindex
+          options:
+            - -injecttoindex=77                                                        <span class = "comment"># we inject faults to 77th instruction (indexed by llfiindex)</span>
+
+    regSelMethod: regloc
+    regloc: dstreg
+
+runOption:
+    - run:
+        numOfRuns: 100                                                                 <span class = "comment"># 100 program executions with injected fault (1 fault for 1 program execution)</span>
+        fi_type: bitflip                                                               <span class = "comment"># fault type is bit-flip (i.e. randomly flip one bit of target instruction's return value)</span>
+</pre></div></div>
+<div class="codeblock">
+<div class="blocktitle">3. Execute LLFI Commands (Instrument-Profile-InjectFault)</div>
+<div class="blockcontent"><pre>
+$ instrument --readable sqrt.ll
+$ profile ./llfi/sqrt-profiling.exe                                                    <span class = "comment"># no input augments in current program sqrt</span>
+$ injectfault ./llfi/sqrt-faultinjection.exe                                           <span class = "comment"># no input augments in current program sqrt</span>
+</pre></div></div>
 <h3>Random FI</h3>
+<p>We provide an example of performing random FI experiments via LLFI. The code of this example can be found at link [<a href="haha">link</a>].
+Note that the &ldquo;instruction&rdquo; here we mentioned are <b>LLVM IR instruction</b>.</p>
+<div class="codeblock">
+<div class="blocktitle">1. Download and Prepare</div>
+<div class="blockcontent"><pre>
+$ git clone https://github.com/hyfshishen/LLFI-Quick-Start.git                         <span class = "comment"># download code from github</span>
+$ cd randomFI                                                                          <span class = "comment"># change directory to target folder</span>
+$ clang -emit-llvm -S *.c                                                              <span class = "comment"># compile demo C code to readable LLVM IR</span>
+</pre></div></div>
+<div class="codeblock">
+<div class="blocktitle">2. Check input.yaml</div>
+<div class="blockcontent"><pre>
+defaultTimeOut: 500                                                                    <span class = "comment"># if program with injected fault execute more than 500 seconds</span>
+                                                                                       <span class = "comment">#     it will be terminated and recorded as "hang".</span>
+compileOption:
+    instSelMethod:                                                                     <span class = "comment"># how we select instruction to inject fault in each program execution</span>
+      - insttype:
+          include:
+            - all                                                                      <span class = "comment"># the fault may occur at any instructions in current program</span>
+          exclude:                                                                     <span class = "comment"># also, we don't inject fault to instructions with type:</span>
+            - ret                                                                      <span class = "comment">#     ret</span>
+            - alloca                                                                   <span class = "comment">#     alloca</span>
+            - call                                                                     <span class = "comment">#     call</span>
+            - phi                                                                      <span class = "comment">#     phi</span>
+
+    regSelMethod: regloc
+    regloc: dstreg
+
+runOption:
+    - run:
+        numOfRuns: 100                                                                 <span class = "comment"># 100 program executions with injected fault (1 fault for 1 program execution)</span>
+        fi_type: bitflip                                                               <span class = "comment"># fault type is bit-flip (i.e. randomly flip one bit of target instruction's return value)</span>
+</pre></div></div>
+<div class="codeblock">
+<div class="blocktitle">3. Execute LLFI Commands (Instrument-Profile-InjectFault)</div>
+<div class="blockcontent"><pre>
+$ instrument --readable sqrt.ll
+$ profile ./llfi/sqrt-profiling.exe                                                    <span class = "comment"># no input augments in current program sqrt</span>
+$ injectfault ./llfi/sqrt-faultinjection.exe                                           <span class = "comment"># no input augments in current program sqrt</span>
+</pre></div></div>
 <h3>Post-analysis</h3>
+<p>We compare results </p>
 <h2>Contributing</h2>
-<p>This document is written by <a href="https://hyfshishen.github.io/">Yafan Huang</a>. If you have any questions after reading this document, please feel free to email him at <b>yafan-huang@uiowa.edu</b>.</p>
+<p>This document is written by <a href="https://hyfshishen.github.io/">Yafan Huang</a>. 
+Besides, this document has not been iterated yet, so some descriptions may be a bit confused. 
+If you have any questions after reading this document, please feel free to email him at <b>yafan-huang@uiowa.edu</b>.</p>
 <h2>References</h2>
 <div id="footer">
 <div id="footer-text">
-Page generated 2022-05-06 01:18:40 CDT, by <a href="http://jemdoc.jaboc.net/">jemdoc</a>.
+Page generated 2022-05-08 02:08:07 CDT, by <a href="http://jemdoc.jaboc.net/">jemdoc</a>.
 </div>
 </div>
 </td>

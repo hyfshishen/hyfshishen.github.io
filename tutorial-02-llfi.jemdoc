@@ -9,6 +9,8 @@ The main contents of this tutorial are shown as below:
 - What is LLFI? Why we use it? What is its basic usage?
 - How to use LLFI for analyzing program resilience?
 
+The video of this document can be found at \[[https://youtu.be/41pk25OAees youtube]\]
+
 == LLFI Quick Installation
 Before you install LLFI, make sure your environment has +python3+ and its package +pyyaml+. For +pyyaml+, version 4x is okay and 4.2b1 is highly recommended.
 Other dependencies can be found at \[[https://github.com/DependableSystemsLab/LLFI 1]\].
@@ -48,7 +50,9 @@ We have already known FI is commonly used for testing program resilience against
 - In LLVM-level FIs, because of its Optimizer and standard IR, we can easily perform a lot of code transformations and program analysis by developing LLVM Passes. Here tracking error propagation is also possible.
 
 === LLFI Basic Usage
-To use LLFI, there are three major steps. We use pathfinder from Rodinia benchmark suite \[[http://www.cs.virginia.edu/rodinia/doku.php 3]\] for example.
+There are three major steps to use LLFI. and we use pathfinder \[[http://www.cs.virginia.edu/rodinia/doku.php 3]\] for example.
+Note that *these commands can only be executed with +input.yaml+ under the same path with compiled +pathfinder.ll+.*
+More information of input.yaml format can be checked at the \[[ WIKI]\].
 ~~~
 {1. Instrumentation: instrumenting functional code in given program IR}{pyint}
 $ # command example
@@ -95,12 +99,86 @@ $ ./hpccg 64 64 64                                                              
 You can follow this pattern to preprocess and compile other C/C\+\+ projects before evaluating resilience.
 
 === Per-Instruction FI
+We provide an example of performing per-instruction FI experiments via LLFI. The code of this example can be found at link \[[haha link]\].
+Note that the "instruction" here we mentioned are *LLVM IR instruction*.
+~~~
+{1. Download and Prepare}{pyint}
+$ git clone https://github.com/hyfshishen/LLFI-Quick-Start.git                         # download code from github
+$ cd perInstFI                                                                         # change directory to target folder
+$ clang -emit-llvm -S *.c                                                              # compile demo C code to readable LLVM IR
+~~~
+~~~
+{2. Check input.yaml}{pyint}
+defaultTimeOut: 500                                                                    # if program with injected fault execute more than 500 seconds
+                                                                                       #     it will be terminated and recorded as "hang".
+compileOption:
+    instSelMethod:                                                                     # how we select instruction to inject fault in each program execution
+      - customInstselector:
+          include:
+            - llfiindex 
+          options:
+            - -injecttoindex=77                                                        # we inject faults to 77th instruction (indexed by llfiindex)
+
+    regSelMethod: regloc
+    regloc: dstreg
+
+runOption:
+    - run:
+        numOfRuns: 100                                                                 # 100 program executions with injected fault (1 fault for 1 program execution)
+        fi_type: bitflip                                                               # fault type is bit-flip (i.e. randomly flip one bit of target instruction's return value)
+~~~
+~~~
+{3. Execute LLFI Commands (Instrument-Profile-InjectFault)}{pyint}
+$ instrument --readable sqrt.ll
+$ profile ./llfi/sqrt-profiling.exe                                                    # no input augments in current program sqrt
+$ injectfault ./llfi/sqrt-faultinjection.exe                                           # no input augments in current program sqrt
+~~~
 
 === Random FI
+We provide an example of performing random FI experiments via LLFI. The code of this example can be found at link \[[haha link]\].
+Note that the "instruction" here we mentioned are *LLVM IR instruction*.
+~~~
+{1. Download and Prepare}{pyint}
+$ git clone https://github.com/hyfshishen/LLFI-Quick-Start.git                         # download code from github
+$ cd randomFI                                                                          # change directory to target folder
+$ clang -emit-llvm -S *.c                                                              # compile demo C code to readable LLVM IR
+~~~
+~~~
+{2. Check input.yaml}{pyint}
+defaultTimeOut: 500                                                                    # if program with injected fault execute more than 500 seconds
+                                                                                       #     it will be terminated and recorded as "hang".
+compileOption:
+    instSelMethod:                                                                     # how we select instruction to inject fault in each program execution
+      - insttype:
+          include:
+            - all                                                                      # the fault may occur at any instructions in current program
+          exclude:                                                                     # also, we don't inject fault to instructions with type:
+            - ret                                                                      #     ret                                                                  
+            - alloca                                                                   #     alloca
+            - call                                                                     #     call
+            - phi                                                                      #     phi
+
+    regSelMethod: regloc
+    regloc: dstreg
+
+runOption:
+    - run:
+        numOfRuns: 100                                                                 # 100 program executions with injected fault (1 fault for 1 program execution)
+        fi_type: bitflip                                                               # fault type is bit-flip (i.e. randomly flip one bit of target instruction's return value)
+~~~
+~~~
+{3. Execute LLFI Commands (Instrument-Profile-InjectFault)}{pyint}
+$ instrument --readable sqrt.ll
+$ profile ./llfi/sqrt-profiling.exe                                                    # no input augments in current program sqrt
+$ injectfault ./llfi/sqrt-faultinjection.exe                                           # no input augments in current program sqrt
+~~~
 
 === Post-analysis
+We compare results balabalabalabala.
 
 == Contributing
-This document is written by [https://hyfshishen.github.io/ Yafan Huang]. If you have any questions after reading this document, please feel free to email him at *yafan-huang@uiowa.edu*.
+This document is written by [https://hyfshishen.github.io/ Yafan Huang]. 
+Besides, this document has not been iterated yet, so some descriptions may be a bit confused. 
+If you have any questions after reading this document, please feel free to email him at *yafan-huang@uiowa.edu*.
 
 == References
