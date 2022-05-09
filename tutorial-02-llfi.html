@@ -117,6 +117,7 @@ $ injectfault ./llfi/pathfinder-faultinjection.exe 1000 10                      
 </pre></div></div>
 <p>Making sure the program input for <tt>Profile</tt> phase is the same as <tt>Fault Injection</tt> phase. In this way we compare the results are meaningful.</p>
 <h2>Analyze Program Resilience with LLFI</h2>
+<p>We refer <b>instruction</b> in this section as <b>LLVM IR instructions</b> since LLFI injects faults to LLVM IR level.</p>
 <h3>Preprocess and Compile</h3>
 <p>To analyze the program resilience, we make to make sure the program results are deterministic under each input. 
 So that comparing the results between fault-free (i.e. profile phase) and fault-injected program executions is meaningful.
@@ -209,6 +210,15 @@ runOption:
         numOfRuns: 100                                                                 <span class = "comment"># 100 program executions with injected fault (1 fault for 1 program execution)</span>
         fi_type: bitflip                                                               <span class = "comment"># fault type is bit-flip (i.e. randomly flip one bit of target instruction's return value)</span>
 </pre></div></div>
+<p>The reasons we routinely exclude &ldquo;ret&rdquo;, &ldquo;alloca&rdquo;, &ldquo;call&rdquo;, and &ldquo;phi&rdquo; instructions during random FI are listed as below:</p>
+<ul>
+<li><p>Those instructions do not have return values. In our commonly used fault model, we only inject fault to return value of an instruction.</p>
+</li>
+<li><p>Some instructions appear only one time (or several times) for one program execution, such as &ldquo;alloca&rdquo; allocates value to target parameter.</p>
+</li>
+<li><p>Some instructions are defined only at LLVM IR instruction level, but not in assembly code, such as &ldquo;phi&rdquo;.</p>
+</li>
+</ul>
 <div class="codeblock">
 <div class="blocktitle">3. Execute LLFI Commands (Instrument-Profile-InjectFault)</div>
 <div class="blockcontent"><pre>
@@ -217,7 +227,42 @@ $ profile ./llfi/sqrt-profiling.exe                                             
 $ injectfault ./llfi/sqrt-faultinjection.exe                                           <span class = "comment"># no input augments in current program sqrt</span>
 </pre></div></div>
 <h3>Post-analysis</h3>
-<p>We compare results </p>
+<p>The output structure of an IR that is injected with faults via LLFI can be checked as below. We still use sqrt.ll here for example. 
+Before talking this, we have to make sure these following concepts are clear:</p>
+<ul>
+<li><p><b>Numerical Program Input</b>: the input of a program is numerical and can be executed via command line (like &ldquo;./hello-world -i 100&rdquo;).</p>
+</li>
+<li><p><b>File Program Input</b>: the input of a program is a file (like &ldquo;./hello-world -i ../yafan.txt&rdquo;).</p>
+</li>
+<li><p><b>Standard Program Output</b>: program outputs that are printed in the screen (like printf(&ldquo;hello world!&rdquo;) in C).</p>
+</li>
+<li><p><b>File Program Output</b>: program outputs that are written into a file (routinely via file I/O stream).</p>
+</li>
+</ul>
+<div class="codeblock">
+<div class="blockcontent"><pre>
+┌── sqrt.c
+├── sqrt.ll
+├── input.yaml
+├── llfi.config.compiletime.txt
+├── llfi.config.runtime.txt
+├── llfi.log.compilation.txt
+├── llfi.stat.prof.txt
+├── llfi.stat.totalindex.txt
+└── llfi
+    ├── baseline            -&gt;  This folder contains results (both standard output and file output) generated from profile phase (fault-free program execution).
+    ├── error_output        -&gt;  This folder contains error information (if program is "hang" or "crash") of each fault-injected program execution.
+    ├── llfi_stat_output    -&gt;  This folder contains detaled injected fault information (e.g. instruction type where fault is injected) of each fault-injected program execution.
+    ├── prog_input          -&gt;  If program has file inputs, they will be backed up in this folder.
+    ├── prog_output         -&gt;  If
+    ├── std_output
+    ├── sqrt-llfi_index.ll
+    ├── sqrt-profiling.ll
+    ├── sqrt-profiling.exe
+    ├── sqrt-faultinjection.ll
+    ├── sqrt-faultinjection.exe
+    └── sqrt-llfi_index.ll
+</pre></div></div>
 <h2>Contributing</h2>
 <p>This document is written by <a href="https://hyfshishen.github.io/">Yafan Huang</a>. 
 Besides, this document has not been iterated yet, so some descriptions may be a bit confused. 
@@ -225,7 +270,7 @@ If you have any questions after reading this document, please feel free to email
 <h2>References</h2>
 <div id="footer">
 <div id="footer-text">
-Page generated 2022-05-08 02:08:07 CDT, by <a href="http://jemdoc.jaboc.net/">jemdoc</a>.
+Page generated 2022-05-09 04:48:44 CDT, by <a href="http://jemdoc.jaboc.net/">jemdoc</a>.
 </div>
 </div>
 </td>

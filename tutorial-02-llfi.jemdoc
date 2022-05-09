@@ -75,7 +75,7 @@ $ injectfault ./llfi/pathfinder-faultinjection.exe 1000 10                      
 Making sure the program input for +Profile+ phase is the same as +Fault Injection+ phase. In this way we compare the results are meaningful.
 
 == Analyze Program Resilience with LLFI
-
+We refer *instruction* in this section as *LLVM IR instructions* since LLFI injects faults to LLVM IR level.
 === Preprocess and Compile
 To analyze the program resilience, we make to make sure the program results are deterministic under each input. 
 So that comparing the results between fault-free (i.e. profile phase) and fault-injected program executions is meaningful.
@@ -166,6 +166,10 @@ runOption:
         numOfRuns: 100                                                                 # 100 program executions with injected fault (1 fault for 1 program execution)
         fi_type: bitflip                                                               # fault type is bit-flip (i.e. randomly flip one bit of target instruction's return value)
 ~~~
+The reasons we routinely exclude "ret", "alloca", "call", and "phi" instructions during random FI are listed as below:
+- Those instructions do not have return values. In our commonly used fault model, we only inject fault to return value of an instruction.
+- Some instructions appear only one time (or several times) for one program execution, such as "alloca" allocates value to target parameter.
+- Some instructions are defined only at LLVM IR instruction level, but not in assembly code, such as "phi".
 ~~~
 {3. Execute LLFI Commands (Instrument-Profile-InjectFault)}{pyint}
 $ instrument --readable sqrt.ll
@@ -174,7 +178,37 @@ $ injectfault ./llfi/sqrt-faultinjection.exe                                    
 ~~~
 
 === Post-analysis
-We compare results balabalabalabala.
+The output structure of an IR that is injected with faults via LLFI can be checked as below. We still use sqrt.ll here for example. 
+Before talking this, we have to make sure these following concepts are clear:
+- *Numerical Program Input*: the input of a program is numerical and can be executed via command line (like ".\/hello-world -i 100").
+- *File Program Input*: the input of a program is a file (like ".\/hello-world -i ..\/yafan.txt").
+- *Standard Program Output*: program outputs that are printed in the screen (like printf("hello world!") in C).
+- *File Program Output*: program outputs that are written into a file (routinely via file I/O stream).
+~~~
+{}{pyint}
+┌── sqrt.c
+├── sqrt.ll
+├── input.yaml
+├── llfi.config.compiletime.txt
+├── llfi.config.runtime.txt
+├── llfi.log.compilation.txt
+├── llfi.stat.prof.txt
+├── llfi.stat.totalindex.txt
+└── llfi
+    ├── baseline            ->  This folder contains results (both standard output and file output) generated from profile phase (fault-free program execution).
+    ├── error_output        ->  This folder contains error information (if program is "hang" or "crash") of each fault-injected program execution.
+    ├── llfi_stat_output    ->  This folder contains detaled injected fault information (e.g. instruction type where fault is injected) of each fault-injected program execution.
+    ├── prog_input          ->  If program has file inputs, they will be backed up in this folder.
+    ├── prog_output         ->  If
+    ├── std_output
+    ├── sqrt-llfi_index.ll
+    ├── sqrt-profiling.ll
+    ├── sqrt-profiling.exe
+    ├── sqrt-faultinjection.ll
+    ├── sqrt-faultinjection.exe
+    └── sqrt-llfi_index.ll
+~~~
+
 
 == Contributing
 This document is written by [https://hyfshishen.github.io/ Yafan Huang]. 
