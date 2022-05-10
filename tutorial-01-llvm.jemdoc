@@ -310,4 +310,4 @@ If you have any questions after reading this document, please feel free to email
 \[1\]  *LLVM Documents*: \[[https://llvm.org/ Link]\]\n
 \[2\]  *Blog: LLVM IR and Go:* \[[https://blog.gopheracademy.com/advent-2018/llvm-ir-and-go/ Link]\]\n
 \[3\]  *Mapping High Level Constructs to LLVM IR*: \[[https://mapping-high-level-constructs-to-llvm-ir.readthedocs.io/en/latest/README.html Link]\]\n
-\[4\]  *LLFI Quick Start:* \[[https://github.com/hyfshishen/LLFI-Quick-Start Link]\]
+\[4\]  *Github Repo: LLFI-Quick-Start*: \[[https://github.com/hyfshishen/LLFI-Quick-Start Link]\]

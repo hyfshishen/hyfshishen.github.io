@@ -9,11 +9,11 @@ The main contents of this tutorial are shown as below:
 - What is LLFI? Why we use it? What is its basic usage?
 - How to use LLFI for analyzing program resilience?
 
-The video of this document can be found at \[[https://youtu.be/41pk25OAees youtube]\]
+The video of this document can be found at \[[https://youtu.be/41pk25OAees 1]\].
 
 == LLFI Quick Installation
 Before you install LLFI, make sure your environment has +python3+ and its package +pyyaml+. For +pyyaml+, version 4x is okay and 4.2b1 is highly recommended.
-Other dependencies can be found at \[[https://github.com/DependableSystemsLab/LLFI 1]\].
+Other dependencies can be found at \[[https://github.com/DependableSystemsLab/LLFI 2]\].
 ~~~
 {Following commands show how to install LLFI on a Ubuntu 16.04 machine.}{pyint}
 $ git clone https://github.com/DependableSystemsLab/LLFI.git                           # download LLFI repository
@@ -39,20 +39,20 @@ $ # It indicates LLFI is successfully installed to your machine :)
 == LLFI
 === What is LLFI?
 LLFI (Low-Level Fault Injector) is an LLVM based fault injection tool, which injects faults into the LLVM IR (human-readable one) of a specified program.
-LLFI is mainly implemented by several LLVM 3.4 passes and driven by python script.
+LLFI is mainly implemented by a collection of LLVM 3.4 passes and driven by python script.
 The fault injection (FI) campaign of LLFI is defined by +input.yaml+ and very flexible.
 
 === Why we use LLFI?
 We have already known FI is commonly used for testing program resilience against soft errors. But why we use LLFI? (or why we injection faults on LLVM IR) There are several reasons:
 - Hardware FI is hard to pinpoint a certain location (imagine you want to flip a certain bit in a hardware device \>\_\<). The analysis is also very hard in hardware. Beam test is even radio active.
 - Architecture FI can be conducted by simulator, but it is very slow. Some architecture designs (such as Intel) are not publicly available, making it hard to develop simulator.
-- Thus, application-level FI is flexible and easy to develop and post-analyze. Besides, Wei et al \[[http://blogs.ubc.ca/karthik/files/2014/04/DSN-Jiesheng.pdf 2]\] have demonstrated FIs on binary (PINFI) and LLVM (LLFI) can produce similar results.
+- Thus, application-level FI is flexible and easy to develop and post-analyze. Besides, Wei et al \[[http://blogs.ubc.ca/karthik/files/2014/04/DSN-Jiesheng.pdf 3]\] have demonstrated FIs on binary (PINFI) and LLVM (LLFI) can produce similar results.
 - In LLVM-level FIs, because of its Optimizer and standard IR, we can easily perform a lot of code transformations and program analysis by developing LLVM Passes. Here tracking error propagation is also possible.
 
 === LLFI Basic Usage
 There are three major steps to use LLFI. and we use pathfinder \[[http://www.cs.virginia.edu/rodinia/doku.php 3]\] for example.
 Note that *these commands can only be executed with +input.yaml+ under the same path with compiled +pathfinder.ll+.*
-More information of input.yaml format can be checked at the \[[ WIKI]\].
+More information of input.yaml format can be checked at the \[[https://github.com/DependableSystemsLab/LLFI/wiki/Get-Started-with-LLFI-Using-Command-Line 4]\].
 ~~~
 {1. Instrumentation: instrumenting functional code in given program IR}{pyint}
 $ # command example
@@ -81,10 +81,10 @@ To analyze the program resilience, we make to make sure the program results are 
 So that comparing the results between fault-free (i.e. profile phase) and fault-injected program executions is meaningful.
 In order to make the results deterministic, we have to remove all randomenss in the raw code, such as +CPU time+ and +random numbers/arrays+.
 
-After preprocessing the codes, we can compile the program source code into an LLVM IR (readable format \[[https://hyfshishen.github.io/tutorial-01-llvm.html 4]\]).
+After preprocessing the codes, we can compile the program source code into a readable LLVM IR (what is LLVM IR? \[[https://hyfshishen.github.io/tutorial-01-llvm.html 5]\]).
 In studying program resilience against soft errors, the programs we evaluate are always implemented via C/C\+\+.
 Here we provide an example to show how to compile a C++ project into a readable LLVM IR.
-The code can be found at \[[https://github.com/hyfshishen/LLFI-Complicated-Project 5]\].
+The code can be found at \[[https://github.com/hyfshishen/LLFI-Complicated-Project 6]\].
 Specifically, its compile commands can be found as below:
 ~~~
 {}{pyint}
@@ -99,7 +99,7 @@ $ ./hpccg 64 64 64                                                              
 You can follow this pattern to preprocess and compile other C/C\+\+ projects before evaluating resilience.
 
 === Per-Instruction FI
-We provide an example of performing per-instruction FI experiments via LLFI. The code of this example can be found at link \[[haha link]\].
+We provide an example of performing per-instruction FI experiments via LLFI. The code of this example can be found at link \[[https://github.com/hyfshishen/LLFI-Quick-Start 7]\].
 Note that the "instruction" here we mentioned are *LLVM IR instruction*.
 ~~~
 {1. Download and Prepare}{pyint}
@@ -135,7 +135,7 @@ $ injectfault ./llfi/sqrt-faultinjection.exe                                    
 ~~~
 
 === Random FI
-We provide an example of performing random FI experiments via LLFI. The code of this example can be found at link \[[haha link]\].
+We provide an example of performing random FI experiments via LLFI. The code of this example can be found at link \[[https://github.com/hyfshishen/LLFI-Quick-Start 7]\].
 Note that the "instruction" here we mentioned are *LLVM IR instruction*.
 ~~~
 {1. Download and Prepare}{pyint}
@@ -170,6 +170,7 @@ The reasons we routinely exclude "ret", "alloca", "call", and "phi" instructions
 - Those instructions do not have return values. In our commonly used fault model, we only inject fault to return value of an instruction.
 - Some instructions appear only one time (or several times) for one program execution, such as "alloca" allocates value to target parameter.
 - Some instructions are defined only at LLVM IR instruction level, but not in assembly code, such as "phi".
+- Some instructions will occupy too much space of main memory and will lead to system failure, such as "alloca".
 ~~~
 {3. Execute LLFI Commands (Instrument-Profile-InjectFault)}{pyint}
 $ instrument --readable sqrt.ll
@@ -186,29 +187,47 @@ Before talking this, we have to make sure these following concepts are clear:
 - *File Program Output*: program outputs that are written into a file (routinely via file I/O stream).
 ~~~
 {}{pyint}
-┌── sqrt.c
-├── sqrt.ll
-├── input.yaml
-├── llfi.config.compiletime.txt
-├── llfi.config.runtime.txt
-├── llfi.log.compilation.txt
-├── llfi.stat.prof.txt
-├── llfi.stat.totalindex.txt
+# More details about the following content can be checked at LLFI wiki [4].
+┌── sqrt.c                                  # Original C source code of target program.
+├── sqrt.ll                                 # Readable IR compiled from C source code. This is also the input of instrumentation phase.
+├── input.yaml                              # Defines what fault to inject, where/when to inject fault, and how many faults we inject in total.
+├── llfi.config.compiletime.txt             # Output of LLFI's llvm passes. We typically DON'T CHECK THIS in FI experiments.
+├── llfi.config.runtime.txt                 # Run-time option of LLFI.      We typically DON'T CHECK THIS in FI experiments.
+├── llfi.log.compilation.txt                # Compilation log with LLFI.    We typically DON'T CHECK THIS in FI experiments.
+├── llfi.stat.prof.txt                      # The total number of dynamic instruction counts of potential injection points.
+│                                           #     If we perform random FI, that will be dynamic instruction count of the whole program.
+│                                           #     If we perform per-instruction FI, that will be dynamic instruction count of the target instruction.
+├── llfi.stat.totalindex.txt                # The total number of static instructions labeled as candidates of fault injection.
 └── llfi
-    ├── baseline            ->  This folder contains results (both standard output and file output) generated from profile phase (fault-free program execution).
-    ├── error_output        ->  This folder contains error information (if program is "hang" or "crash") of each fault-injected program execution.
-    ├── llfi_stat_output    ->  This folder contains detaled injected fault information (e.g. instruction type where fault is injected) of each fault-injected program execution.
-    ├── prog_input          ->  If program has file inputs, they will be backed up in this folder.
-    ├── prog_output         ->  If
-    ├── std_output
-    ├── sqrt-llfi_index.ll
-    ├── sqrt-profiling.ll
-    ├── sqrt-profiling.exe
-    ├── sqrt-faultinjection.ll
-    ├── sqrt-faultinjection.exe
-    └── sqrt-llfi_index.ll
+    ├── baseline           # ->  This folder contains results (both standard output and file output) generated from profile phase (fault-free program execution).
+    ├── error_output       # ->  This folder contains error information (if program is "hang" or "crash") of each fault-injected program execution.
+    ├── llfi_stat_output   # ->  This folder contains detaled injected fault information (e.g. instruction type where fault is injected) of each fault-injected program execution.
+    ├── prog_input         # ->  If program has file inputs, they will be backed up in this folder.
+    ├── prog_output        # ->  This folder contains file output for each fault-injected program execution.
+    ├── std_output         # ->  This folder contains standard output for each fault-injected program execution.
+    ├── sqrt-llfi_index.ll                  # All its function is the same as sqrt.ll and each instruction in it is labeled with an LLFI index.
+    ├── sqrt-profiling.ll                   # Readable IR for profiling phase.
+    ├── sqrt-profiling.exe                  # Executable binary for profiling phase (compiled from above .ll).
+    ├── sqrt-faultinjection.ll              # Readable IR for fault-injection phase.
+    └── sqrt-faultinjection.exe             # Executable binary for fault-injection phase (compiled from above .ll).
 ~~~
+Sometimes, program will have both file output and standard output. We have to compare the *meaningful* outputs between profile and fault-injection phases.
+Imagine there is one sorting program called +bubble-sort.c+, its outputs after one execution can be checked as below:
+- *File output*: the sorting results can be checked at *result.txt*.
+- *Standard output*: "Finish sorting!" will be printed through commandline.
 
+Clearly, to analyze the program's resilience, we have to choose the main results that are more closely related to its functionality.
+So we choose to compare +file output+ in that scenario.
+Note that this is very important for post-analysis after experiments with LLFI.
+Otherwise, we may bring totally useless resilience analysis results.
+
+There are 4 types of results after comparing the outputs:
+- +SDC+: Silent data corruption (SDC) means program exits normally but produces wrong results.
+- +Benign+: Program exits normally and produces correct results.
+- +Crash+: Program exits abnormally with exceptions.
+- +Hang+: Program halts and executes longer than *defaultTimeOut* set in input.yaml.
+
+LLFI provides an official Python3 script to measure those results, which can be found at: \[[https://github.com/DependableSystemsLab/LLFI/blob/master/tutorials/ISSRE19/1-sqrt/measure.py 8]\].
 
 == Contributing
 This document is written by [https://hyfshishen.github.io/ Yafan Huang]. 
@@ -216,3 +235,11 @@ Besides, this document has not been iterated yet, so some descriptions may be a 
 If you have any questions after reading this document, please feel free to email him at *yafan-huang@uiowa.edu*.
 
 == References
+\[1\]  *Yafan Huang: LLFI Tutorial Video*: \[[https://youtu.be/41pk25OAees Link]\]\n
+\[2\]  *Github Repo: LLFI*: \[[https://github.com/DependableSystemsLab/LLFI Link]\]\n
+\[3\]  *DSN-14: Quantifying the accuracy of High-Level Fault injection Techniques for Hardware Faults*: \[[http://blogs.ubc.ca/karthik/files/2014/04/DSN-Jiesheng.pdf Link]\]\n
+\[4\]  *LLFI WIKI*: \[[https://github.com/DependableSystemsLab/LLFI/wiki/Get-Started-with-LLFI-Using-Command-Line Link]\]\n
+\[5\]  *Yafan Huang: LLVM Tutorial*: \[[https://hyfshishen.github.io/tutorial-01-llvm.html Link]\]\n
+\[6\]  *Github Repo: LLFI-Complicated-Project*: \[[https://github.com/hyfshishen/LLFI-Complicated-Project Link]\]\n
+\[7\]  *Github Repo: LLFI-Quick-Start*: \[[https://github.com/hyfshishen/LLFI-Quick-Start Link]\]\n
+\[8\]  *LLFI Result Measurement Script*: \[[https://github.com/DependableSystemsLab/LLFI/blob/master/tutorials/ISSRE19/1-sqrt/measure.py Link]\]
