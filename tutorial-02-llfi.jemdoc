@@ -93,8 +93,7 @@ $ clang++ -S -emit-llvm *.cpp                                                   
 $ llvm-link -S -o hpccg.ll *.ll                                                        #     Link all .ll into a single IR
                                                                                        # Optional:
 $ clang++ hpccg.ll -o hpccg                                                            #     Compile to executable binary
-$ ./hpccg 64 64 64                                                                     #     check if its execution is normal                                                                                    
-                                                                                          
+$ ./hpccg 64 64 64                                                                     #     check if its execution is normal                                                                               
 ~~~
 You can follow this pattern to preprocess and compile other C/C\+\+ projects before evaluating resilience.
 
