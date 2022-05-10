@@ -222,10 +222,10 @@ Note that this is very important for post-analysis after experiments with LLFI.
 Otherwise, we may bring totally useless resilience analysis results.
 
 There are 4 types of results after comparing the outputs:
-- +SDC+: Silent data corruption (SDC) means program exits normally but produces wrong results.
-- +Benign+: Program exits normally and produces correct results.
-- +Crash+: Program exits abnormally with exceptions.
-- +Hang+: Program halts and executes longer than *defaultTimeOut* set in input.yaml.
+- +*SDC*+: Silent data corruption (SDC) means program exits normally but produces wrong results.
+- +*Benign*+: Program exits normally and produces correct results.
+- +*Crash*+: Program exits abnormally with exceptions.
+- +*Hang*+: Program halts and executes longer than *defaultTimeOut* set in input.yaml.
 
 LLFI provides an official Python3 script to measure those results, which can be found at: \[[https://github.com/DependableSystemsLab/LLFI/blob/master/tutorials/ISSRE19/1-sqrt/measure.py 8]\].
 
