@@ -36,7 +36,7 @@ $ # It indicates LLVM-3.4 is successfully installed to your machine :)
 
 == LLVM
 ~~~
-{}{img_left}{image/llvm-structure.png}{alt text}{600px}{220px}
+{}{img_left}{image/tutorials/llvm-structure.png}{alt text}{600px}{220px}
 Low-Level Virtual Machine (LLVM) actually is a compiler architecture \[[https://llvm.org/ 1]\], shown as left picture.
 The main use of LLVM is that it can be the Optimizer (language-agnostic Optimization) and Backend (Machine Code Generation) of multiple programming languages.
 
@@ -51,7 +51,7 @@ Besides, LLVM contains a lot of sub-projects including Clang (a lightweight comp
 == LLVM IR
 === What is LLVM IR?
 ~~~
-{}{img_left}{image/llvm-IR.jpeg}{alt text}{600px}{220px}
+{}{img_left}{image/tutorials/llvm-IR.jpeg}{alt text}{600px}{220px}
 LLVM IR is a low-level intermediate representation used by LLVM compiler framework \[[https://blog.gopheracademy.com/advent-2018/llvm-ir-and-go/ 2]\], shown as left picture.
 LLVM-based compilers here can be splited into three components, the front-end, middle-end, and back-end; each with a specific task that takes IR as input and/or produces IR as output.
 
@@ -67,7 +67,7 @@ Other looks more like low-level assembly (e.g. branching, basic-blocks, instruct
 
 === How to read LLVM IR?
 ~~~
-{}{img_left}{image/cfg.jpeg}{alt text}{300px}{200px}
+{}{img_left}{image/tutorials/cfg.jpeg}{alt text}{300px}{200px}
 LLVM IR has both human-readable (+.ll+) and binary versions (+.bc+, bitcode format).
 These two formats can be transformed easily, and we mainly focus on +.ll+ here.
 
