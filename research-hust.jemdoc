@@ -5,7 +5,7 @@ This page contains all my research conducted at Huazhong University of Science a
 == Natural Language Processing
 
 ~~~
-{}{img_left}{./image/research/hust-matt.png}{}{280px}{180px}{}
+{}{img_left}{./image/research/hust-matt.png}{}{350px}{225px}{}
 == MATT: A Multiple-instance Attention Mechanism for Long-tail Music Genre Classification
 This work targets to improve long-tail classification in Music Information Retrieval (MIR).
 Inspired by the success of introducing Multi-instance Learning (MIL) from classification tasks in NLP, this work designs MIL attention mechanism to boost the performance for identifying tail classes. 
@@ -14,12 +14,14 @@ Then, this work leverages neural networks to encode the music audio segments.
 Based on these, the neural network-based models could recognize the most informative genre to match the given music segment. 
 Comprehensive experimental results on a large-scale music genre benchmark dataset with long-tail distribution demonstrates the proposed attention mechanism significantly outperforms other state-of-the-art baselines.
 
+- This work is conducted at School of Computer Science and Technology at HUST.
+- This work is collaborated with Xiaokai Liu.
 - This work is submitted to International Conference on Systems, Man, and Cybernetics (SMC) 2022.
 ~~~
 
 
 ~~~
-{}{img_left}{./image/research/hust-oidgcn.png}{}{280px}{180px}{}
+{}{img_left}{./image/research/hust-oidgcn.png}{}{350px}{225px}{}
 == Rumor Detection on Social Media with Out-In-Degree Graph Convolutional Networks
 This work adopts graph convolutional networks to enhance rumor detection.
 Rumor detection is a hot research topic where graph neural networks are widely utilized.
@@ -28,11 +30,13 @@ Specifically, it incorporates Katz centrality into spectral-domain graph convolu
 Besides enhancing accuracy, Katz centrality can efficiently capture the position information of nodes, while the rest structure of OID-GCN shows a superb ability in dealing with imbalanced data. 
 Comprehensive experimental results on two real-world datasets Twitter-15 and Twitter-16 demonstrate our OID-GCN outperforms several existing methods.
 
+- This work is conducted at School of Computer Science and Technology at HUST.
+- This work is collaborated with Shihui Song.
 - This work is accepted as a conference paper by International Conference on Systems, Man, and Cybernetics (SMC) 2021.
 ~~~
 
 ~~~
-{}{img_left}{./image/research/hust-pern.png}{}{280px}{180px}{}
+{}{img_left}{./image/research/hust-pern.png}{}{350px}{225px}{}
 == Path-enhanced Explainable Recommendation with Knowledge Graphs
 This work incorporates knowledge graph to boost recommendation, and proposes a model named Path-enhanced Recurrent Network (PeRN). 
 Specifically, PeRN integrates a recurrent neural network encoder with a metapath-based entropy encoder to increase explainability and accuracy and reduce cold-start costs. 
@@ -40,12 +44,14 @@ The recurrent network encoder has a strong ability to represent sequential path 
 A path extraction algorithm with a bidirectional scheme is also proposed to make PeRN more feasible. 
 The experimental results on two real-world datasets demonstrate our significant improvements with reasonable explanations, promising accuracy, and a minimal amount of prior knowledge compared with several state-of-the-art baselines.
 
+- This work is conducted at Cluster and Grid Computing Laboratory (CGCL) at HUST.
+- This work is advised by Dr. Feng Zhao.
 - This work is accepted as a journal article by World Wide Web.
 ~~~
 
 
 ~~~
-{}{img_left}{./image/research/hust-ner.jpeg}{}{280px}{180px}{}
+{}{img_left}{./image/research/hust-ner.jpeg}{}{350px}{225px}{}
 == Dynamic Entity-based Named Entity Recognition Under Unconstrained Tagging Schemes
 This work proposes a dynamic entity-based NER approach under unconstrained tagging schemes. 
 First, this work reorganizes widely used tagging schemes and proposes two novel unconstrained schemes. 
@@ -54,5 +60,7 @@ The dynamic mechanism can ensure that the entity-level features are included in 
 Except for word embeddings pretrained from unlabeled corpora, no external language-specific knowledge or other resources such as gazetteers are used. 
 Experiments with English, German, Dutch and Spanish datasets show that the proposed methods can achieve promising performance with different languages.
 
+- This work is conducted at Cluster and Grid Computing Laboratory (CGCL) at HUST.
+- This work is advised by Dr. Feng Zhao and Xiangyu Gui.
 - This work is accepted as a journal article by IEEE Transactions on Big Data.
 ~~~
