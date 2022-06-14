@@ -2,6 +2,11 @@
 = Publications
 
 == Conference
+- Mitigating Silent Data Corruptions in HPC Applications across Multiple Program Inputs\n
+*Yafan Huang*, Shengjian Guo, Sheng Di, Guanpeng Li\*, and Franck Cappello\n
+*\[SC'22\]*: International Conference for High Performance Computing, Networking, Storage and Analysis\n
+\[[ Paper]\] \[[ Slides]\] \[[ Video]\] \[[ Code]\]
+
 - Hardening Selective Protection across Multiple Program Inputs for HPC Applications\n
 *Yafan Huang*, Shengjian Guo, Sheng Di, Guanpeng Li\*, and Franck Cappello\n
 *\[PPoPP'22\]*: ACM SIGPLAN Symposium on Principles and Practice of Parallel Programming, 2022 (Poster)\n
