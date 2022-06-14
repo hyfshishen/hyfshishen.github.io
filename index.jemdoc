@@ -24,10 +24,10 @@ I spent a happy time there :)
 - Natural Language Processing
 
 == Latest News ([news.html More])
-- 06/2022: Our paper, Multi-Input-Hardened Selective Instruction Duplication, is accepted by SC'22.
-- 05/2022: Serve as reviewer of SMC'22 and subreviewer of ISSRE'22.
-- 03/2022: Serve as subreviewer of LCTES'22 and DSML@DSN'22.
-- 02/2022: Serve as reviewer of IJCNN'22 and subreviewer of HPDC'22.
+- 06/2022: {{<font color=red size=+0.5><b>}} \[Paper\] {{</b></font>}}One paper about error resilience is accepted by SC'22.
+- 05/2022: {{<font color=blue size=+0.5><b>}} \[Service\] {{</b></font>}}Serve as reviewer of SMC'22 and subreviewer of ISSRE'22.
+- 03/2022: {{<font color=blue size=+0.5><b>}} \[Service\] {{</b></font>}}Serve as subreviewer of LCTES'22 and DSML@DSN'22.
+- 02/2022: {{<font color=blue size=+0.5><b>}} \[Service\] {{</b></font>}}Serve as reviewer of IJCNN'22 and subreviewer of HPDC'22.
 
 == Selected Publications ([publications.html Full List])
 - *\[SC'22\]* Mitigating Silent Data Corruptions in HPC Applications across Multiple Program Inputs\n
