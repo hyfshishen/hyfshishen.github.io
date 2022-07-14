@@ -24,15 +24,16 @@ I spent a happy time there :)
 - Natural Language Processing
 
 == Latest News ([news.html More])
-- 07/2022: {{<font color=red size=+0.5><b>}} \[Paper\] {{</b></font>}}One paper about natural language processing is accepted by SMC'22.
-- 06/2022: {{<font color=orange size=+0.5><b>}} \[Collab\] {{</b></font>}}Our work, MINPSID (SC'22), is promoted by Baidu Security \[[https://mp.weixin.qq.com/s/RIS1XlbVJfj_7t6gnKhSRw Link]\].
-- 06/2022: {{<font color=red size=+0.5><b>}} \[Paper\] {{</b></font>}}One paper about error resilience is accepted by SC'22. The work was conducted in collaboration with Argonne National Lab and Baidu Security.
+- 07/2022: {{<font color=red size=+0.5><b>}} \[Award\] {{</b></font>}}Our work, MINPSID (SC'22), is nominated as the best paper finalist and the best student paper finalist (3 papers out of 320 initial submissions). 
+- 07/2022: {{<font color=orange size=+0.5><b>}} \[Paper\] {{</b></font>}}One paper about natural language processing is accepted by SMC'22.
+- 06/2022: {{<font color=purple size=+0.5><b>}} \[Collab\] {{</b></font>}}Our work, MINPSID (SC'22), is promoted by Baidu Security \[[https://mp.weixin.qq.com/s/RIS1XlbVJfj_7t6gnKhSRw Link]\].
+- 06/2022: {{<font color=orange size=+0.5><b>}} \[Paper\] {{</b></font>}}One paper about error resilience is accepted by SC'22. The work was conducted in collaboration with Argonne National Lab and Baidu Security.
 - 02/2022: {{<font color=blue size=+0.5><b>}} \[Service\] {{</b></font>}}Serve as reviewer of IJCNN'22 and SMC'22.
 - 01/2022: {{<font color=blue size=+0.5><b>}} \[Service\] {{</b></font>}}Serve as subreviewer of Middleware'22, HPDC'22, ISSRE'22, LCTES'22, and DSML@DSN'22.
 
 == Selected Publications ([publications.html Full List])
 - *\[SC'22\]* Mitigating Silent Data Corruptions in HPC Applications across Multiple Program Inputs\n
-*Yafan Huang*, Shengjian Guo, Sheng Di, Guanpeng Li\*, and Franck Cappello
+*Yafan Huang*, Shengjian Guo, Sheng Di, Guanpeng Li\*, and Franck Cappello\n{{<font color=red size=+0.5><b>}} Best Paper Finalist, Best Student Paper Finalist {{</b></font>}}*(0.9%≈3/320)*
 
 - *\[WWWJ'21\]* Path-enhanced Explainable Recommendation with Knowledge Graphs\n
 *Yafan Huang*, Feng Zhao\*, Xiangyu Gui, Hai Jin
