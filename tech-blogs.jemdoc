@@ -10,18 +10,11 @@ Some good tutorials that help me a lot.
 
 
 == Notes and Tutorials at UIowa
-- Fall21, CS:4330:0001, Theory of Computation\n
-  -- Final Report - Universal Turing Machine \[[file/yhuang203-ssong10-TOC-CourseReport.pdf PDF]\]
-
-- Fall21, CS:4980:0003, Topics in Computer Science II: High Performance Computing\n
-  -- Final Report - Resiliency of Machine Learning Applications in CPU and GPU \[[file/Yafan&Hasan-HPC-CourseReport.pdf PDF]\]
-
-- Spring21, CS:4980:0002, Topics in Computer Science II: Dependable System Design\n
-  -- Tutorial - A Brief Introduction of LLVM Compiler Structure, IR, and Pass \[[tutorial-01-llvm.html Link]\]\n
-  -- Tutorial - LLFI: LLVM IR Level Fault Injector \[[tutorial-02-llfi.html Link]\]\n
-  -- Tutorial - PINFI: Assembly Code Level Fault Injector \[[tutorial-03-pinfi.html Link]\]\n
-  -- Tutorial - LLFI-GPU: LLVM IR Level Fault Injector of Application Source Code of GPU CUDA Kernels \[[tutorial-04-llfigpu.html Link]\]
-  -- Tutorial - NVBitFI: Nvidia GPU Binary Level Fault Injector \[[tutorial-05-nvbitfi.html Link]\]
+- Tutorial - A Brief Introduction of LLVM Compiler Structure, IR, and Pass \[[tutorial-01-llvm.html Link]\]\n
+- Tutorial - LLFI: LLVM IR Level Fault Injector \[[tutorial-02-llfi.html Link]\]\n
+- Tutorial - PINFI: Assembly Code Level Fault Injector \[[tutorial-03-pinfi.html Link]\]\n
+- Tutorial - LLFI-GPU: LLVM IR Level Fault Injector of Application Source Code of GPU CUDA Kernels \[[tutorial-04-llfigpu.html Link]\]
+- Tutorial - NVBitFI: Nvidia GPU Binary Level Fault Injector \[[tutorial-05-nvbitfi.html Link]\]
    
 
 
