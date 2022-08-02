@@ -5,7 +5,7 @@
 - [ Mitigating Silent Data Corruptions in HPC Applications across Multiple Program Inputs]\n
 *Yafan Huang*, Shengjian Guo, Sheng Di, Guanpeng Li\*, and Franck Cappello\n
 *\[SC'22\]*: International Conference for High Performance Computing, Networking, Storage and Analysis, 2022\n
-\[[ Paper]\] \[[ Slides]\] \[[ Video]\] \[[ Code]\] \[[https://mp.weixin.qq.com/s/RIS1XlbVJfj_7t6gnKhSRw Media]\]\n{{<font color=red size=+0.5><b>}} Best Paper Finalist, Best Student Paper Finalist {{</b></font>}}
+\[[ Paper]\] \[[ Slides]\] \[[ Video]\] \[[https://github.com/hyfshishen/MINPSID Code]\] \[[https://mp.weixin.qq.com/s/RIS1XlbVJfj_7t6gnKhSRw Media]\]\n{{<font color=red size=+0.5><b>}} Best Paper Finalist, Best Student Paper Finalist {{</b></font>}}
 
 - [ MATT: A Multiple-instance Attention Mechanism for Long-tail Music Genre Classification]\n
 Xiaokai Liu, Shihui Song, and *Yafan Huang*\*\n
@@ -32,8 +32,8 @@ Feng Zhao\*, Xiangyu Gui, *Yafan Huang*, Hai Jin, and Laurence T. Yang\n
 - [https://dl.acm.org/doi/10.1145/3503221.3508414 POSTER: Hardening Selective Protection across Multiple Program Inputs for HPC Applications]\n
 *Yafan Huang*, Shengjian Guo, Sheng Di, Guanpeng Li\*, and Franck Cappello\n
 *\[PPoPP'22\]*: ACM SIGPLAN Symposium on Principles and Practice of Parallel Programming, 2022\n
-\[[publications/PPoPP'22-Paper.pdf Paper]\] \[[publications/PPoPP'22-Slides.pdf Slides]\] \[[https://www.youtube.com/watch?v=zZa8ZIS1DOo Video]\] \[[ Code]\]
+\[[publications/PPoPP'22-Paper.pdf Paper]\] \[[publications/PPoPP'22-Slides.pdf Slides]\] \[[https://www.youtube.com/watch?v=zZa8ZIS1DOo Video]\] \[[https://github.com/hyfshishen/MINPSID Code]\]
 
-- AV Safety Monitor\n
-Bohan Zhang, *Yafan Huang*, Rachel Chen, Guanpeng Li\*\n
-In submission to RSDA@ISSRE 2022
+- D2MON: Detecting and Mitigating Real-Time Safety Violations in Autonomous Driving Systems\n
+Bohan Zhang, *Yafan Huang*, Rachael Chen, Guanpeng Li\*\n
+In submission to ISSRE Workshop 2022
