@@ -1,40 +1,38 @@
 # jemdoc: menu{MENU}{publications.html}
 = Publications \n
 
-== Conference
+- D2MON: Detecting and Mitigating Real-Time Safety Violations in Autonomous Driving Systems\n
+Bohan Zhang, *Yafan Huang*, Rachael Chen, Guanpeng Li\*\n
+*\[ISSREW'22\]*: Workshop on Resiliency, Security, Defenses, and Attacks (RSDA) at IEEE International Symposium on Software Reliability Engineering, 2022\n
+\[[ Paper]\] \[[ Slides]\] \[[ Video]\] \[[ Code]\]
+
 - [ Mitigating Silent Data Corruptions in HPC Applications across Multiple Program Inputs]\n
 *Yafan Huang*, Shengjian Guo, Sheng Di, Guanpeng Li\*, and Franck Cappello\n
 *\[SC'22\]*: International Conference for High Performance Computing, Networking, Storage and Analysis, 2022\n
 \[[ Paper]\] \[[ Slides]\] \[[ Video]\] \[[https://github.com/hyfshishen/MINPSID Code]\] \[[https://mp.weixin.qq.com/s/RIS1XlbVJfj_7t6gnKhSRw Media]\]\n{{<font color=red size=+0.5><b>}} Best Paper Finalist, Best Student Paper Finalist {{</b></font>}}
+
+- [https://dl.acm.org/doi/10.1145/3503221.3508414 Hardening Selective Protection across Multiple Program Inputs for HPC Applications]\n
+*Yafan Huang*, Shengjian Guo, Sheng Di, Guanpeng Li\*, and Franck Cappello\n
+*\[PPoPP'22\]*: ACM SIGPLAN Symposium on Principles and Practice of Parallel Programming, 2022, (Poster Session)\n
+\[[publications/PPoPP'22-Paper.pdf Paper]\] \[[publications/PPoPP'22-Slides.pdf Poster]\] \[[https://www.youtube.com/watch?v=zZa8ZIS1DOo Video]\] \[[https://github.com/hyfshishen/MINPSID Code]\]
+
+== Before PhD
+- [https://doi.org/10.1109/TBDATA.2020.2998770 Dynamic Entity-Based Named Entity Recognition Under Unconstrained Tagging Schemes]\n
+Feng Zhao\*, Xiangyu Gui, *Yafan Huang*, Hai Jin, and Laurence T. Yang\n
+*\[TBD'22\]*: IEEE Transactions on Big Data, 2022\n
+\[[publications/TBD'22-Paper.pdf Paper]\] \[[https://mp.weixin.qq.com/s/i1kI1SzjFLvrth1JKZlwxw Media]\]
 
 - [ MATT: A Multiple-instance Attention Mechanism for Long-tail Music Genre Classification]\n
 Xiaokai Liu, Shihui Song, and *Yafan Huang*\*\n
 *\[SMC'22\]*: IEEE International Conference on Systems, Man and Cybernetics, 2022\n
 \[[publications/SMC'22-Paper.pdf Paper]\] \[[ Slides]\] \[[ Video]\]
 
-- [https://doi.org/10.1109/SMC52423.2021.9659106 Rumor Detection on Social Media with Out-In-Degree Graph Convolutional Networks]\n
-Shihui Song, *Yafan Huang*\*, and Hongwei Lu\n
-*\[SMC'21\]*: IEEE International Conference on Systems, Man and Cybernetics, 2021\n
-\[[publications/SMC'21-Paper.pdf Paper]\] \[[publications/SMC'21-Slides.pdf Slides]\] \[[https://www.youtube.com/watch?v=L5ykHXY8tYM Video]\]
-
-== Journal
-- [https://doi.org/10.1109/TBDATA.2020.2998770 Dynamic Entity-Based Named Entity Recognition Under Unconstrained Tagging Schemes]\n
-Feng Zhao\*, Xiangyu Gui, *Yafan Huang*, Hai Jin, and Laurence T. Yang\n
-*\[TBD'22\]*: IEEE Transactions on Big Data, 2022\n
-\[[publications/TBD'22-Paper.pdf Paper]\] \[[https://mp.weixin.qq.com/s/i1kI1SzjFLvrth1JKZlwxw Media]\]
-
 - [https://doi.org/10.1007/s11280-021-00912-4 Path-enhanced Explainable Recommendation with Knowledge Graphs]\n
 *Yafan Huang*, Feng Zhao\*, Xiangyu Gui, and Hai Jin\n
 *\[WWWJ'21\]*: World Wide Web, 2021\n
 \[[publications/WWWJ'21-Paper.pdf Paper]\] \[[https://pdfs.semanticscholar.org/adad/9fa021d638f6f4d47ab537adb0bce7efc035.pdf Slides]\]
 
-== Poster & Workshop
-- [https://dl.acm.org/doi/10.1145/3503221.3508414 POSTER: Hardening Selective Protection across Multiple Program Inputs for HPC Applications]\n
-*Yafan Huang*, Shengjian Guo, Sheng Di, Guanpeng Li\*, and Franck Cappello\n
-*\[PPoPP'22\]*: ACM SIGPLAN Symposium on Principles and Practice of Parallel Programming, 2022\n
-\[[publications/PPoPP'22-Paper.pdf Paper]\] \[[publications/PPoPP'22-Slides.pdf Slides]\] \[[https://www.youtube.com/watch?v=zZa8ZIS1DOo Video]\] \[[https://github.com/hyfshishen/MINPSID Code]\]
-
-- D2MON: Detecting and Mitigating Real-Time Safety Violations in Autonomous Driving Systems\n
-Bohan Zhang, *Yafan Huang*, Rachael Chen, Guanpeng Li\*\n
-*\[ISSREW'22\]*: Workshop on Resiliency, Security, Defenses, and Attacks (RSDA) at IEEE International Symposium on Software Reliability Engineering\n
-\[[ Paper]\] \[[ Slides]\] \[[ Video]\] \[[ Code]\]
+- [https://doi.org/10.1109/SMC52423.2021.9659106 Rumor Detection on Social Media with Out-In-Degree Graph Convolutional Networks]\n
+Shihui Song, *Yafan Huang*\*, and Hongwei Lu\n
+*\[SMC'21\]*: IEEE International Conference on Systems, Man and Cybernetics, 2021\n
+\[[publications/SMC'21-Paper.pdf Paper]\] \[[publications/SMC'21-Slides.pdf Slides]\] \[[https://www.youtube.com/watch?v=L5ykHXY8tYM Video]\]
