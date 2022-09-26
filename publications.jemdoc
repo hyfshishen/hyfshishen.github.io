@@ -4,12 +4,12 @@
 - D2MON: Detecting and Mitigating Real-Time Safety Violations in Autonomous Driving Systems\n
 Bohan Zhang, *Yafan Huang*, Rachael Chen, Guanpeng Li\*\n
 *\[ISSREW'22\]*: Workshop on Resiliency, Security, Defenses, and Attacks (RSDA) at IEEE International Symposium on Software Reliability Engineering, 2022\n
-\[[ Paper]\] \[[ Slides]\] \[[ Video]\] \[[ Code]\]
+\[[publications/ISSREW'22-Paper.pdf Paper]\] \[[ Slides]\] \[[ Video]\] \[[ Code]\]
 
 - [ Mitigating Silent Data Corruptions in HPC Applications across Multiple Program Inputs]\n
 *Yafan Huang*, Shengjian Guo, Sheng Di, Guanpeng Li\*, and Franck Cappello\n
 *\[SC'22\]*: International Conference for High Performance Computing, Networking, Storage and Analysis, 2022\n
-\[[ Paper]\] \[[ Slides]\] \[[ Video]\] \[[https://github.com/hyfshishen/MINPSID Code]\] \[[https://mp.weixin.qq.com/s/RIS1XlbVJfj_7t6gnKhSRw Media]\]\n{{<font color=red size=+0.5><b>}} Best Paper Finalist, Best Student Paper Finalist {{</b></font>}}
+\[[publications/SC'22-Paper.pdf Paper]\] \[[ Slides]\] \[[ Video]\] \[[https://github.com/hyfshishen/MINPSID Code]\] \[[https://mp.weixin.qq.com/s/RIS1XlbVJfj_7t6gnKhSRw Media]\]\n{{<font color=red size=+0.5><b>}} Best Paper Finalist, Best Student Paper Finalist {{</b></font>}}
 
 - [https://dl.acm.org/doi/10.1145/3503221.3508414 Hardening Selective Protection across Multiple Program Inputs for HPC Applications]\n
 *Yafan Huang*, Shengjian Guo, Sheng Di, Guanpeng Li\*, and Franck Cappello\n
