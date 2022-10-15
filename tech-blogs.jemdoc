@@ -8,6 +8,10 @@ Some good tutorials that help me a lot.
 - Using MPI with C \[[https://curc.readthedocs.io/en/latest/programming/MPI-C.html Link]\]
 - Simple CUDA Programming \[[https://cuda-tutorial.readthedocs.io/en/latest/ Link]\]
 
+== Interesting Papers
+- Lossy Compression \[[ Link]\]
+- Soft Error Resilience \[[ Link]\]
+- Program Analysis \[[ Link]\]
 
 == Notes and Tutorials at UIowa
 - Tutorial - A Brief Introduction of LLVM Compiler Structure, IR, and Pass \[[tutorial-01-llvm.html Link]\]\n
@@ -16,8 +20,6 @@ Some good tutorials that help me a lot.
 - Tutorial - LLFI-GPU: LLVM IR Level Fault Injector of Application Source Code of GPU CUDA Kernels \[[tutorial-04-llfigpu.html Link]\]
 - Tutorial - NVBitFI: Nvidia GPU Binary Level Fault Injector \[[tutorial-05-nvbitfi.html Link]\]
    
-
-
 == Notes and Tutorials at HUST
 - [https://hyfshishen.notion.site/a9cd735ae1d64a1e8323266e352c0484 Machine Learning (in Chinese)].
 
