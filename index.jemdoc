@@ -24,8 +24,9 @@ I spent a happy time there :)
 - Natural Language Processing
 
 == Latest News ([news.html More])
+- 11/2022: {{<font color=blue size=+0.5><b>}} \[Talk\] {{</b></font>}}Give a talk at SC'22 conference (held in Dallas).
 - 11/2022: {{<font color=orange size=+0.5><b>}} \[Paper\] {{</b></font>}}One paper about autonomous driving safety is accepted by QRS'22.
-- 10/2022: {{<font color=blue size=+0.5><b>}} \[Service\] {{</b></font>}}Serve as SIGHPC student volunteer of SC'22.
+- 10/2022: {{<font color=blue size=+0.5><b>}} \[Talk\] {{</b></font>}}Give a talk at Argonne National Lab \[[https://www.alcf.anl.gov/events/mitigating-silent-data-corruptions-hpc-applications-across-multiple-program-inputs Link]\], thanks Dr. Di for the invitation.
 - 09/2022: {{<font color=green size=+0.5><b>}} \[Career\] {{</b></font>}}Pass my PhD qualifying exam.
 - 09/2022: {{<font color=purple size=+0.5><b>}} \[Collab\] {{</b></font>}}Our work, D2MON, is promoted by the University of Iowa \[[https://cs.uiowa.edu/news/2022/06/hs_coauthor_chen Link]\].
 - 08/2022: {{<font color=orange size=+0.5><b>}} \[Paper\] {{</b></font>}}One paper about autonomous driving safety is accepted as a workshop paper by ISSRE'22.
@@ -33,8 +34,6 @@ I spent a happy time there :)
 - 07/2022: {{<font color=orange size=+0.5><b>}} \[Paper\] {{</b></font>}}One paper about natural language processing is accepted by SMC'22.
 - 06/2022: {{<font color=purple size=+0.5><b>}} \[Collab\] {{</b></font>}}Our work, MINPSID (SC'22), is promoted by Baidu Security \[[https://mp.weixin.qq.com/s/RIS1XlbVJfj_7t6gnKhSRw Link]\].
 - 06/2022: {{<font color=orange size=+0.5><b>}} \[Paper\] {{</b></font>}}One paper about error resilience is accepted by SC'22. The work was conducted in collaboration with Argonne National Lab and Baidu Security.
-- 02/2022: {{<font color=blue size=+0.5><b>}} \[Service\] {{</b></font>}}Serve as reviewer of IJCNN'22 and SMC'22.
-- 01/2022: {{<font color=blue size=+0.5><b>}} \[Service\] {{</b></font>}}Serve as subreviewer of Middleware'22, HPDC'22, ISSRE'22, LCTES'22, and DSML@DSN'22.
 
 == Selected Publications ([publications.html Full List])
 - *\[SC'22\]* Mitigating Silent Data Corruptions in HPC Applications across Multiple Program Inputs\n
