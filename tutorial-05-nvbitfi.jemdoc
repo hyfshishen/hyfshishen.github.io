@@ -1,2 +1,25 @@
 # jemdoc: menu{MENU}{tutorial-05-nvbitfi.html}
-= MVBitFI
+= NVBitFI
+
+== About NVBitFI
+This tutorial targets to provide a consise instruction on using NVBitFI to perform fault injection experiments.
+NVBitFI is a fault injectior based on *NVBit* framework, which is a *NVIDIA binary instrumentation tool*.
+Why should we use NVBitFI? There are three reasons: 
+- +*No Need to Modify Code*+: Compared with LLFI-GPU, NVBitFI injects faults into SASS code level (i.e. NVIDIA GPU assembly code), so /it does not require program source code/ and /does not affect any instruction scheduling or register allocation/.
+- +*Very Very Fast*+: Compared with simulation-based fault injectors (e.g. GPGPU-SODA and GPGPU-SIM), NVBitFI is very fast (/at GPU speed, billions of insts per sec/) so it is not constrained to small kernels.
+- +*GPU Arch-Agnostic*+: In addition, NVBitFI works for all recent NVIDIA GPU architectures including Kepler, Maxwell, Pascal, Volta, and Ampere.
+
+Detailed descriptions see NVBitFI paper \[[https://ieeexplore.ieee.org/abstract/document/9505068 1]\].
+
+== NVBitFI Installation
+
+== Fault Parameter that NVBitFI Supports
+
+== To Use NVBitFI
+
+== Contributing
+This document is written by [https://hyfshishen.github.io/ Yafan Huang]. 
+Besides, this document has not been iterated yet, so some descriptions may be a bit confused. 
+If you have any questions after reading this document, please feel free to email him at *yafan-huang@uiowa.edu*.
+
+== References

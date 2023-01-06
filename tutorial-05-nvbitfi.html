@@ -5,7 +5,7 @@
 <meta name="generator" content="jemdoc, see http://jemdoc.jaboc.net/" />
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <link rel="stylesheet" href="jemdoc.css" type="text/css" />
-<title>MVBitFI</title>
+<title>NVBitFI</title>
 </head>
 <body>
 <table summary="Table for page layout." id="tlayout">
@@ -32,12 +32,32 @@
 </td>
 <td id="layout-content">
 <div id="toptitle">
-<h1>MVBitFI</h1>
-<div id="subtitle"></div>
+<h1>NVBitFI</h1>
 </div>
+<h2>About NVBitFI</h2>
+<p>This tutorial targets to provide a consise instruction on using NVBitFI to perform fault injection experiments.
+NVBitFI is a fault injectior based on <b>NVBit</b> framework, which is a <b>NVIDIA binary instrumentation tool</b>.
+Why should we use NVBitFI? There are three reasons: </p>
+<ul>
+<li><p><tt><b>No Need to Modify Code</b></tt>: Compared with LLFI-GPU, NVBitFI injects faults into SASS code level (i.e. NVIDIA GPU assembly code), so <i>it does not require program source code</i> and <i>does not affect any instruction scheduling or register allocation</i>.</p>
+</li>
+<li><p><tt><b>Very Very Fast</b></tt>: Compared with simulation-based fault injectors (e.g. GPGPU-SODA and GPGPU-SIM), NVBitFI is very fast (<i>at GPU speed, billions of insts per sec</i>) so it is not constrained to small kernels.</p>
+</li>
+<li><p><tt><b>GPU Arch-Agnostic</b></tt>: In addition, NVBitFI works for all recent NVIDIA GPU architectures including Kepler, Maxwell, Pascal, Volta, and Ampere.</p>
+</li>
+</ul>
+<p>Detailed descriptions see NVBitFI paper [<a href="https://ieeexplore.ieee.org/abstract/document/9505068">1</a>].</p>
+<h2>NVBitFI Installation</h2>
+<h2>Fault Parameter that NVBitFI Supports</h2>
+<h2>To Use NVBitFI</h2>
+<h2>Contributing</h2>
+<p>This document is written by <a href="https://hyfshishen.github.io/">Yafan Huang</a>. 
+Besides, this document has not been iterated yet, so some descriptions may be a bit confused. 
+If you have any questions after reading this document, please feel free to email him at <b>yafan-huang@uiowa.edu</b>.</p>
+<h2>References</h2>
 <div id="footer">
 <div id="footer-text">
-Page generated 2022-11-02 00:10:50 CDT, by <a href="http://jemdoc.jaboc.net/">jemdoc</a>.
+Page generated 2023-01-06 01:53:51 CST, by <a href="http://jemdoc.jaboc.net/">jemdoc</a>.
 </div>
 </div>
 </td>
