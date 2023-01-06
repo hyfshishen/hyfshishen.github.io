@@ -1,6 +1,7 @@
 # jemdoc: menu{MENU}{publications.html}
 = Publications \n
 
+\* indicates corresponding author.
 - SALUS: A Novel Data-Driven Approach for Enabling Real-Time Safety of Autonomous Vehicles\n
 Bohan Zhang, *Yafan Huang*, Guanpeng Li\*\n
 *\[QRS'22\]*: The 22nd IEEE International Conference on Software Quality, Reliability, and Security, 2022\n
@@ -9,11 +10,11 @@ Bohan Zhang, *Yafan Huang*, Guanpeng Li\*\n
 - [ Mitigating Silent Data Corruptions in HPC Applications across Multiple Program Inputs]\n
 *Yafan Huang*, Shengjian Guo, Sheng Di, Guanpeng Li\*, and Franck Cappello\n
 *\[SC'22\]*: International Conference for High Performance Computing, Networking, Storage and Analysis, 2022\n
-\[[publications/SC'22-Paper.pdf Paper]\] \[[ Slides]\] \[[ Video]\] \[[https://github.com/hyfshishen/MINPSID Code]\] \[[https://mp.weixin.qq.com/s/RIS1XlbVJfj_7t6gnKhSRw Media]\]\n{{<font color=red size=+0.5><b>}} Best Paper Finalist, Best Student Paper Finalist {{</b></font>}}
+\[[publications/SC'22-Paper.pdf Paper]\] \[[publications/SC'22-Slides.pdf Slides]\] \[[ Video]\] \[[https://github.com/hyfshishen/MINPSID Code]\] \[[https://cs.uiowa.edu/news/2022/11/phd-student-yafan-huang-et-al-garners-best-paper-nominations-sc22 News]\]\n{{<font color=red size=+0.5><b>}} Best Paper Finalist, Best Student Paper Finalist {{</b></font>}}
 
-- D2MON: Detecting and Mitigating Real-Time Safety Violations in Autonomous Driving Systems\n
+- D2MoN: Detecting and Mitigating Real-Time Safety Violations in Autonomous Driving Systems\n
 Bohan Zhang, *Yafan Huang*, Rachael Chen, Guanpeng Li\*\n
-*\[ISSREW'22\]*: Workshop on Resiliency, Security, Defenses, and Attacks (RSDA) at IEEE International Symposium on Software Reliability Engineering, 2022\n
+*\[ISSRE-W'22\]*: Workshop on Resiliency, Security, Defenses, and Attacks (RSDA) at IEEE International Symposium on Software Reliability Engineering, 2022\n
 \[[publications/ISSREW'22-Paper.pdf Paper]\] \[[ Slides]\] \[[ Video]\]
 
 - [https://dl.acm.org/doi/10.1145/3503221.3508414 Hardening Selective Protection across Multiple Program Inputs for HPC Applications]\n
@@ -25,9 +26,9 @@ Bohan Zhang, *Yafan Huang*, Rachael Chen, Guanpeng Li\*\n
 - [https://doi.org/10.1109/TBDATA.2020.2998770 Dynamic Entity-Based Named Entity Recognition Under Unconstrained Tagging Schemes]\n
 Feng Zhao\*, Xiangyu Gui, *Yafan Huang*, Hai Jin, and Laurence T. Yang\n
 *\[TBD'22\]*: IEEE Transactions on Big Data, 2022\n
-\[[publications/TBD'22-Paper.pdf Paper]\] \[[https://mp.weixin.qq.com/s/i1kI1SzjFLvrth1JKZlwxw Media]\]
+\[[publications/TBD'22-Paper.pdf Paper]\]
 
-- [ MATT: A Multiple-instance Attention Mechanism for Long-tail Music Genre Classification]\n
+- [https://doi.org/10.1109/SMC53654.2022.9945477 MATT: A Multiple-instance Attention Mechanism for Long-tail Music Genre Classification]\n
 Xiaokai Liu, Shihui Song, and *Yafan Huang*\*\n
 *\[SMC'22\]*: IEEE International Conference on Systems, Man and Cybernetics, 2022\n
 \[[publications/SMC'22-Paper.pdf Paper]\] \[[ Slides]\] \[[ Video]\]
