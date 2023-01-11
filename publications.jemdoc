@@ -1,11 +1,12 @@
 # jemdoc: menu{MENU}{publications.html}
 = Publications \n
 
+== During PhD
 \* indicates corresponding author.
 - SALUS: A Novel Data-Driven Approach for Enabling Real-Time Safety of Autonomous Vehicles\n
 Bohan Zhang, *Yafan Huang*, Guanpeng Li\*\n
 *\[QRS'22\]*: The 22nd IEEE International Conference on Software Quality, Reliability, and Security, 2022\n
-\[[ Paper]\] \[[ Slides]\] \[[ Video]\]
+\[[publications/QRS'22-Paper.pdf Paper]\] \[[ Slides]\] \[[ Video]\]
 
 - [ Mitigating Silent Data Corruptions in HPC Applications across Multiple Program Inputs]\n
 *Yafan Huang*, Shengjian Guo, Sheng Di, Guanpeng Li\*, and Franck Cappello\n
@@ -23,6 +24,7 @@ Bohan Zhang, *Yafan Huang*, Rachael Chen, Guanpeng Li\*\n
 \[[publications/PPoPP'22-Paper.pdf Paper]\] \[[publications/PPoPP'22-Slides.pdf Poster]\] \[[https://www.youtube.com/watch?v=zZa8ZIS1DOo Video]\] \[[https://github.com/hyfshishen/MINPSID Code]\]
 
 == Before PhD
+\* indicates corresponding author.
 - [https://doi.org/10.1109/TBDATA.2020.2998770 Dynamic Entity-Based Named Entity Recognition Under Unconstrained Tagging Schemes]\n
 Feng Zhao\*, Xiangyu Gui, *Yafan Huang*, Hai Jin, and Laurence T. Yang\n
 *\[TBD'22\]*: IEEE Transactions on Big Data, 2022\n
@@ -31,7 +33,7 @@ Feng Zhao\*, Xiangyu Gui, *Yafan Huang*, Hai Jin, and Laurence T. Yang\n
 - [https://doi.org/10.1109/SMC53654.2022.9945477 MATT: A Multiple-instance Attention Mechanism for Long-tail Music Genre Classification]\n
 Xiaokai Liu, Shihui Song, and *Yafan Huang*\*\n
 *\[SMC'22\]*: IEEE International Conference on Systems, Man and Cybernetics, 2022\n
-\[[publications/SMC'22-Paper.pdf Paper]\] \[[ Slides]\] \[[ Video]\]
+\[[publications/SMC'22-Paper.pdf Paper]\] \[[publications/SMC'22-Slides.pdf Slides]\]
 
 - [https://doi.org/10.1007/s11280-021-00912-4 Path-enhanced Explainable Recommendation with Knowledge Graphs]\n
 *Yafan Huang*, Feng Zhao\*, Xiangyu Gui, and Hai Jin\n
