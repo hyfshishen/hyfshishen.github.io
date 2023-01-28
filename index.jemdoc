@@ -24,6 +24,7 @@ I spent a happy time there :)
 - Natural Language Processing
 
 == Latest News ([news.html More])
+- 01/2023: {{<font color=orange size=+0.5><b>}} \[Paper\] {{</b></font>}}One paper about lossy compression is accepted by CCGrid'23. The work was conducted in collaboration with Argonne National Lab.
 - 11/2022: {{<font color=blue size=+0.5><b>}} \[Talk\] {{</b></font>}}Give a talk at SC'22 conference (held in Dallas). Also thanks for the promotion by CS@UIOWA \[[https://cs.uiowa.edu/news/2022/11/phd-student-yafan-huang-et-al-garners-best-paper-nominations-sc22 Link]\].
 - 11/2022: {{<font color=orange size=+0.5><b>}} \[Paper\] {{</b></font>}}One paper about autonomous driving safety is accepted by QRS'22.
 - 10/2022: {{<font color=blue size=+0.5><b>}} \[Talk\] {{</b></font>}}Give a talk at Argonne National Lab \[[https://www.alcf.anl.gov/events/mitigating-silent-data-corruptions-hpc-applications-across-multiple-program-inputs Link]\], thanks Dr. Di for the invitation.
@@ -38,6 +39,9 @@ I spent a happy time there :)
 == Selected Publications ([publications.html Full List])
 - *\[SC'22\]* Mitigating Silent Data Corruptions in HPC Applications across Multiple Program Inputs\n
 *Yafan Huang*, Shengjian Guo, Sheng Di, Guanpeng Li\*, and Franck Cappello\n{{<font color=red size=+0.5><b>}} Best Paper Finalist, Best Student Paper Finalist {{</b></font>}}
+
+- *\[CCGrid'23\]* Towards Improving Reverse Time Migration Performance by High-speed Lossy Compression\n
+*Yafan Huang*, Kai Zhao, Sheng Di\*, Guanpeng Li, Maxim Dmitriev, Thierry-Laurent D. Tonellot, and Franck Cappello
 
 - *\[WWWJ'21\]* Path-enhanced Explainable Recommendation with Knowledge Graphs\n
 *Yafan Huang*, Feng Zhao\*, Xiangyu Gui, Hai Jin
