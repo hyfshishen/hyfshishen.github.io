@@ -33,11 +33,6 @@ Bohan Zhang, *Yafan Huang*, Rachael Chen, Guanpeng Li\*\n
 == Before PhD
 \* indicates corresponding author.
 
-- [https://doi.org/10.1007/s11280-021-00912-4 Path-enhanced Explainable Recommendation with Knowledge Graphs]\n
-*Yafan Huang*, Feng Zhao\*, Xiangyu Gui, and Hai Jin\n
-*\[WWWJ'21\]*: World Wide Web, 2021\n
-\[[publications/WWWJ'21-Paper.pdf Paper]\] \[[https://pdfs.semanticscholar.org/adad/9fa021d638f6f4d47ab537adb0bce7efc035.pdf Slides]\]
-
 - [https://doi.org/10.1109/TBDATA.2020.2998770 Dynamic Entity-Based Named Entity Recognition Under Unconstrained Tagging Schemes]\n
 Feng Zhao\*, Xiangyu Gui, *Yafan Huang*, Hai Jin, and Laurence T. Yang\n
 *\[TBD'22\]*: IEEE Transactions on Big Data, 2022\n
@@ -47,6 +42,11 @@ Feng Zhao\*, Xiangyu Gui, *Yafan Huang*, Hai Jin, and Laurence T. Yang\n
 Xiaokai Liu, Shihui Song, and *Yafan Huang*\*\n
 *\[SMC'22\]*: IEEE International Conference on Systems, Man and Cybernetics, 2022\n
 \[[publications/SMC'22-Paper.pdf Paper]\] \[[publications/SMC'22-Slides.pdf Slides]\]
+
+- [https://doi.org/10.1007/s11280-021-00912-4 Path-enhanced Explainable Recommendation with Knowledge Graphs]\n
+*Yafan Huang*, Feng Zhao\*, Xiangyu Gui, and Hai Jin\n
+*\[WWWJ'21\]*: World Wide Web, 2021\n
+\[[publications/WWWJ'21-Paper.pdf Paper]\] \[[https://pdfs.semanticscholar.org/adad/9fa021d638f6f4d47ab537adb0bce7efc035.pdf Slides]\]
 
 - [https://doi.org/10.1109/SMC52423.2021.9659106 Rumor Detection on Social Media with Out-In-Degree Graph Convolutional Networks]\n
 Shihui Song, *Yafan Huang*\*, and Hongwei Lu\n
