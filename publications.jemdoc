@@ -1,8 +1,9 @@
 # jemdoc: menu{MENU}{publications.html}
 = Publications \n
 
+Full list publications \[[https://scholar.google.com/citations?user=r8qwkW8AAAAJ&hl=en Google Scholar]\] \[[https://dblp.uni-trier.de/pid/268/9947.html DBLP]\]. \* indicates corresponding author.
+
 == During PhD
-\* indicates corresponding author.
 
 - [ Towards Improving Reverse Time Migration Performance by High-speed Lossy Compression]\n
 *Yafan Huang*, Kai Zhao, Sheng Di\*, Guanpeng Li, Maxim Dmitriev, Thierry-Laurent D. Tonellot, and Franck Cappello\n
@@ -22,16 +23,11 @@
 - SALUS: A Novel Data-Driven Approach for Enabling Real-Time Safety of Autonomous Vehicles\n
 Bohan Zhang, *Yafan Huang*, Guanpeng Li\*\n
 *\[QRS'22\]*: The 22nd IEEE International Conference on Software Quality, Reliability, and Security, 2022\n
-\[[publications/QRS'22-Paper.pdf Paper]\] \[[publications/QRS'22-Slides.pdf Slides]\]
+\[[publications/QRS'22-Paper.pdf Paper]\] \[[publications/ISSREW'22-Paper.pdf WorkshopVersion]\] \[[publications/QRS'22-Slides.pdf Slides]\]
 
-- D2MoN: Detecting and Mitigating Real-Time Safety Violations in Autonomous Driving Systems\n
-Bohan Zhang, *Yafan Huang*, Rachael Chen, Guanpeng Li\*\n
-*\[ISSRE-W'22\]*: Workshop on Resiliency, Security, Defenses, and Attacks (RSDA) at IEEE International Symposium on Software Reliability Engineering, 2022\n
-\[[publications/ISSREW'22-Paper.pdf Paper]\] \[[publications\ISSREW'22-slides.pdf Slides]\]
 
 
 == Before PhD
-\* indicates corresponding author.
 
 - [https://doi.org/10.1109/TBDATA.2020.2998770 Dynamic Entity-Based Named Entity Recognition Under Unconstrained Tagging Schemes]\n
 Feng Zhao\*, Xiangyu Gui, *Yafan Huang*, Hai Jin, and Laurence T. Yang\n
