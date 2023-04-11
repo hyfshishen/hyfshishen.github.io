@@ -8,9 +8,9 @@ Full list publications \[[https://scholar.google.com/citations?user=r8qwkW8AAAAJ
 - [ Towards Improving Reverse Time Migration Performance by High-speed Lossy Compression]\n
 *Yafan Huang*, Kai Zhao, Sheng Di\*, Guanpeng Li, Maxim Dmitriev, Thierry-Laurent D. Tonellot, and Franck Cappello\n
 *\[CCGrid'23\]*: IEEE/ACM International Symposium on Cluster Computing and the Grid, 2023\n
-\[[publications/CCGrid'23-Paper.pdf Paper]\] \[[ Slides]\] \[[ Code]\]
+\[[publications/CCGrid'23-Paper.pdf Paper]\] \[[ Slides]\] \[[https://github.com/szcompressor/SZx Code]\]
 
-- [ Mitigating Silent Data Corruptions in HPC Applications across Multiple Program Inputs]\n
+- [https://ieeexplore.ieee.org/document/10046091 Mitigating Silent Data Corruptions in HPC Applications across Multiple Program Inputs]\n
 *Yafan Huang*, Shengjian Guo, Sheng Di, Guanpeng Li\*, and Franck Cappello\n
 *\[SC'22\]*: International Conference for High Performance Computing, Networking, Storage and Analysis, 2022\n
 \[[publications/SC'22-Paper.pdf Paper]\] \[[publications/SC'22-Slides.pdf Slides]\] \[[https://youtu.be/wYaKVAmRmx8 Video]\] \[[https://github.com/hyfshishen/MINPSID Code]\] \[[https://cs.uiowa.edu/news/2022/11/phd-student-yafan-huang-et-al-garners-best-paper-nominations-sc22 News]\]\n{{<font color=red size=+0.5><b>}} Best Paper Finalist, Best Student Paper Finalist {{</b></font>}}
@@ -20,7 +20,7 @@ Full list publications \[[https://scholar.google.com/citations?user=r8qwkW8AAAAJ
 *\[PPoPP'22\]*: ACM SIGPLAN Symposium on Principles and Practice of Parallel Programming, 2022, (Poster Session)\n
 \[[publications/PPoPP'22-Paper.pdf Paper]\] \[[publications/PPoPP'22-Slides.pdf Poster]\] \[[https://www.youtube.com/watch?v=zZa8ZIS1DOo Video]\] \[[https://github.com/hyfshishen/MINPSID Code]\]
 
-- SALUS: A Novel Data-Driven Approach for Enabling Real-Time Safety of Autonomous Vehicles\n
+- [https://ieeexplore.ieee.org/document/10062392 SALUS: A Novel Data-Driven Approach for Enabling Real-Time Safety of Autonomous Vehicles]\n
 Bohan Zhang, *Yafan Huang*, Guanpeng Li\*\n
 *\[QRS'22\]*: The 22nd IEEE International Conference on Software Quality, Reliability, and Security, 2022\n
 \[[publications/QRS'22-Paper.pdf Paper]\] \[[publications/ISSREW'22-Paper.pdf RSDA@ISSRE]\] \[[publications/QRS'22-Slides.pdf Slides]\]
