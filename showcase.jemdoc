@@ -15,6 +15,7 @@ In order to get the best overall RTM analysis performance, we develop a novel hy
 Experiments show that HyZ not only significantly improves the overall performance for RTM by 6.29 to 6.60 times but also obtains fairly good qualities for both RTM single snapshots and the final stacking image.
 
 - This work is advised by Dr. Sheng Di at Argonne National Laboratory.
+- This work is collaborated with Saudi Aramco (Saudi Arabian Oil Group).
 - This work is accepted as a conference paper by IEEE/ACM International Symposium on Cluster Computing and the Grid (CCGrid) 2023.
 ~~~
 
