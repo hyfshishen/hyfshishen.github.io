@@ -10,10 +10,10 @@ Full list publications \[[https://scholar.google.com/citations?user=r8qwkW8AAAAJ
 *\[CCGrid'23\]*: IEEE/ACM International Symposium on Cluster Computing and the Grid, 2023\n
 \[[publications/CCGrid'23-Paper.pdf Paper]\] \[[ Slides]\] \[[https://github.com/szcompressor/SZx Code]\]
 
-- [https://ieeexplore.ieee.org/document/10046091 Mitigating Silent Data Corruptions in HPC Applications across Multiple Program Inputs]\n
+- [https://dl.acm.org/doi/abs/10.5555/3571885.3571907 Mitigating Silent Data Corruptions in HPC Applications across Multiple Program Inputs]\n
 *Yafan Huang*, Shengjian Guo, Sheng Di, Guanpeng Li\*, and Franck Cappello\n
 *\[SC'22\]*: International Conference for High Performance Computing, Networking, Storage and Analysis, 2022\n
-\[[publications/SC'22-Paper.pdf Paper]\] \[[publications/SC'22-Slides.pdf Slides]\] \[[https://youtu.be/wYaKVAmRmx8 Video]\] \[[https://github.com/hyfshishen/MINPSID Code]\] \[[https://cs.uiowa.edu/news/2022/11/phd-student-yafan-huang-et-al-garners-best-paper-nominations-sc22 News]\]\n{{<font color=red size=+0.5><b>}} Best Paper Finalist, Best Student Paper Finalist {{</b></font>}}
+\[[publications/SC'22-Paper.pdf Paper]\] \[[publications/SC'22-Slides.pdf Slides]\] \[[https://www.youtube.com/watch?v=rBe-R-P5J8Q Video]\] \[[https://github.com/hyfshishen/MINPSID Code]\] \[[https://cs.uiowa.edu/news/2022/11/phd-student-yafan-huang-et-al-garners-best-paper-nominations-sc22 News]\]\n{{<font color=red size=+0.5><b>}} Best Paper Finalist, Best Student Paper Finalist {{</b></font>}}
 
 - [https://dl.acm.org/doi/10.1145/3503221.3508414 Hardening Selective Protection across Multiple Program Inputs for HPC Applications]\n
 *Yafan Huang*, Shengjian Guo, Sheng Di, Guanpeng Li\*, and Franck Cappello\n
