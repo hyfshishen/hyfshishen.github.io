@@ -8,7 +8,7 @@ Full list publications \[[https://scholar.google.com/citations?user=r8qwkW8AAAAJ
 - [ Towards Improving Reverse Time Migration Performance by High-speed Lossy Compression]\n
 *Yafan Huang*, Kai Zhao, Sheng Di\*, Guanpeng Li, Maxim Dmitriev, Thierry-Laurent D. Tonellot, and Franck Cappello\n
 *\[CCGrid'23\]*: IEEE/ACM International Symposium on Cluster Computing and the Grid, 2023\n
-\[[publications/CCGrid'23-Paper.pdf Paper]\] \[[ Slides]\] \[[https://github.com/szcompressor/SZx Code]\]
+\[[publications/CCGrid'23-Paper.pdf Paper]\] \[[publications/CCGrid'23-Slides.pdf Slides]\] \[[https://github.com/szcompressor/SZx Code]\]
 
 - [https://dl.acm.org/doi/abs/10.5555/3571885.3571907 Mitigating Silent Data Corruptions in HPC Applications across Multiple Program Inputs]\n
 *Yafan Huang*, Shengjian Guo, Sheng Di, Guanpeng Li\*, and Franck Cappello\n
