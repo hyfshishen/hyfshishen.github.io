@@ -1,7 +1,6 @@
 # jemdoc: menu{MENU}{news.html}
 = News
 
-~~~
 == 2022
 - 11/2022: {{<font color=blue size=+0.5><b>}} \[Talk\] {{</b></font>}}Give a talk about MinpSID paper at SC'22 conference (held in Dallas). Also thanks for the promotion by CS@UIOWA \[[https://cs.uiowa.edu/news/2022/11/phd-student-yafan-huang-et-al-garners-best-paper-nominations-sc22 Link]\].
 - 11/2022: {{<font color=orange size=+0.5><b>}} \[Paper\] {{</b></font>}}One paper about autonomous driving safety is accepted by QRS'22.
@@ -14,9 +13,7 @@
 - 06/2022: {{<font color=purple size=+0.5><b>}} \[Collab\] {{</b></font>}}Our work, MINPSID (SC'22), is promoted by Baidu Security \[[https://mp.weixin.qq.com/s/RIS1XlbVJfj_7t6gnKhSRw Link]\].
 - 06/2022: {{<font color=orange size=+0.5><b>}} \[Paper\] {{</b></font>}}One paper about error resilience is accepted by SC'22. The work was conducted in collaboration with Argonne National Lab and Baidu Security.
 - 04/2022: {{<font color=blue size=+0.5><b>}} \[Talk\] {{</b></font>}}Give a talk about Sentinel paper at PPoPP'22 conference (held virtually).
-~~~
 
-~~~
 == 2021
 - 11/2021: {{<font color=orange size=+0.5><b>}} \[Paper\] {{</b></font>}}One paper about error resilience is accepted as a poster paper by PPoPP'22. The work was conducted in collaboration with Argonne National Lab and Baidu Security.
 - 10/2021: {{<font color=green size=+0.5><b>}} \[Career\] {{</b></font>}}Join Argonne National Laboratory (ANL) as a research intern!
@@ -24,16 +21,11 @@
 - 07/2021: {{<font color=orange size=+0.5><b>}} \[Paper\] {{</b></font>}}One paper about natural language processing is accepted by SMC'21.
 - 06/2021: {{<font color=green size=+0.5><b>}} \[Career\] {{</b></font>}}Receive my Master's degree (Computer Science) from Huazhong University of Science and Technology.
 - 06/2021: {{<font color=orange size=+0.5><b>}} \[Paper\] {{</b></font>}}One paper about natural language processing is accepted by World Wide Web Journal. 
-~~~
 
-~~~
 == 2020
 - 02/2020: {{<font color=orange size=+0.5><b>}} \[Paper\] {{</b></font>}}One paper about natural language processing is accepted by IEEE Transactions on Big Data.
-~~~
 
-~~~
 == Past
 - 09/2018: {{<font color=green size=+0.5><b>}} \[Career\] {{</b></font>}}Join Cluster and Grid Computing Lab (CGCL@HUST) as a research assistant.
 - 06/2018: {{<font color=green size=+0.5><b>}} \[Career\] {{</b></font>}}Receive my Bachelor's degree (Software Engineering) from Hunan University.
 - 11/2017: {{<font color=green size=+0.5><b>}} \[Career\] {{</b></font>}}Join Eastman Kodak (Shanghai) as a software intern.
-~~~
