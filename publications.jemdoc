@@ -5,6 +5,16 @@ Full list publications \[[https://scholar.google.com/citations?user=r8qwkW8AAAAJ
 
 == During PhD
 
+- [ CompX: An Ultra-fast GPU Error-bounded Lossy Compression Framework with Optimized End-to-End Performance]\n
+*Yafan Huang*, Sheng Di\*, Xiaodong Yu, Guanpeng Li, and Franck Cappello\n
+*\[SC'23\]*: International Conference for High Performance Computing, Networking, Storage and Analysis, 2023\n
+\[[ Paper]\] \[[ Slides]\] \[[ Code]\]
+
+- [ Demystifying and Mitigating Cross-Layer Deficiencies of Soft Error Protection in Instruction Duplication]\n
+Zhengyang He, *Yafan Huang*, Hui Xu, Dingwen Tao, Guanpeng Li\*\n
+*\[SC'23\]*: International Conference for High Performance Computing, Networking, Storage and Analysis, 2023\n
+\[[ Paper]\] \[[ Slides]\] \[[ Code]\]
+
 - [ Towards Improving Reverse Time Migration Performance by High-speed Lossy Compression]\n
 *Yafan Huang*, Kai Zhao, Sheng Di\*, Guanpeng Li, Maxim Dmitriev, Thierry-Laurent D. Tonellot, and Franck Cappello\n
 *\[CCGrid'23\]*: IEEE/ACM International Symposium on Cluster Computing and the Grid, 2023\n

@@ -24,15 +24,20 @@ I spent a happy time there :)
 - Natural Language Processing
 
 == Latest News ([news.html More])
+- 06/2023: {{<font color=orange size=+0.5><b>}} \[Paper\] {{</b></font>}}One paper about lossy compression is accepted by SC'23. This work was conducted in collaboration with Argonne National Lab.
+- 06/2023: {{<font color=orange size=+0.5><b>}} \[Paper\] {{</b></font>}}One paper about error resilience is accepted by SC'23. This work was conducted in collaboration with Fudan University and Indiana University Bloomington.
 - 05/2023: {{<font color=blue size=+0.5><b>}} \[Talk\] {{</b></font>}}Give a talk about HyZ paper at CCGrid'23 conference (held in Bangalore).
-- 01/2023: {{<font color=orange size=+0.5><b>}} \[Paper\] {{</b></font>}}One paper about lossy compression is accepted by CCGrid'23. The work was conducted in collaboration with Argonne National Lab, University of Alabama at Birmingham, and Saudi Aramco.
+- 01/2023: {{<font color=orange size=+0.5><b>}} \[Paper\] {{</b></font>}}One paper about lossy compression is accepted by CCGrid'23. This work was conducted in collaboration with Argonne National Lab, University of Alabama at Birmingham, and Saudi Aramco.
 
 == Selected Publications ([publications.html Full List])
-- *\[SC'22\]* Mitigating Silent Data Corruptions in HPC Applications across Multiple Program Inputs\n
-*Yafan Huang*, Shengjian Guo, Sheng Di, Guanpeng Li\*, and Franck Cappello\n{{<font color=red size=+0.5><b>}} Best Paper Finalist, Best Student Paper Finalist {{</b></font>}}
+- *\[SC'23\]* CompX: An Ultra-fast GPU Error-bounded Lossy Compression Framework with Optimized End-to-End Performance\n
+*Yafan Huang*, Sheng Di\*, Xiaodong Yu, Guanpeng Li, and Franck Cappello
 
 - *\[CCGrid'23\]* Towards Improving Reverse Time Migration Performance by High-speed Lossy Compression\n
 *Yafan Huang*, Kai Zhao, Sheng Di\*, Guanpeng Li, Maxim Dmitriev, Thierry-Laurent D. Tonellot, and Franck Cappello
+
+- *\[SC'22\]* Mitigating Silent Data Corruptions in HPC Applications across Multiple Program Inputs\n
+*Yafan Huang*, Shengjian Guo, Sheng Di, Guanpeng Li\*, and Franck Cappello\n{{<font color=red size=+0.5><b>}} Best Paper Finalist, Best Student Paper Finalist {{</b></font>}}
 
 - *\[WWWJ'21\]* Path-enhanced Explainable Recommendation with Knowledge Graphs\n
 *Yafan Huang*, Feng Zhao\*, Xiangyu Gui, Hai Jin
