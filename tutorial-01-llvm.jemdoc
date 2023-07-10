@@ -268,7 +268,7 @@ $ clang hello-world.c -o hello-world                                     # Compi
 $ clang -S -emit-llvm hello-world.c -o hello-world.ll                    # Compile C code to readable IR
 ~~~
 ~~~
-{clang++: LLVM C++ compiler}{pyint}
+{clang\+\+: LLVM C\+\+ compiler}{pyint}
 $ clang++ hello-world.cpp -o hello-world                                 # Compile C++ code to executable binary
 $ clang++ -S -emit-llvm hello-world.cpp -o hello-world.ll                # Compile C++ code to readable IR
 ~~~
