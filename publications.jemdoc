@@ -10,7 +10,7 @@ Full list publications can be fount at \[[https://scholar.google.com/citations?u
 *\[SC'23\]*: International Conference for High Performance Computing, Networking, Storage and Analysis, 2023\n
 \[[ Paper]\] \[[ Slides]\] \[[ Video]\] \[[ Code]\]
 
-- [ Towards Improving Reverse Time Migration Performance by High-speed Lossy Compression]\n
+- [https://ieeexplore.ieee.org/document/10171443 Towards Improving Reverse Time Migration Performance by High-speed Lossy Compression]\n
 *Yafan Huang*, Kai Zhao, Sheng Di, Guanpeng Li, Maxim Dmitriev, Thierry-Laurent D. Tonellot, and Franck Cappello\n
 *\[CCGrid'23\]*: IEEE/ACM International Symposium on Cluster Computing and the Grid, 2023\n
 \[[publications/CCGrid'23-Paper.pdf Paper]\] \[[publications/CCGrid'23-Slides.pdf Slides]\] \[[https://drive.google.com/file/d/1_6m9E1HX0qiuQSXDRbyrConIYXiJzjpK/view?usp=share_link Video]\] \[[https://github.com/szcompressor/SZx/tree/rtm Code]\]
