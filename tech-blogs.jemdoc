@@ -1,27 +1,25 @@
 # jemdoc: menu{MENU}{tech-blogs.html}
 = Tech Blogs
 
-== Knowledge Portal
-Some good tutorials that help me a lot. 
-- Mapping High Level Constructs to LLVM IR \[[https://mapping-high-level-constructs-to-llvm-ir.readthedocs.io/en/latest/ Link]\]
-- Using OpenMP with C \[[https://curc.readthedocs.io/en/latest/programming/OpenMP-C.html Link]\]
-- Using MPI with C \[[https://curc.readthedocs.io/en/latest/programming/MPI-C.html Link]\]
-- Simple CUDA Programming \[[https://zhuanlan.zhihu.com/p/34587739 Link]\]
+== Books
+ - Understanding LLVM Transformation Passes \[[ Link]\]\n
+
+== Notes
+- Knowledge - A Brief Introduction of LLVM Compiler Structure, IR, and Pass \[[tutorial-01-llvm.html Link]\]\n
+- Knowledge - My Notes in Machine Learning (in Chinese) \[[https://hyfshishen.notion.site/a9cd735ae1d64a1e8323266e352c0484 Link]\]
+- Tool - LLFI: LLVM IR Level Fault Injector \[[tutorial-02-llfi.html Link]\]\n
+- Tool - LLFI-GPU: LLVM IR Level Fault Injector for NVIDIA GPU CUDA Kernels \[[tutorial-04-llfigpu.html Link]\]
+- Tool - PINFI: Assembly Code Level Fault Injector \[[tutorial-03-pinfi.html Link]\]\n
+- Tool - NVBitFI: Nvidia GPU Binary Level Fault Injector \[[tutorial-05-nvbitfi.html Link]\]
 
 == Interesting Papers
 - Lossy Compression \[[ Link]\]
 - Soft Error Resilience \[[ Link]\]
 - Program Analysis \[[ Link]\]
 
-== Notes and Tutorials at UIowa
-- Tutorial - A Brief Introduction of LLVM Compiler Structure, IR, and Pass \[[tutorial-01-llvm.html Link]\]\n
-- Tutorial - Understanding LLVM Transformation Passes \[[ Link]\]\n
-- Tutorial - LLFI: LLVM IR Level Fault Injector \[[tutorial-02-llfi.html Link]\]\n
-- Tutorial - PINFI: Assembly Code Level Fault Injector \[[tutorial-03-pinfi.html Link]\]\n
-- Tutorial - LLFI-GPU: LLVM IR Level Fault Injector of Application Source Code of GPU CUDA Kernels \[[tutorial-04-llfigpu.html Link]\]
-- Tutorial - NVBitFI: Nvidia GPU Binary Level Fault Injector \[[tutorial-05-nvbitfi.html Link]\]
-   
-== Notes and Tutorials at HUST
-- [https://hyfshishen.notion.site/a9cd735ae1d64a1e8323266e352c0484 Machine Learning (in Chinese)].
-
-- [https://hyfshishen.notion.site/c827e4e09099436bb763c8ce4bd65ab0 General Computer Skills (in Chinese)].
+== Knowledge Portal
+Some good tutorials that help me a lot. 
+- Mapping High Level Constructs to LLVM IR \[[https://mapping-high-level-constructs-to-llvm-ir.readthedocs.io/en/latest/ Link]\]
+- Using OpenMP with C \[[https://curc.readthedocs.io/en/latest/programming/OpenMP-C.html Link]\]
+- Using MPI with C \[[https://curc.readthedocs.io/en/latest/programming/MPI-C.html Link]\]
+- Simple CUDA Programming \[[https://zhuanlan.zhihu.com/p/34587739 Link]\]
