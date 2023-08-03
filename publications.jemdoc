@@ -5,8 +5,18 @@ Full list publications can be fount at \[[https://scholar.google.com/citations?u
 
 == During PhD
 
+- [ Characterizing Runtime Performance Variation in Error Detection by Duplicating Instructions]\n
+*Yafan Huang*\*, Zhengyang He\*, Lingda Li, and Guanpeng Li\n
+*\[ISSRE'23\]*: The 34th IEEE International Symposium on Software Reliability Engineering, 2023\n
+\[[ Paper]\] \[[ Slides]\] \[[ Video]\] \[[ Code]\] (\* indicates equal contribution)
+
 - [ CompX: An Ultra-fast GPU Error-bounded Lossy Compression Framework with Optimized End-to-End Performance]\n
 *Yafan Huang*, Sheng Di, Xiaodong Yu, Guanpeng Li, and Franck Cappello\n
+*\[SC'23\]*: International Conference for High Performance Computing, Networking, Storage and Analysis, 2023\n
+\[[ Paper]\] \[[ Slides]\] \[[ Video]\] \[[ Code]\]
+
+- [ Demystifying and Mitigating Cross-Layer Deficiencies of Soft Error Protection in Instruction Duplication]\n
+Zhengyang He, *Yafan Huang*, Hui Xu, Dingwen Tao, and Guanpeng Li\n
 *\[SC'23\]*: International Conference for High Performance Computing, Networking, Storage and Analysis, 2023\n
 \[[ Paper]\] \[[ Slides]\] \[[ Video]\] \[[ Code]\]
 
