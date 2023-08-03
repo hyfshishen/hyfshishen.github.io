@@ -1,8 +1,8 @@
 # jemdoc: menu{MENU}{tech-blogs.html}
 = Tech Blogs
 
-== Books
- - Understanding LLVM Transformation Passes \[[ Link]\]\n
+== Technical Documentations
+ - Understanding LLVM Transformation Passes \[[https://understanding-llvm-transformation-passes.readthedocs.io/en/latest/ Link]\]\n
 
 == Notes
 - Knowledge - A Brief Introduction of LLVM Compiler Structure, IR, and Pass \[[tutorial-01-llvm.html Link]\]\n

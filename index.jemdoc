@@ -23,14 +23,10 @@ I spent a happy time there :)
 - Lossy Compression
 - Natural Language Processing
 
-== Latest News ([news.html More])
-- 07/2023: {{<font color=orange size=+0.5><b>}} \[Paper\] {{</b></font>}}One paper about error resilience is accepted by ISSRE'23.
-- 06/2023: {{<font color=orange size=+0.5><b>}} \[Paper\] {{</b></font>}}One paper about lossy compression is accepted by SC'23.
-- 06/2023: {{<font color=orange size=+0.5><b>}} \[Paper\] {{</b></font>}}One paper about error resilience is accepted by SC'23.
-- 05/2023: {{<font color=blue size=+0.5><b>}} \[Talk\] {{</b></font>}}Give a talk about HyZ paper at CCGrid'23 conference (held in Bangalore).
-- 01/2023: {{<font color=orange size=+0.5><b>}} \[Paper\] {{</b></font>}}One paper about lossy compression is accepted by CCGrid'23.
-
 == Selected Publications ([publications.html Full List])
+- *\[ISSRE'23\]* Characterizing Runtime Performance Variation in Error Detection by Duplicating Instructions\n
+*Yafan Huang*\*, Zhengyang He\*, Lingda Li, and Guanpeng Li
+
 - *\[SC'23\]* CompX: An Ultra-fast GPU Error-bounded Lossy Compression Framework with Optimized End-to-End Performance\n
 *Yafan Huang*, Sheng Di, Xiaodong Yu, Guanpeng Li, and Franck Cappello
 
