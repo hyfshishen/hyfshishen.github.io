@@ -10,7 +10,7 @@ Full list publications can be fount at \[[https://scholar.google.com/citations?u
 *\[ISSRE'23\]*: The 34th IEEE International Symposium on Software Reliability Engineering, 2023\n
 \[[ Paper]\] \[[ Slides]\] \[[ Video]\] \[[ Code]\] (\* indicates equal contribution)
 
-- [ CompX: An Ultra-fast GPU Error-bounded Lossy Compression Framework with Optimized End-to-End Performance]\n
+- [ cuSZp: An Ultra-fast GPU Error-bounded Lossy Compression Framework with Optimized End-to-End Performance]\n
 *Yafan Huang*, Sheng Di, Xiaodong Yu, Guanpeng Li, and Franck Cappello\n
 *\[SC'23\]*: International Conference for High Performance Computing, Networking, Storage and Analysis, 2023\n
 \[[ Paper]\] \[[ Slides]\] \[[ Video]\] \[[ Code]\]
