@@ -6,10 +6,8 @@
 I am a Ph.D. student in the [https://cs.uiowa.edu/ Computer Science Department] at the [https://uiowa.edu/ University of Iowa].
 I am a member of [https://iowa-hpc.github.io/ IOWA-HPC Group] and advised by [https://homepage.divms.uiowa.edu/~guanpli/ Dr. Guanpeng Li].
 I am also a research intern in [https://www.anl.gov/mcs Argonne National Laboratory] and supervised by [https://www.mcs.anl.gov/~shdi/ Dr. Sheng Di].
-
 Before coming to UIowa, I received my Master's degree (Sep.2018-Jun.2021, major: Computer Science) at [http://english.hust.edu.cn/ Huazhong University of Science and Technology], Wuhan.
 I was a member of [http://grid.hust.edu.cn/ Cluster and Grid Computing Lab (CGCL)] lead by [https://scholar.google.ca/citations?user=o02W0aEAAAAJ&hl=en Dr. Hai Jin] and advised by [http://faculty.hust.edu.cn/zhaofeng1/en/index.htm Dr. Feng Zhao].
-
 I received my Bachelor's degree (Sep.2014-Jun.2018, major: Software Engineering) at [http://www-en.hnu.edu.cn/ Hunan University], Changsha.
 I spent a happy time there :)
 
@@ -21,6 +19,7 @@ I spent a happy time there :)
 == Research Interests
 - Error Resilience
 - Lossy Compression
+- Parallel Computing
 - Natural Language Processing
 
 == Selected Publications ([publications.html Full List])
