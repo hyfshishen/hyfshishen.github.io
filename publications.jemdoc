@@ -5,40 +5,40 @@ Full list publications can be fount at \[[https://scholar.google.com/citations?u
 
 == During PhD
 
-- [ Characterizing Runtime Performance Variation in Error Detection by Duplicating Instructions]\n
+- [https://ieeexplore.ieee.org/document/10301234 Characterizing Runtime Performance Variation in Error Detection by Duplicating Instructions]\n
 *Yafan Huang*\*, Zhengyang He\*, Lingda Li, and Guanpeng Li\n
 *\[ISSRE'23\]*: The 34th IEEE International Symposium on Software Reliability Engineering, 2023\n
-\[[ Paper]\] \[[ Slides]\] \[[ Video]\] \[[https://github.com/hyfshishen/ISSRE23-FUZZYB-CELER Code]\] (\* indicates equal contribution)
+\[[publications/ISSRE23-paper.pdf Paper]\] \[[publications/ISSRE23-slides.pdf Slides]\] \[[https://drive.google.com/file/d/1YLCXaXTSTJO6MaD_A6HiQB1Qp1LExmo6/view?usp=sharing Video]\] \[[https://github.com/hyfshishen/ISSRE23-FUZZYB-CELER Code]\] (\* indicates equal contribution)
 
-- [ cuSZp: An Ultra-fast GPU Error-bounded Lossy Compression Framework with Optimized End-to-End Performance]\n
+- [https://dl.acm.org/doi/10.1145/3581784.3607048 cuSZp: An Ultra-fast GPU Error-bounded Lossy Compression Framework with Optimized End-to-End Performance]\n
 *Yafan Huang*, Sheng Di, Xiaodong Yu, Guanpeng Li, and Franck Cappello\n
 *\[SC'23\]*: International Conference for High Performance Computing, Networking, Storage and Analysis, 2023\n
-\[[ Paper]\] \[[ Slides]\] \[[ Video]\] \[[https://github.com/szcompressor/cuSZp Code]\]
+\[[publications/SC23a-paper.pdf Paper]\] \[[ Slides]\] \[[ Video]\] \[[https://github.com/szcompressor/cuSZp Code]\]
 
-- [ Demystifying and Mitigating Cross-Layer Deficiencies of Soft Error Protection in Instruction Duplication]\n
+- [https://dl.acm.org/doi/10.1145/3581784.3607078 Demystifying and Mitigating Cross-Layer Deficiencies of Soft Error Protection in Instruction Duplication]\n
 Zhengyang He, *Yafan Huang*, Hui Xu, Dingwen Tao, and Guanpeng Li\n
 *\[SC'23\]*: International Conference for High Performance Computing, Networking, Storage and Analysis, 2023\n
-\[[ Paper]\] \[[ Slides]\] \[[ Video]\] \[[https://github.com/hyfshishen/SC23-FLOWERY Code]\]
+\[[publications/SC23b-paper.pdf Paper]\] \[[ Slides]\] \[[ Video]\] \[[https://github.com/hyfshishen/SC23-FLOWERY Code]\]
 
 - [https://ieeexplore.ieee.org/document/10171443 Towards Improving Reverse Time Migration Performance by High-speed Lossy Compression]\n
 *Yafan Huang*, Kai Zhao, Sheng Di, Guanpeng Li, Maxim Dmitriev, Thierry-Laurent D. Tonellot, and Franck Cappello\n
 *\[CCGrid'23\]*: IEEE/ACM International Symposium on Cluster Computing and the Grid, 2023\n
-\[[publications/CCGrid'23-Paper.pdf Paper]\] \[[publications/CCGrid'23-Slides.pdf Slides]\] \[[https://drive.google.com/file/d/1_6m9E1HX0qiuQSXDRbyrConIYXiJzjpK/view?usp=share_link Video]\] \[[https://github.com/szcompressor/SZx/tree/rtm Code]\]
+\[[publications/CCGrid23-paper.pdf Paper]\] \[[publications/CCGrid23-slides.pdf Slides]\] \[[https://drive.google.com/file/d/1_6m9E1HX0qiuQSXDRbyrConIYXiJzjpK/view?usp=share_link Video]\] \[[https://github.com/szcompressor/SZx/tree/rtm Code]\]
 
 - [https://dl.acm.org/doi/abs/10.5555/3571885.3571907 Mitigating Silent Data Corruptions in HPC Applications across Multiple Program Inputs]\n
 *Yafan Huang*, Shengjian Guo, Sheng Di, Guanpeng Li, and Franck Cappello\n
 *\[SC'22\]*: International Conference for High Performance Computing, Networking, Storage and Analysis, 2022\n
-\[[publications/SC'22-Paper.pdf Paper]\] \[[publications/SC'22-Slides.pdf Slides]\] \[[https://drive.google.com/file/d/1VdXJ02VYjzszMpYnKUVfcDljHHJ4a60L/view?usp=share_link Video]\] \[[https://github.com/hyfshishen/MINPSID Code]\] \[[https://cs.uiowa.edu/news/2022/11/phd-student-yafan-huang-et-al-garners-best-paper-nominations-sc22 News]\]\n{{<font color=red size=+0.5><b>}} Best Paper Finalist, Best Student Paper Finalist {{</b></font>}}
+\[[publications/SC22-paper.pdf Paper]\] \[[publications/SC22-slides.pdf Slides]\] \[[https://drive.google.com/file/d/1VdXJ02VYjzszMpYnKUVfcDljHHJ4a60L/view?usp=share_link Video]\] \[[https://github.com/hyfshishen/MINPSID Code]\] \[[https://cs.uiowa.edu/news/2022/11/phd-student-yafan-huang-et-al-garners-best-paper-nominations-sc22 News]\]\n{{<font color=red size=+0.5><b>}} Best Paper Finalist, Best Student Paper Finalist {{</b></font>}}
 
 - [https://dl.acm.org/doi/10.1145/3503221.3508414 Hardening Selective Protection across Multiple Program Inputs for HPC Applications]\n
 *Yafan Huang*, Shengjian Guo, Sheng Di, Guanpeng Li, and Franck Cappello\n
 *\[PPoPP'22\]*: ACM SIGPLAN Symposium on Principles and Practice of Parallel Programming, 2022, (Poster Session)\n
-\[[publications/PPoPP'22-Paper.pdf Paper]\] \[[publications/PPoPP'22-Slides.pdf Poster]\] \[[https://drive.google.com/file/d/1eGqC_DfYku6R-Rh5nUABwVat2VoJs2Yd/view?usp=share_link Video]\] \[[https://github.com/hyfshishen/MINPSID Code]\]
+\[[publications/PPoPP22-paper.pdf Paper]\] \[[publications/PPoPP22-slides.pdf Poster]\] \[[https://drive.google.com/file/d/1eGqC_DfYku6R-Rh5nUABwVat2VoJs2Yd/view?usp=share_link Video]\] \[[https://github.com/hyfshishen/MINPSID Code]\]
 
 - [https://ieeexplore.ieee.org/document/10062392 SALUS: A Novel Data-Driven Approach for Enabling Real-Time Safety of Autonomous Vehicles]\n
 Bohan Zhang, *Yafan Huang*, Guanpeng Li\n
 *\[QRS'22\]*: The 22nd IEEE International Conference on Software Quality, Reliability, and Security, 2022\n
-\[[publications/QRS'22-Paper.pdf Paper]\] \[[publications/ISSREW'22-Paper.pdf RSDA@ISSRE]\] \[[publications/QRS'22-Slides.pdf Slides]\]
+\[[publications/QRS22-paper.pdf Paper]\] \[[publications/ISSREW22-paper.pdf RSDA@ISSRE]\] \[[publications/QRS22-slides.pdf Slides]\]
 
 
 
@@ -47,14 +47,14 @@ Bohan Zhang, *Yafan Huang*, Guanpeng Li\n
 - [https://doi.org/10.1109/TBDATA.2020.2998770 Dynamic Entity-Based Named Entity Recognition Under Unconstrained Tagging Schemes]\n
 Feng Zhao, Xiangyu Gui, *Yafan Huang*, Hai Jin, and Laurence T. Yang\n
 *\[TBD'22\]*: IEEE Transactions on Big Data, 2022\n
-\[[publications/TBD'22-Paper.pdf Paper]\]
+\[[publications/TBD22-paper.pdf Paper]\]
 
 - [https://doi.org/10.1007/s11280-021-00912-4 Path-enhanced Explainable Recommendation with Knowledge Graphs]\n
 *Yafan Huang*, Feng Zhao, Xiangyu Gui, and Hai Jin\n
 *\[WWWJ'21\]*: World Wide Web, 2021\n
-\[[publications/WWWJ'21-Paper.pdf Paper]\] \[[https://pdfs.semanticscholar.org/adad/9fa021d638f6f4d47ab537adb0bce7efc035.pdf Slides]\]
+\[[publications/WWWJ21-paper.pdf Paper]\] \[[https://pdfs.semanticscholar.org/adad/9fa021d638f6f4d47ab537adb0bce7efc035.pdf Slides]\]
 
 - [https://doi.org/10.1109/SMC52423.2021.9659106 Rumor Detection on Social Media with Out-In-Degree Graph Convolutional Networks]\n
 Shihui Song, *Yafan Huang*, and Hongwei Lu\n
 *\[SMC'21\]*: IEEE International Conference on Systems, Man and Cybernetics, 2021\n
-\[[publications/SMC'21-Paper.pdf Paper]\] \[[publications/SMC'21-Slides.pdf Slides]\] \[[https://www.youtube.com/watch?v=L5ykHXY8tYM Video]\]
+\[[publications/SMC21-paper.pdf Paper]\] \[[publications/SMC21-slides.pdf Slides]\] \[[https://www.youtube.com/watch?v=L5ykHXY8tYM Video]\]
