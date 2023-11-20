@@ -3,7 +3,7 @@
 
 Full list publications can be fount at \[[https://scholar.google.com/citations?user=r8qwkW8AAAAJ&hl=en Google Scholar]\] and \[[https://dblp.uni-trier.de/pid/268/9947.html DBLP]\].
 
-== During PhD
+== Conference Papers
 
 - [https://ieeexplore.ieee.org/document/10301234 Characterizing Runtime Performance Variation in Error Detection by Duplicating Instructions]\n
 *Yafan Huang*\*, Zhengyang He\*, Lingda Li, and Guanpeng Li\n
@@ -30,19 +30,18 @@ Zhengyang He, *Yafan Huang*, Hui Xu, Dingwen Tao, and Guanpeng Li\n
 *\[SC'22\]*: International Conference for High Performance Computing, Networking, Storage and Analysis, 2022\n
 \[[publications/SC22-paper.pdf Paper]\] \[[publications/SC22-slides.pdf Slides]\] \[[https://drive.google.com/file/d/1VdXJ02VYjzszMpYnKUVfcDljHHJ4a60L/view?usp=share_link Video]\] \[[https://github.com/hyfshishen/MINPSID Code]\] \[[https://cs.uiowa.edu/news/2022/11/phd-student-yafan-huang-et-al-garners-best-paper-nominations-sc22 News]\]\n{{<font color=red size=+0.5><b>}} Best Paper Finalist, Best Student Paper Finalist {{</b></font>}}
 
-- [https://dl.acm.org/doi/10.1145/3503221.3508414 Hardening Selective Protection across Multiple Program Inputs for HPC Applications]\n
-*Yafan Huang*, Shengjian Guo, Sheng Di, Guanpeng Li, and Franck Cappello\n
-*\[PPoPP'22\]*: ACM SIGPLAN Symposium on Principles and Practice of Parallel Programming, 2022, (Poster Session)\n
-\[[publications/PPoPP22-paper.pdf Paper]\] \[[publications/PPoPP22-slides.pdf Poster]\] \[[https://drive.google.com/file/d/1eGqC_DfYku6R-Rh5nUABwVat2VoJs2Yd/view?usp=share_link Video]\] \[[https://github.com/hyfshishen/MINPSID Code]\]
-
 - [https://ieeexplore.ieee.org/document/10062392 SALUS: A Novel Data-Driven Approach for Enabling Real-Time Safety of Autonomous Vehicles]\n
 Bohan Zhang, *Yafan Huang*, Guanpeng Li\n
 *\[QRS'22\]*: The 22nd IEEE International Conference on Software Quality, Reliability, and Security, 2022\n
-\[[publications/QRS22-paper.pdf Paper]\] \[[publications/ISSREW22-paper.pdf RSDA@ISSRE]\] \[[publications/QRS22-slides.pdf Slides]\]
+\[[publications/QRS22-paper.pdf Paper]\] \[[publications/QRS22-slides.pdf Slides]\]
+
+- [https://doi.org/10.1109/SMC52423.2021.9659106 Rumor Detection on Social Media with Out-In-Degree Graph Convolutional Networks]\n
+Shihui Song, *Yafan Huang*, and Hongwei Lu\n
+*\[SMC'21\]*: IEEE International Conference on Systems, Man and Cybernetics, 2021\n
+\[[publications/SMC21-paper.pdf Paper]\] \[[publications/SMC21-slides.pdf Slides]\] \[[https://www.youtube.com/watch?v=L5ykHXY8tYM Video]\]
 
 
-
-== Before PhD
+== Journal Papers
 
 - [https://doi.org/10.1109/TBDATA.2020.2998770 Dynamic Entity-Based Named Entity Recognition Under Unconstrained Tagging Schemes]\n
 Feng Zhao, Xiangyu Gui, *Yafan Huang*, Hai Jin, and Laurence T. Yang\n
@@ -54,7 +53,15 @@ Feng Zhao, Xiangyu Gui, *Yafan Huang*, Hai Jin, and Laurence T. Yang\n
 *\[WWWJ'21\]*: World Wide Web, 2021\n
 \[[publications/WWWJ21-paper.pdf Paper]\] \[[https://pdfs.semanticscholar.org/adad/9fa021d638f6f4d47ab537adb0bce7efc035.pdf Slides]\]
 
-- [https://doi.org/10.1109/SMC52423.2021.9659106 Rumor Detection on Social Media with Out-In-Degree Graph Convolutional Networks]\n
-Shihui Song, *Yafan Huang*, and Hongwei Lu\n
-*\[SMC'21\]*: IEEE International Conference on Systems, Man and Cybernetics, 2021\n
-\[[publications/SMC21-paper.pdf Paper]\] \[[publications/SMC21-slides.pdf Slides]\] \[[https://www.youtube.com/watch?v=L5ykHXY8tYM Video]\]
+
+== Workshop\/Poster\/Short Papers
+
+- [https://dl.acm.org/doi/10.1145/3503221.3508414 Hardening Selective Protection across Multiple Program Inputs for HPC Applications]\n
+*Yafan Huang*, Shengjian Guo, Sheng Di, Guanpeng Li, and Franck Cappello\n
+*\[Poster@PPoPP'22\]*: ACM SIGPLAN Symposium on Principles and Practice of Parallel Programming, 2022, Poster Session\n
+\[[publications/PPoPP22-paper.pdf Paper]\] \[[publications/PPoPP22-slides.pdf Poster]\] \[[https://drive.google.com/file/d/1eGqC_DfYku6R-Rh5nUABwVat2VoJs2Yd/view?usp=share_link Video]\] \[[https://github.com/hyfshishen/MINPSID Code]\]
+
+- [https://ieeexplore.ieee.org/abstract/document/9985215 D2MoN: Detecting and Mitigating Real-Time Safety Violations in Autonomous Driving Systems]\n
+Bohan Zhang, *Yafan Huang*, Guanpeng Li\n
+*\[RSDA@ISSRE'22\]*: The 7th IEEE International Workshop on Resiliency, Security, Defenses and Attacks, in conjunction with ISSRE'22\n
+\[[publications/ISSREW22-paper.pdf Paper]\] \[[publications/QRS22-slides.pdf Slides]\]
