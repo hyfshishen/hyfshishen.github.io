@@ -13,12 +13,12 @@ Full list publications can be fount at \[[https://scholar.google.com/citations?u
 - [https://dl.acm.org/doi/10.1145/3581784.3607048 cuSZp: An Ultra-fast GPU Error-bounded Lossy Compression Framework with Optimized End-to-End Performance]\n
 *Yafan Huang*, Sheng Di, Xiaodong Yu, Guanpeng Li, and Franck Cappello\n
 *\[SC'23\]*: International Conference for High Performance Computing, Networking, Storage and Analysis, 2023\n
-\[[publications/SC23a-paper.pdf Paper]\] \[[ Slides]\] \[[ Video]\] \[[https://github.com/szcompressor/cuSZp Code]\]
+\[[publications/SC23a-paper.pdf Paper]\] \[[publications/SC23a-slides.pdf Slides]\] \[[ Video]\] \[[https://github.com/szcompressor/cuSZp Code]\]
 
 - [https://dl.acm.org/doi/10.1145/3581784.3607078 Demystifying and Mitigating Cross-Layer Deficiencies of Soft Error Protection in Instruction Duplication]\n
 Zhengyang He, *Yafan Huang*, Hui Xu, Dingwen Tao, and Guanpeng Li\n
 *\[SC'23\]*: International Conference for High Performance Computing, Networking, Storage and Analysis, 2023\n
-\[[publications/SC23b-paper.pdf Paper]\] \[[ Slides]\] \[[ Video]\] \[[https://github.com/hyfshishen/SC23-FLOWERY Code]\]
+\[[publications/SC23b-paper.pdf Paper]\] \[[publications/SC23b-slides.pdf Slides]\] \[[ Video]\] \[[https://github.com/hyfshishen/SC23-FLOWERY Code]\]
 
 - [https://ieeexplore.ieee.org/document/10171443 Towards Improving Reverse Time Migration Performance by High-speed Lossy Compression]\n
 *Yafan Huang*, Kai Zhao, Sheng Di, Guanpeng Li, Maxim Dmitriev, Thierry-Laurent D. Tonellot, and Franck Cappello\n
@@ -63,5 +63,5 @@ Feng Zhao, Xiangyu Gui, *Yafan Huang*, Hai Jin, and Laurence T. Yang\n
 
 - [https://ieeexplore.ieee.org/abstract/document/9985215 D2MoN: Detecting and Mitigating Real-Time Safety Violations in Autonomous Driving Systems]\n
 Bohan Zhang, *Yafan Huang*, Guanpeng Li\n
-*\[RSDA@ISSRE'22\]*: The 7th IEEE International Workshop on Resiliency, Security, Defenses and Attacks, in conjunction with ISSRE'22\n
-\[[publications/ISSREW22-paper.pdf Paper]\] \[[publications/QRS22-slides.pdf Slides]\]
+*\[RSDA@ISSRE'22\]*: International Workshop on Resiliency, Security, Defenses and Attacks, in conjunction with ISSRE'22\n
+\[[publications/ISSREW22-paper.pdf Paper]\] \[[publications/ISSREW22-slides.pdf Slides]\]
