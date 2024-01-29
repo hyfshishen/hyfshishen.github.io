@@ -58,7 +58,7 @@ Feng Zhao, Xiangyu Gui, *Yafan Huang*, Hai Jin, and Laurence T. Yang\n
 
 - [https://dl.acm.org/doi/10.1145/3503221.3508414 Hardening Selective Protection across Multiple Program Inputs for HPC Applications]\n
 *Yafan Huang*, Shengjian Guo, Sheng Di, Guanpeng Li, and Franck Cappello\n
-*\[Poster@PPoPP'22\]*: ACM SIGPLAN Symposium on Principles and Practice of Parallel Programming, 2022, Poster Session\n
+*\[PPoPP'22\]*: ACM SIGPLAN Symposium on Principles and Practice of Parallel Programming, 2022, Poster Session\n
 \[[publications/PPoPP22-paper.pdf Paper]\] \[[publications/PPoPP22-slides.pdf Poster]\] \[[https://drive.google.com/file/d/1eGqC_DfYku6R-Rh5nUABwVat2VoJs2Yd/view?usp=share_link Video]\] \[[https://github.com/hyfshishen/MINPSID Code]\]
 
 - [https://ieeexplore.ieee.org/abstract/document/9985215 D2MoN: Detecting and Mitigating Real-Time Safety Violations in Autonomous Driving Systems]\n
