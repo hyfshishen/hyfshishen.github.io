@@ -5,7 +5,7 @@
 {}{img_left}{image/yafan_huang.jpeg}{alt text}{180px}{185px}
 I am a Ph.D. student in the [https://cs.uiowa.edu/ Computer Science Department] at the [https://uiowa.edu/ University of Iowa].
 I am a member of [https://iowa-hpc.github.io/ IOWA-HPC Group] and advised by [https://homepage.divms.uiowa.edu/~guanpli/ Dr. Guanpeng Li].
-I am also a research intern in [https://www.anl.gov/mcs Argonne National Laboratory] and supervised by [https://www.mcs.anl.gov/~shdi/ Dr. Sheng Di].
+I am also a research intern in [https://www.anl.gov/mcs Argonne National Laboratory] and supervised by [https://disheng222.github.io/ Dr. Sheng Di].
 Before coming to UIowa, I received my Master's degree (Sep.2018-Jun.2021, major: Computer Science) at [http://english.hust.edu.cn/ Huazhong University of Science and Technology], Wuhan.
 I was a member of [http://grid.hust.edu.cn/ Cluster and Grid Computing Lab (CGCL)] lead by [https://scholar.google.ca/citations?user=o02W0aEAAAAJ&hl=en Dr. Hai Jin] and advised by [http://faculty.hust.edu.cn/zhaofeng1/en/index.htm Dr. Feng Zhao].
 I received my Bachelor's degree (Sep.2014-Jun.2018, major: Software Engineering) at [http://www-en.hnu.edu.cn/ Hunan University], Changsha.
@@ -22,7 +22,7 @@ I spent a happy time there :)
 - Parallel Computing
 - Natural Language Processing
 
-== Selected Publications ([publications.html Full List])
+== Selected Publications ([publications.html More])
 - *\[ISSRE'23\]* Characterizing Runtime Performance Variation in Error Detection by Duplicating Instructions\n
 *Yafan Huang*\*, Zhengyang He\*, Lingda Li, and Guanpeng Li
 
@@ -37,18 +37,4 @@ I spent a happy time there :)
 
 - *\[WWWJ'21\]* Path-enhanced Explainable Recommendation with Knowledge Graphs\n
 *Yafan Huang*, Feng Zhao, Xiangyu Gui, Hai Jin
-
-
-{{
-<div class="center" id="member-container">
-    <div id="member">
-        <img src="image/icons/anl.png" width="260" height="130">
-        <img src="image/icons/uiowa2.png" width="150" height="150">
-        <img src="image/icons/hust.webp" width="200" height="150">
-        <img src="image/icons/hnu.jpeg" width="150" height="150">
-        <a href='https://clustrmaps.com/site/1bjkn'  title='Visit tracker'><img src='//clustrmaps.com/map_v2.png?cl=f7c000&w=284&t=t&d=jhde0r9eqi9rr3GM-4w0eBmV3s7ayjluV-on6kfPItg&co=000000&ct=ffffff'/></a>
-    </div>
-</div>
-}}
-
 
