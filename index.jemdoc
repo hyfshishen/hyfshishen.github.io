@@ -11,16 +11,12 @@ I was a member of [http://grid.hust.edu.cn/ Cluster and Grid Computing Lab (CGCL
 I received my Bachelor's degree (Sep.2014-Jun.2018, major: Software Engineering) at [http://www-en.hnu.edu.cn/ Hunan University], Changsha.
 I spent a happy time there :)
 
+My research mostly lies in Error Resilience, Lossy Compression, and Parallel Computing. I am also interesrted in Natual Language Processing.
+
 - Email: yafan-huang /at/ uiowa /dot/ edu
 - Office: Iowa Advanced Technology Laboratories (IATL) 376, Iowa City, IA
 - [file/yafan_cv.pdf Curriculem Vitae]
 ~~~
-
-== Research Interests
-- Error Resilience
-- Lossy Compression
-- Parallel Computing
-- Natural Language Processing
 
 == Selected Publications ([publications.html More])
 - *\[ISSRE'23\]* Characterizing Runtime Performance Variation in Error Detection by Duplicating Instructions\n

@@ -7,7 +7,7 @@ Full list publications can be fount at \[[https://scholar.google.com/citations?u
 - [ CereSZ: Enabling and Scaling Error-bounded Lossy Compression on Cerebras CS-2]\n
 Shihui Song, *Yafan Huang*, Peng Jiang, Xiaodong Yu, Weijian Zheng, Sheng Di, Qinglei Cao, Yunhe Feng, Zhen Xie, and Franck Cappello\n
 *\[HPDC'24\]*: The ACM International Symposium on High-Performance Parallel and Distributed Computing, 2024\n
-\[[ Paper]\] \[[ Slides]\] \[[Video]\] \[[Code]\]
+\[[publications/HPDC24-paper.pdf Paper]\] \[[ Slides]\] \[[Video]\] \[[Code]\]
 
 - [https://ieeexplore.ieee.org/document/10301234 Characterizing Runtime Performance Variation in Error Detection by Duplicating Instructions]\n
 *Yafan Huang*\*, Zhengyang He\*, Lingda Li, and Guanpeng Li\n
@@ -50,7 +50,7 @@ Shihui Song, *Yafan Huang*, and Hongwei Lu\n
 - [https://doi.org/10.1109/TBDATA.2020.2998770 Dynamic Entity-Based Named Entity Recognition Under Unconstrained Tagging Schemes]\n
 Feng Zhao, Xiangyu Gui, *Yafan Huang*, Hai Jin, and Laurence T. Yang\n
 *\[TBD'22\]*: IEEE Transactions on Big Data, 2022\n
-\[[publications/TBD22-paper.pdf Paper]\]
+\[[https://doi.org/10.1109/TBDATA.2020.2998770 Paper]\]
 
 - [https://doi.org/10.1007/s11280-021-00912-4 Path-enhanced Explainable Recommendation with Knowledge Graphs]\n
 *Yafan Huang*, Feng Zhao, Xiangyu Gui, and Hai Jin\n
