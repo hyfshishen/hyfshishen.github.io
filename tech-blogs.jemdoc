@@ -12,11 +12,6 @@
 - Tool - PINFI: Assembly Code Level Fault Injector \[[tutorial-03-pinfi.html Link]\]\n
 - Tool - NVBitFI: Nvidia GPU Binary Level Fault Injector \[[tutorial-05-nvbitfi.html Link]\]
 
-== Interesting Papers
-- Lossy Compression \[[ Link]\]
-- Soft Error Resilience \[[ Link]\]
-- Program Analysis \[[ Link]\]
-
 == Knowledge Portal
 Some good tutorials that help me a lot. 
 - Mapping High Level Constructs to LLVM IR \[[https://mapping-high-level-constructs-to-llvm-ir.readthedocs.io/en/latest/ Link]\]

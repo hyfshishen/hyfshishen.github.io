@@ -7,7 +7,7 @@ Full list publications can be fount at \[[https://scholar.google.com/citations?u
 - [https://dl.acm.org/doi/10.1145/3625549.3658691 CereSZ: Enabling and Scaling Error-bounded Lossy Compression on Cerebras CS-2]\n
 Shihui Song, *Yafan Huang*, Peng Jiang, Xiaodong Yu, Weijian Zheng, Sheng Di, Qinglei Cao, Yunhe Feng, Zhen Xie, and Franck Cappello\n
 *\[HPDC'24\]*: The ACM International Symposium on High-Performance Parallel and Distributed Computing, 2024\n
-\[[publications/HPDC24-paper.pdf Paper]\] \[[ Slides]\] \[[Video]\]
+\[[publications/HPDC24-paper.pdf Paper]\] \[[publications/HPDC24-slides.pdf Slides]\]
 
 - [https://ieeexplore.ieee.org/document/10301234 Characterizing Runtime Performance Variation in Error Detection by Duplicating Instructions]\n
 *Yafan Huang*\*, Zhengyang He\*, Lingda Li, and Guanpeng Li\n
@@ -22,7 +22,7 @@ Shihui Song, *Yafan Huang*, Peng Jiang, Xiaodong Yu, Weijian Zheng, Sheng Di, Qi
 - [https://dl.acm.org/doi/10.1145/3581784.3607078 Demystifying and Mitigating Cross-Layer Deficiencies of Soft Error Protection in Instruction Duplication]\n
 Zhengyang He, *Yafan Huang*, Hui Xu, Dingwen Tao, and Guanpeng Li\n
 *\[SC'23\]*: International Conference for High Performance Computing, Networking, Storage and Analysis, 2023\n
-\[[publications/SC23b-paper.pdf Paper]\] \[[publications/SC23b-slides.pdf Slides]\] \[[ Video]\] \[[https://github.com/hyfshishen/SC23-FLOWERY Code]\]
+\[[publications/SC23b-paper.pdf Paper]\] \[[publications/SC23b-slides.pdf Slides]\] \[[https://github.com/hyfshishen/SC23-FLOWERY Code]\]
 
 - [https://ieeexplore.ieee.org/document/10171443 Towards Improving Reverse Time Migration Performance by High-speed Lossy Compression]\n
 *Yafan Huang*, Kai Zhao, Sheng Di, Guanpeng Li, Maxim Dmitriev, Thierry-Laurent D. Tonellot, and Franck Cappello\n
