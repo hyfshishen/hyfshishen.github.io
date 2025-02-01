@@ -1,0 +1,8 @@
+@inproceedings{huang2024cuszp2,
+  title={cuSZp2: A GPU Lossy Compressor with Extreme Throughput and Optimized Compression Ratio},
+  author={Huang, Yafan and Di, Sheng and Li, Guanpeng and Cappello, Franck},
+  booktitle={SC24: International Conference for High Performance Computing, Networking, Storage and Analysis},
+  pages={1--18},
+  year={2024},
+  organization={IEEE}
+}

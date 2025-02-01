@@ -1,0 +1,489 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <title>Yafan Huang | University of Iowa</title>
+
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="The Minimal Light is a simple and elegant jekyll theme for academic personal homepage.">
+    
+    <meta name="keywords" content="minimal light">
+    
+    
+    <link rel="canonical" href="https://minimal-light-theme.yliu.me/"/>
+    
+
+    <link rel="icon" media="(prefers-color-scheme:dark)" href="./assets/img/favicon-yafan.png" type="image/png" />
+    <link rel="icon" media="(prefers-color-scheme:light)" href="./assets/img/favicon-yafan.png" type="image/png" />
+    <script src="../../assets/js/favicon-switcher.js" type="application/javascript"></script>
+
+    <link rel=stylesheet href=https://cdnjs.cloudflare.com/ajax/libs/academicons/1.8.6/css/academicons.min.css integrity="sha256-uFVgMKfistnJAfoCUQigIl+JfUaP47GrRKjf6CTPVmw=" crossorigin=anonymous>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    
+    <!-- Code template -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/styles/github-dark.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/highlight.min.js"></script>
+    <script>hljs.highlightAll();</script>
+
+    
+    <link rel="stylesheet" href="../../assets/css/font.css">
+    
+    
+    <link rel="stylesheet" href="../../assets/css/style.css">
+    <link rel="stylesheet" href="../../assets/css/publications.css">
+    
+
+  </head>
+  <body>
+
+    <nav class="top-nav">
+      <ul>
+        
+          <li>
+            <a href="/">Home</a>
+          </li>
+        
+          <li>
+            <a href="/publication/">Publications</a>
+          </li>
+        
+          <li>
+            <a href="/experiences/">Experiences</a>
+          </li>
+        
+          <li>
+            <a href="/awards/">Awards</a>
+          </li>
+        
+          <li>
+            <a href="/services/">Services</a>
+          </li>
+        
+          <li>
+            <a href="/blog/">Blog</a>
+          </li>
+        
+      </ul>
+    </nav>
+
+    <div class="wrapper">
+      <header>
+        
+        
+        <a class="image avatar"><img src="../../assets/img/avatar.png" alt="avatar_subsubpage" /></a>
+        
+
+        <h1>Yafan Huang</h1>
+
+        
+        <position style="font-size:1.10rem;">Ph.D. Candidate</position>
+        <br>
+        
+        
+        <a href="" rel="noopener"><autocolor>University of Iowa</autocolor></a>
+        <br>
+        
+        
+        <email>yafan-huang@uiowa.edu</email>
+        
+
+        <br>
+        <br>
+        <div class="social-icons">
+        
+        <a style="margin: 0 5px 0 0" href="https://scholar.google.com/citations?user=r8qwkW8AAAAJ&hl=en">
+          <!-- <i class="ai ai-google-scholar" style="font-size:1.2rem"></i> -->
+          <img src="../../assets/img/google-scholar-icon.png" alt="google-scholar" style="width: 18px; height: 18px;">
+        </a>  
+        
+
+        
+        <a style="margin: 0 5px 0 0" href="https://dblp.org/pid/268/9947.html">
+          <img src="../../assets/img/dblp-icon.webp" alt="DBLP" style="width: 18px; height: 18px;">
+        </a>
+        
+
+        
+
+        
+
+        
+        <a style="margin: 0 5px 0 0" href="https://github.com/hyfshishen">
+          <!-- <i class="fab fa-github"></i> -->
+          <img src="../../assets/img/github-icon.png" alt="github" style="width: 18px; height: 18px;">
+        </a>
+        
+
+        
+        <a style="margin: 0 5px 0 0" href="https://www.linkedin.com/in/yafan-huang-2471181a0/">
+          <!-- <i class="fab fa-linkedin"></i> -->
+          <img src="../../assets/img/linkedin-icon.png" alt="linkedin" style="width: 18px; height: 18px;">
+        </a>
+        
+
+        
+        </div>
+        <br>
+
+      </header>
+      <section>
+
+      
+
+      <h1 id="a-brief-introduction-to-llvm">A Brief Introduction to LLVM</h1>
+
+<h2 id="table-of-contents">Table of Contents</h2>
+<ul>
+  <li><a href="#about">About</a></li>
+  <li><a href="#llvm-installation">LLVM Installation</a></li>
+  <li><a href="#llvm">LLVM</a></li>
+  <li><a href="#llvm-ir">LLVM IR</a></li>
+  <li><a href="#how-to-read-llvm-ir">How to Read LLVM IR?</a></li>
+  <li><a href="#llvm-pass">LLVM Pass</a></li>
+  <li><a href="#some-useful-llvm-tools">Some Useful LLVM Tools</a></li>
+  <li><a href="#references">References</a></li>
+</ul>
+
+<h2 id="about">About</h2>
+
+<p>This tutorial provides a very basic and brief introduction about LLVM which is used in UIowa:CS:4980, Topics in Computer Science II: Dependable System Design instructed by Dr. Guanpeng Li.
+Specifically, this tutorial targets to provide concise descriptions of following contents:</p>
+
+<ul>
+  <li>How to Install LLVM?</li>
+  <li>What is LLVM?</li>
+  <li>What is LLVM IR? How to read LLVM IR?</li>
+  <li>What is LLVM Pass? How to write and compile an LLVM Pass?</li>
+  <li>Some useful LLVM Tools.</li>
+</ul>
+
+<h2 id="llvm-installation">LLVM Installation</h2>
+
+<p>Following commands show how to install LLVM 3.4 on a Ubuntu 16.04 machine.</p>
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span><span class="c"># Note that LLVM source code of other versions can be found at https://github.com/llvm/llvm-project.</span>
+<span class="nv">$ </span>git clone https://github.com/zjuacompiler/llvm.git          <span class="c"># Download LLVM 3.4 source code</span>
+<span class="nv">$ </span><span class="nb">cd </span>llvm                                                     <span class="c"># Change directory to uncompressed folder</span>
+<span class="nv">$ </span>./configure <span class="nt">--enable-optimized</span> <span class="nt">--disable-assertions</span> <span class="nt">--enable-targets</span><span class="o">=</span>host <span class="nt">--with-python</span><span class="o">=</span><span class="s2">"/usr/bin/python2"</span>
+<span class="nv">$ </span>                                                            <span class="c"># Configure dependencies before you build LLVM</span>
+<span class="nv">$ </span><span class="nb">mkdir </span>build <span class="o">&amp;&amp;</span> <span class="nb">cd </span>build                                     <span class="c"># "build" folder is for release</span>
+<span class="nv">$ </span>cmake ..                                                    <span class="c"># Prepare cmake file, ".." indicates the path to source code</span>
+<span class="nv">$ </span>make <span class="nt">-j</span><span class="si">$(</span><span class="nb">nproc</span><span class="si">)</span>                                             <span class="c"># Make install LLVM with multi-threads</span>
+</code></pre></div></div>
+
+<p>Check if installation is successful.</p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ cd $YOUR-LOCAL-PATH$/llvm/build/bin/ &amp;&amp; ls                  # list all compiled LLVM executable binaries
+bugpoint   FileUpdate  lli-child-target  llvm-bcanalyzer  llvm-c-test  llvm-dwarfdump  llvm-lit  llvm-mcmarkup  llvm-ranlib   llvm-size        llvm-tblgen  obj2yaml  yaml-bench
+count      llc         llvm-ar           llvm-config      llvm-diff    llvm-extract    llvm-lto  llvm-nm        llvm-readobj  llvm-stress      macho-dump   opt
+FileCheck  lli         llvm-as           llvm-cov         llvm-dis     llvm-link       llvm-mc   llvm-objdump   llvm-rtdyld   llvm-symbolizer  not          yaml2obj
+$ # It indicates LLVM-3.4 is successfully installed to your machine :)
+</code></pre></div></div>
+
+<h2 id="llvm">LLVM</h2>
+<div>
+    <img src="../../assets/img/tutorials/llvm-structure.png" alt="LLVM Structure" style="width: 500px; height: auto" />
+</div>
+
+<p>Low-Level Virtual Machine (LLVM) actually is a compiler architecture [1], shown as above picture. The main use of LLVM is that it can be the Optimizer (language-agnostic Optimization) and Backend (Machine Code Generation) of multiple programming languages.</p>
+
+<p>Compared with the traditional compiler (Frontend, Optimizer, Backend), the design of LLVM is very flexible for different programming languages. Supporting a new language only needs a new frontend. Supporting a new hardware device only needs a new backend. LLVM Optimizer is a general module — it provides a common standard and its optimization is based on well-structured LLVM IR (Intermediate Representation).</p>
+
+<p>Besides, LLVM contains a lot of sub-projects including Clang (a lightweight compiler frontend for C, C, Objective-C, and Objective-C. You may frequently see it in your MacBooks)</p>
+
+<h2 id="llvm-ir">LLVM IR</h2>
+<div>
+    <img src="../../assets/img/tutorials/llvm-IR.jpeg" alt="LLVM Structure" style="width: 550px; height: auto" />
+</div>
+
+<p>LLVM IR is a low-level intermediate representation used by LLVM compiler framework [2], shown as above picture.
+LLVM-based compilers here can be splited into three components, front-end, middle-end, and back-end; each with a specific task that takes IR as input and/or produces IR as output.</p>
+
+<ul>
+  <li><em>Front-end</em>: compiles source language to IR.</li>
+  <li><em>Middle-end</em>: optimizes IR, this step is very powerful and you can do a lot of interesting code transformations and program analysis here.</li>
+  <li><em>Back-end</em>: compiles IR to machine code.</li>
+</ul>
+
+<p>You can think of LLVM IR as platform-independent assembly language with an infinite number of function local registers.
+However, LLVM IR is not machine code, but sort of the step just above assembly. 
+So some things look more like a high-level language (like functions and the strong typing). 
+Other looks more like low-level assembly (e.g. branching, basic-blocks, instructions).</p>
+
+<h2 id="how-to-read-llvm-ir">How to Read LLVM IR?</h2>
+
+<div>
+    <img src="../../assets/img/tutorials/cfg.jpeg" alt="LLVM Structure" style="width: 450px; height: auto" />
+</div>
+
+<p>LLVM IR has both human-readable <code class="language-plaintext highlighter-rouge">.ll</code> and binary versions (<code class="language-plaintext highlighter-rouge">.bc</code>, bitcode format).
+These two formats can be transformed easily, and we mainly focus on <code class="language-plaintext highlighter-rouge">.ll</code> here.</p>
+
+<p>LLVM IR has three major components, function, basic-block (BB), and instruction.</p>
+<ul>
+  <li><em>Function</em>: One LLVM IR has several functions, such as one function shown in above picture.
+Note that the function name is LLVM-level and can not be mapped with source code (except main function).</li>
+  <li><em>Basic-Block</em>: One function contains several basic-blocks, and each node in the above picture represents a basic-block. 
+Basic-block is also the minimum unit to record the dynamic footprint of one program execution.</li>
+  <li><em>Instruction</em>: One basic-block contains several instructions. Every instruction has its own instruction type and variables.</li>
+</ul>
+
+<p>Here is a toy example of compiling C code to LLVM IR.
+This IR has only one <code class="language-plaintext highlighter-rouge">main()</code> function.
+This function has only one basic-block.
+This basic-block has four instructions, of which types are <code class="language-plaintext highlighter-rouge">load</code>, <code class="language-plaintext highlighter-rouge">mul</code>, <code class="language-plaintext highlighter-rouge">store</code>, and <code class="language-plaintext highlighter-rouge">ret</code>.</p>
+
+<p>Original C code.</p>
+<pre><code class="language-C">int variable = 21;
+
+int main()
+{
+    variable = variable * 2;
+    return variable;
+}
+</code></pre>
+
+<p>LLVM IR (readable format).</p>
+<div class="language-llvm highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="vg">@variable</span> <span class="p">=</span> <span class="k">global</span> <span class="kt">i32</span> <span class="m">21</span>          <span class="c1">; define global variable, in LLVM IR global variable starts with '@'</span>
+
+<span class="k">define</span> <span class="kt">i32</span> <span class="vg">@main</span><span class="p">()</span> <span class="p">{</span>
+    <span class="nv">%1</span> <span class="p">=</span> <span class="k">load</span> <span class="kt">i32</span><span class="p">,</span> <span class="kt">i32</span><span class="p">*</span> <span class="vg">@variable</span>  <span class="c1">; load the global variable, in LLVM IR local variable starts with '%' </span>
+    <span class="nv">%2</span> <span class="p">=</span> <span class="k">mul</span> <span class="kt">i32</span> <span class="nv">%1</span><span class="p">,</span> <span class="m">2</span>
+    <span class="k">store</span> <span class="kt">i32</span> <span class="nv">%2</span><span class="p">,</span> <span class="kt">i32</span><span class="p">*</span> <span class="vg">@variable</span>   <span class="c1">; store instruction to write to global variable</span>
+    <span class="k">ret</span> <span class="kt">i32</span> <span class="nv">%2</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<p>To know more about LLVM IR grammar, please see this document [3].</p>
+
+<h2 id="llvm-pass">LLVM Pass</h2>
+
+<h3 id="what-is-llvm-pass">What is LLVM Pass?</h3>
+<p>LLVM Pass framework is an important component of LLVM infrastructure, and it performs <em>code transformations and optimizations</em> at LLVM IR level. 
+You may have already noticed that in the pictures above: LLVM Passes can be executed via the <code class="language-plaintext highlighter-rouge">optimizer</code>.
+In fact, you can conduct any transformations on a given LLVM IR code via LLVM Passes, even converting one IR (e.g. bubble sort) to a totally another one (e.g. quick sort) as long as you can implement the functions.
+As a result, LLVM Pass is a very efficient tool for analyzing the program code.</p>
+
+<h3 id="how-to-write-and-compile-an-llvm-pass">How to write and compile an LLVM Pass?</h3>
+<p>Let’s start writing an LLVM Pass by conducting some simple program analysis: calculating the number of <code class="language-plaintext highlighter-rouge">Call</code> type instructions in program IR.</p>
+
+<p><strong>STEP-1: Create LLVM Pass Folder</strong></p>
+
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span><span class="c"># We assume that you have already installed LLVM 3.4 via above guidance.</span>
+<span class="nv">$ </span><span class="nb">cd</span> <span class="nv">$YOUR</span><span class="nt">-LOCAL-PATH</span><span class="nv">$/</span>llvm/lib/Transforms                               <span class="c"># change directory to the main folder that contains the LLVM Passes</span>
+<span class="nv">$ </span><span class="nb">ls</span>                                                                     <span class="c"># list files and folders in current path</span>
+CMakeLists.txt  InstCombine      IPO            Makefile  Scalar  Vectorize
+Hello           Instrumentation  LLVMBuild.txt  ObjCARC   Utils
+<span class="nv">$ </span><span class="c"># Except file CMakeList.txt, LLVMBuild.txt, and Makefile. Each of the rest folders denotes an individual LLVM Pass.</span>
+<span class="nv">$ </span><span class="nb">mkdir </span>CallCount                                                        <span class="c"># create folder for our target LLVM Pass</span>
+</code></pre></div></div>
+
+<p>Next, add path of folder CallCount into current CMakeLists.txt, so that it can be recognized during the LLVM compilation. 
+The content of modified CMakeList.txt can be shown as below:</p>
+
+<div class="language-cmake highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">add_subdirectory</span><span class="p">(</span>Utils<span class="p">)</span>
+<span class="nb">add_subdirectory</span><span class="p">(</span>Instrumentation<span class="p">)</span>
+<span class="nb">add_subdirectory</span><span class="p">(</span>InstCombine<span class="p">)</span>
+<span class="nb">add_subdirectory</span><span class="p">(</span>Scalar<span class="p">)</span>
+<span class="nb">add_subdirectory</span><span class="p">(</span>IPO<span class="p">)</span>
+<span class="nb">add_subdirectory</span><span class="p">(</span>Vectorize<span class="p">)</span>
+<span class="nb">add_subdirectory</span><span class="p">(</span>Hello<span class="p">)</span>
+<span class="nb">add_subdirectory</span><span class="p">(</span>ObjCARC<span class="p">)</span>
+<span class="nb">add_subdirectory</span><span class="p">(</span>CallCount<span class="p">)</span> 
+</code></pre></div></div>
+
+<p><strong>STEP-2: Write LLVM Pass</strong></p>
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span><span class="nb">cd </span>CallCount                                                           <span class="c"># change directory to target folder</span>
+<span class="nv">$ </span><span class="nb">touch </span>Hello.cpp                                                        <span class="c"># create C++ source file of target LLVM Pass</span>
+</code></pre></div></div>
+
+<p>Hello.cpp defines the logic of our pass, which is calculating the number of <code class="language-plaintext highlighter-rouge">Call</code> type instructions in program IR.
+The content of Hello.cpp can be shown as below:</p>
+
+<pre><code class="language-C++">#include "llvm/ADT/Statistic.h"
+#include "llvm/IR/Function.h"
+#include "llvm/Pass.h"
+#include "llvm/Support/raw_ostream.h"
+#include "llvm/IR/Module.h"
+#include "llvm/IR/Type.h"
+#include "llvm/IR/Instructions.h"
+#include "llvm/IR/Instruction.h"
+#include "llvm/IR/IRBuilder.h"
+#include "llvm/Support/InstIterator.h"
+
+#include &lt;iostream&gt;
+#include &lt;map&gt;
+#include &lt;list&gt;
+#include &lt;vector&gt;
+#include &lt;set&gt;
+
+using namespace llvm;
+
+namespace{
+
+    /****** analysis pass ********/
+    struct CallCount : public ModulePass{                                                       // This pass is developed based on ModulePass.
+                                                                                                // There are also some other LLVM classes, such as:
+                                                                                                //     CallGraphSCCPass, FunctionPass, LoopPass, and RegionPass.
+        static char ID;
+        int call_count = 0;                                                                     // Global variable that records the number of call type instructions.
+
+        CallCount() : ModulePass(ID) {}
+
+        virtual bool runOnModule(Module &amp;M){                                                    // For each program IR, load it as a Module. 
+                                                                                                // Besides, you can regard this as the Main Function of this Pass.
+            for(Module::iterator F = M.begin(), E = M.end(); F!= E; ++F){                       // Iterate each function in this Module.
+                for(Function::iterator BB = F-&gt;begin(), E = F-&gt;end(); BB != E; ++BB){           // Iterate each basic-block in current function.
+                    CallCount::runOnBasicBlock(BB, M.getContext());                             // Iterate each instructions in current basic-block.
+                }
+            }
+            return false;
+        }
+
+        virtual bool runOnBasicBlock(Function::iterator &amp;BB, LLVMContext &amp;context){             // The function that is used above, input is current basic-block.
+            for(BasicBlock::iterator BI = BB-&gt;begin(), BE = BB-&gt;end(); BI != BE; ++BI){         // Interate each instructions in current basic-block.
+                int opcode = BI-&gt;getOpcode();                                                   // Get opcode of current instruction:
+                                                                                                //     Opcode is the unique number for each instruction type.
+                                                                                                //     More details can be found at $YOUR-LOCAL-PATH$/llvm/include/llvm/IR/instruction.def
+                if(opcode == 49){                                                               // Record if the type of current instruction is "call".
+                    call_count++;
+                    outs() &lt;&lt; call_count &lt;&lt; '\n';
+                }
+            }           
+            return true;
+        }  
+    };
+}
+char CallCount::ID = 0;
+static RegisterPass&lt;CallCount&gt; X("CallCount", "Count call type instructions in given program IR", false, false);
+                                                                                                // "CallCount" is the unique flag of this pass while being loaded by opt command.
+</code></pre>
+
+<p><strong>STEP-3: Prepare for LLVM Pass Compilation</strong></p>
+
+<p>Usually, the pass folder (i.e. CallCount here) should contain three files:</p>
+<ul>
+  <li>Hello.cpp       –  The souce code of this LLVM Pass. Of course, you can give it another name. We have wrote as above.</li>
+  <li>CMakeLists.txt  –  Link the source code with the compiled LLVM Pass. The LLVM Pass is .so format.</li>
+  <li>Makefile        –  The compilation logic under this whole LLVM project.</li>
+</ul>
+
+<p>So let’s create the CMakeLists.txt and Makefile.</p>
+
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span><span class="nb">touch </span>CMakeLists.txt Makefile
+</code></pre></div></div>
+
+<p>We first modify CMakeLists.txt, of which content can be shown as below:</p>
+
+<div class="language-cmake highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nf">add_llvm_loadable_module</span><span class="p">(</span>CallCount      <span class="c1"># The name of compiled LLVM Pass. So the output will be CallCount.so after the compilation.</span>
+    Hello.cpp                           <span class="c1"># The source code of LLVM Pass.</span>
+<span class="p">)</span>
+</code></pre></div></div>
+
+<p>Then, we modify Makefile, of which content can be shown as below:</p>
+
+<div class="language-makefile highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">LEVEL</span> <span class="o">=</span> ../../..
+<span class="nv">LIBRARYNAME</span> <span class="o">=</span> CallCount                 <span class="c"># Also the name of compiled LLVM Pass. This should be consistent with the name in CMakeLists.txt.</span>
+<span class="nv">LOADABLE_MODULE</span> <span class="o">=</span> 1
+<span class="nv">USEDLIBS</span> <span class="o">=</span>
+
+<span class="c"># If we don't need RTTI or EH, there's no reason to export anything
+# from the hello plugin.
+</span><span class="k">ifneq</span> <span class="nv">($(REQUIRES_RTTI), 1)</span>
+<span class="k">ifneq</span> <span class="nv">($(REQUIRES_EH), 1)</span>
+<span class="nv">EXPORTED_SYMBOL_FILE</span> <span class="o">=</span> <span class="p">$(</span>PROJ_SRC_DIR<span class="p">)</span>/Hello.exports
+<span class="k">endif</span>
+<span class="k">endif</span>
+
+<span class="k">include</span><span class="sx"> $(LEVEL)/Makefile.common</span>
+</code></pre></div></div>
+
+<p>Right now, we are almost done and the LLVM Pass is ready for compilation.</p>
+
+<p><strong>STEP-4: Compile LLVM Pass</strong></p>
+
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span><span class="nb">cd</span> <span class="nv">$YOUR</span><span class="nt">-LOCAL-PATH</span><span class="nv">$/</span>llvm/build                                        <span class="c"># change directory to where we build this LLVM project</span>
+<span class="nv">$ </span>make <span class="nt">-j</span><span class="si">$(</span><span class="nb">nproc</span><span class="si">)</span>                                                        <span class="c"># compile LLVM with multi-threads</span>
+</code></pre></div></div>
+
+<p>Once the compilation is done, the target LLVM Pass <code class="language-plaintext highlighter-rouge">CallCount.so</code> can be found at <code class="language-plaintext highlighter-rouge">$YOUR-LOCAL-PATH$/llvm/build/lib/</code>. 
+To load the LLVM Pass for analyzing a program IR (e.g. pathfinder.ll), you can execute the following commands:</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ $YOUR-LOCAL-PATH$/llvm/build/bin/opt -load $YOUT-LOCAL-PATH$/llvm/build/lib/CallCount.so pathfinder.ll -CallCount -o output.ll
+</code></pre></div></div>
+
+<p>You can know how many <code class="language-plaintext highlighter-rouge">call</code> type instructions are in pathfinder.ll :)</p>
+
+<p>The source folder of this LLVM Pass can be found at git repository [4].</p>
+
+<h2 id="some-useful-llvm-tools">Some Useful LLVM Tools</h2>
+
+<p><code class="language-plaintext highlighter-rouge">clang</code>: LLVM C compiler</p>
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>clang hello-world.c <span class="nt">-o</span> hello-world                                     <span class="c"># Compile C code to executable binary</span>
+<span class="nv">$ </span>clang <span class="nt">-S</span> <span class="nt">-emit-llvm</span> hello-world.c <span class="nt">-o</span> hello-world.ll                    <span class="c"># Compile C code to readable IR</span>
+</code></pre></div></div>
+
+<p><code class="language-plaintext highlighter-rouge">clang++</code>: LLVM C++ compiler</p>
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>clang++ hello-world.cpp <span class="nt">-o</span> hello-world                                 <span class="c"># Compile C++ code to executable binary</span>
+<span class="nv">$ </span>clang++ <span class="nt">-S</span> <span class="nt">-emit-llvm</span> hello-world.cpp <span class="nt">-o</span> hello-world.ll                <span class="c"># Compile C++ code to readable IR</span>
+</code></pre></div></div>
+
+<p><code class="language-plaintext highlighter-rouge">llvm-as</code>: Assembler</p>
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>llvm-as hello-world.ll <span class="nt">-o</span> hello-world.bc                               <span class="c"># Compile readable IR to bitcode format</span>
+</code></pre></div></div>
+
+<p><code class="language-plaintext highlighter-rouge">llvm-dis</code>: Disassembler</p>
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>llvm-dis hello-world.bc <span class="nt">-o</span> hello-world.ll                              <span class="c"># Compile bitcode format to readable IR</span>
+</code></pre></div></div>
+
+<p><code class="language-plaintext highlighter-rouge">llvm-link</code>: Linker</p>
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>llvm-link <span class="nt">-S</span> hello.ll world.ll <span class="nt">-o</span> hello-world.ll                       <span class="c"># Link two IRs into a unified one</span>
+</code></pre></div></div>
+
+<p><code class="language-plaintext highlighter-rouge">llc</code>: Static compiler</p>
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>llc hello-world.ll <span class="nt">-o</span> hello-world.s                                    <span class="c"># Compile IR into assembly code for a specified architecture</span>
+</code></pre></div></div>
+
+<p><code class="language-plaintext highlighter-rouge">lli</code>: Directly execute IR</p>
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>lli pathfinder.ll 1000 10                                              <span class="c"># Directly execute Rodinia-pathfinder IR with input "1000 10" using a just-in-time compiler</span>
+                                                                         <span class="c"># This IR can be found at git repository [4].</span>
+</code></pre></div></div>
+
+<p><code class="language-plaintext highlighter-rouge">opt</code>: Optimizer (this is the standard optimizer in LLVM middle-end)</p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ opt -load ./CallCount.so pathfinder.ll -CallCount -o output.ll
+# Load LLVM Pass for code transformation and optimization.
+# CallCount.so is the LLVM Pass we want to load.
+# -CallCount is the unique flag of this Pass registered in current LLVM project.
+# The output.ll is bitcode format, which can be disassembler to readable IR via llvm-dis.
+</code></pre></div></div>
+
+<h2 id="references">References</h2>
+<p>[1]  <strong>LLVM Documents:</strong> [<a href="https://llvm.org/">Link</a>]<br />
+[2]  <strong>Blog: LLVM IR and Go:</strong> [<a href="https://blog.gopheracademy.com/advent-2018/llvm-ir-and-go/">Link</a>]<br />
+[3]  <strong>Mapping High Level Constructs to LLVM IR:</strong> [<a href="https://mapping-high-level-constructs-to-llvm-ir.readthedocs.io/en/latest/">Link</a>]<br />
+[4]  <strong>Github Repo: LLFI-Quick-Start:</strong> [<a href="https://github.com/hyfshishen/LLFI-Quick-Start">Link</a>]</p>
+
+
+      <br>
+
+      
+      <p><small>Powered by Jekyll and <a href="https://github.com/yaoyao-liu/minimal-light" target="_blank" rel="noopener">Minimal Light</a> theme.</small></p>
+      
+
+      </section>
+      <footer>
+        
+      </footer>
+    </div>
+    <script src="/assets/js/scale.fix.js"></script>
+    
+    <script>
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+      ga('create', 'UA-111540567-4', 'auto');
+      ga('send', 'pageview');
+    </script>
+    
+  </body>
+</html>

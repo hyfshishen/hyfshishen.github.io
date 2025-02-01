@@ -1,0 +1,8 @@
+@inproceedings{huang2023characterizing,
+  title={Characterizing Runtime Performance Variation in Error Detection by Duplicating Instructions},
+  author={Huang, Yafan and He, Zhengyang and Li, Lingda and Li, Guanpeng},
+  booktitle={2023 IEEE 34th International Symposium on Software Reliability Engineering (ISSRE)},
+  pages={730--741},
+  year={2023},
+  organization={IEEE}
+}
