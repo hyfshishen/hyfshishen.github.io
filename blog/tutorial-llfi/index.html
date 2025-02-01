@@ -1,0 +1,432 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <title>Yafan Huang | University of Iowa</title>
+
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="The Minimal Light is a simple and elegant jekyll theme for academic personal homepage.">
+    
+    <meta name="keywords" content="minimal light">
+    
+    
+    <link rel="canonical" href="https://minimal-light-theme.yliu.me/"/>
+    
+
+    <link rel="icon" media="(prefers-color-scheme:dark)" href="./assets/img/favicon-yafan.png" type="image/png" />
+    <link rel="icon" media="(prefers-color-scheme:light)" href="./assets/img/favicon-yafan.png" type="image/png" />
+    <script src="../../assets/js/favicon-switcher.js" type="application/javascript"></script>
+
+    <link rel=stylesheet href=https://cdnjs.cloudflare.com/ajax/libs/academicons/1.8.6/css/academicons.min.css integrity="sha256-uFVgMKfistnJAfoCUQigIl+JfUaP47GrRKjf6CTPVmw=" crossorigin=anonymous>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    
+    <!-- Code template -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/styles/github-dark.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/highlight.min.js"></script>
+    <script>hljs.highlightAll();</script>
+
+    
+    <link rel="stylesheet" href="../../assets/css/font.css">
+    
+    
+    <link rel="stylesheet" href="../../assets/css/style.css">
+    <link rel="stylesheet" href="../../assets/css/publications.css">
+    
+
+  </head>
+  <body>
+
+    <nav class="top-nav">
+      <ul>
+        
+          <li>
+            <a href="/">Home</a>
+          </li>
+        
+          <li>
+            <a href="/publication/">Publications</a>
+          </li>
+        
+          <li>
+            <a href="/experiences/">Experiences</a>
+          </li>
+        
+          <li>
+            <a href="/awards/">Awards</a>
+          </li>
+        
+          <li>
+            <a href="/services/">Services</a>
+          </li>
+        
+          <li>
+            <a href="/blog/">Blog</a>
+          </li>
+        
+      </ul>
+    </nav>
+
+    <div class="wrapper">
+      <header>
+        
+        
+        <a class="image avatar"><img src="../../assets/img/avatar.png" alt="avatar_subsubpage" /></a>
+        
+
+        <h1>Yafan Huang</h1>
+
+        
+        <position style="font-size:1.10rem;">Ph.D. Candidate</position>
+        <br>
+        
+        
+        <a href="" rel="noopener"><autocolor>University of Iowa</autocolor></a>
+        <br>
+        
+        
+        <email>yafan-huang@uiowa.edu</email>
+        
+
+        <br>
+        <br>
+        <div class="social-icons">
+        
+        <a style="margin: 0 5px 0 0" href="https://scholar.google.com/citations?user=r8qwkW8AAAAJ&hl=en">
+          <!-- <i class="ai ai-google-scholar" style="font-size:1.2rem"></i> -->
+          <img src="../../assets/img/google-scholar-icon.png" alt="google-scholar" style="width: 18px; height: 18px;">
+        </a>  
+        
+
+        
+        <a style="margin: 0 5px 0 0" href="https://dblp.org/pid/268/9947.html">
+          <img src="../../assets/img/dblp-icon.webp" alt="DBLP" style="width: 18px; height: 18px;">
+        </a>
+        
+
+        
+
+        
+
+        
+        <a style="margin: 0 5px 0 0" href="https://github.com/hyfshishen">
+          <!-- <i class="fab fa-github"></i> -->
+          <img src="../../assets/img/github-icon.png" alt="github" style="width: 18px; height: 18px;">
+        </a>
+        
+
+        
+        <a style="margin: 0 5px 0 0" href="https://www.linkedin.com/in/yafan-huang-2471181a0/">
+          <!-- <i class="fab fa-linkedin"></i> -->
+          <img src="../../assets/img/linkedin-icon.png" alt="linkedin" style="width: 18px; height: 18px;">
+        </a>
+        
+
+        
+        </div>
+        <br>
+
+      </header>
+      <section>
+
+      
+
+      <h1 id="using-llfi-llvm-ir-level-fault-injector">Using LLFI: LLVM IR Level Fault Injector</h1>
+
+<h2 id="table-of-contents">Table of Contents</h2>
+<ul>
+  <li><a href="#about">About</a></li>
+  <li><a href="#llfi-quick-installation">LLFI Quick Installation</a></li>
+  <li><a href="#llfi">LLFI</a></li>
+  <li><a href="#analyze-program-resilience-with-llfi">Analyze Program Resilience with LLFI</a></li>
+  <li><a href="#references">References</a></li>
+</ul>
+
+<h2 id="about">About</h2>
+<p>This tutorial targets to provide a consise instruction on using LLFI to perform fault injection experiments. Also, it is used in UIowa:CS:4980, Topics in Computer Science II: Dependable System Design instructed by Dr. Guanpeng Li. The main contents of this tutorial are shown as below:</p>
+
+<ul>
+  <li>How to install LLFI?</li>
+  <li>What is LLFI? Why we use it? What is its basic usage?</li>
+  <li>How to use LLFI for analyzing program resilience?</li>
+</ul>
+
+<p>The video of this document can be found at [1].</p>
+
+<h2 id="llfi-quick-installation">LLFI Quick Installation</h2>
+<p>Before you install LLFI, make sure your environment has <code class="language-plaintext highlighter-rouge">python3</code> and its package <code class="language-plaintext highlighter-rouge">pyyaml</code>. 
+For <code class="language-plaintext highlighter-rouge">pyyaml</code>, version 4x is okay and 4.2b1 is highly recommended. 
+Other dependencies can be found at [2].</p>
+
+<p>Following commands show how to install LLFI on a Ubuntu 16.04 machine:</p>
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>git clone https://github.com/DependableSystemsLab/LLFI.git    <span class="c"># download LLFI repository</span>
+<span class="nv">$ </span><span class="nb">cd </span>LLFI/installer                                             <span class="c"># change directory to quick installation folder</span>
+<span class="nv">$ </span>python3 InstallLLFI.py <span class="nt">--noGUI</span>                                <span class="c"># quickly install command-line-version LLFI with python driver</span>
+</code></pre></div></div>
+
+<p><code class="language-plaintext highlighter-rouge">python3 InstallLLFI.py --noGUI</code> contains building LLVM, so it might be slow. 
+If you want to speed up this process, please replace <strong>InstallLLFI.py:line 328</strong> with <code class="language-plaintext highlighter-rouge">p = subprocess.call(["make", "-j16"])</code>. 
+“16” indicates the maximum thread number in your OS. 
+You can use command <code class="language-plaintext highlighter-rouge">nproc</code> to check it out.</p>
+
+<p>Setting up local environment for LLFI:</p>
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span><span class="nb">echo</span> <span class="s2">"export PATH=YOUR-LOCAL-PATH/LLFI/installer/llfi/bin:</span><span class="se">\$</span><span class="s2">PATH"</span> <span class="o">&gt;&gt;</span> ~/.bashrc    <span class="c"># adding LLFI executable binary path variables to local environment</span>
+<span class="nv">$ </span><span class="nb">source</span> ~/.bashrc                                                                  <span class="c"># activate environment</span>
+</code></pre></div></div>
+
+<p>Checking if installation is successful:</p>
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span><span class="nb">cd</span> <span class="nv">$YOUR</span><span class="nt">-LOCAL-PATH</span><span class="nv">$/</span>LLFI/installer/llfi/bin <span class="o">&amp;&amp;</span> <span class="nb">ls</span>                                   <span class="c"># list all compiled LLFI executable binaries</span>
+batchInjectfault  batchProfile  cmake_install.cmake      injectfault       instrument  Makefile  SoftwareFailureAutoScan
+batchInstrument   CMakeFiles    HardwareFailureAutoScan  InjectorAutoScan  llfi-gui    profile
+<span class="nv">$ </span><span class="c"># It indicates LLFI is successfully installed to your machine :)</span>
+</code></pre></div></div>
+
+<h2 id="llfi">LLFI</h2>
+
+<h3 id="what-is-llfi">What is LLFI?</h3>
+<p>LLFI (Low-Level Fault Injector) is an LLVM based fault injection tool, which injects faults into the LLVM IR (human-readable one) of a specified program. 
+LLFI is mainly implemented by a collection of LLVM 3.4 passes and driven by python script. 
+The fault injection (FI) campaign of LLFI is defined by <code class="language-plaintext highlighter-rouge">input.yaml</code> and very flexible.</p>
+
+<h3 id="why-we-use-llfi">Why we use LLFI?</h3>
+
+<p>We have already known FI is commonly used for testing program resilience against soft errors. But why we use LLFI? (or why we injection faults on LLVM IR) There are several reasons:</p>
+
+<ul>
+  <li>Hardware FI is hard to pinpoint a certain location (imagine you want to flip a certain bit in a hardware device &gt;_&lt;). The analysis is also very hard in hardware. Beam test is even radio active.</li>
+  <li>Architecture FI can be conducted by simulator, but it is very slow. Some architecture designs (such as Intel) are not publicly available, making it hard to develop simulator.</li>
+  <li>Thus, application-level FI is flexible and easy to develop and post-analyze. Besides, Wei et al [3] have demonstrated FIs on binary (PINFI) and LLVM (LLFI) can produce similar results.</li>
+  <li>In LLVM-level FIs, because of its Optimizer and standard IR, we can easily perform a lot of code transformations and program analysis by developing LLVM Passes. Here tracking error propagation is also possible.</li>
+</ul>
+
+<h3 id="llfi-basic-usages">LLFI Basic Usages</h3>
+
+<p>There are three major steps to use LLFI. and we use pathfinder [3] for example. 
+Note that <em>these commands can only be executed with input.yaml under the same path with compiled</em> <code class="language-plaintext highlighter-rouge">pathfinder.ll</code>. 
+More information of <code class="language-plaintext highlighter-rouge">input.yaml</code> format can be checked at the [4].</p>
+
+<p><strong>STEP-1: Instrumentation: instrumenting functional code in given program IR</strong></p>
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span><span class="c"># command example</span>
+<span class="nv">$ </span><span class="c"># note that you should have LLFI configure file called input.yaml in the same path before you run this command.</span>
+<span class="nv">$ </span><span class="c"># details can be found in LLFI Usage section.</span>
+<span class="nv">$ </span>instrument <span class="nt">--readable</span> pathfinder.ll
+</code></pre></div></div>
+
+<p><strong>STEP-2: Profile: a fault-free program execution</strong></p>
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span><span class="c"># command example</span>
+<span class="nv">$ </span><span class="c"># note that this command should be executed after "instrument"</span>
+<span class="nv">$ </span>profile ./llfi/pathfinder-profiling.exe 1000 10   <span class="c"># "1000 10" is the program input of pathfinder</span>
+</code></pre></div></div>
+
+<p><strong>STEP-3: Fault Injection: program executions with faults</strong></p>
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span><span class="c"># command example</span>
+<span class="nv">$ </span><span class="c"># note that this command should be executed after "profile"</span>
+<span class="nv">$ </span>injectfault ./llfi/pathfinder-faultinjection.exe 1000 10  <span class="c"># "1000 10" is the program input of pathfinder</span>
+</code></pre></div></div>
+
+<p>Making sure the program input for <code class="language-plaintext highlighter-rouge">Profile</code> phase is the same as Fault Injection phase. 
+In this way we compare the results are meaningful.</p>
+
+<h2 id="analyze-program-resilience-with-llfi">Analyze Program Resilience with LLFI</h2>
+<p>We refer <strong>instruction</strong> in this section as <strong>LLVM IR instructions</strong> since LLFI injects faults to LLVM IR level.</p>
+
+<h3 id="preprocess-and-compile">Preprocess and Compile</h3>
+
+<p>To analyze the program resilience, we make to make sure the program results are deterministic under each input. So that comparing the results between fault-free (i.e. profile phase) and fault-injected program executions is meaningful. In order to make the results deterministic, we have to remove all randomenss in the raw code, such as CPU time and random numbers/arrays.</p>
+
+<p>After preprocessing the codes, we can compile the program source code into a readable LLVM IR (what is LLVM IR? [5]). In studying program resilience against soft errors, the programs we evaluate are always implemented via C/C++. Here we provide an example to show how to compile a C project into a readable LLVM IR. The code can be found at [6]. Its compile commands can be found as below:</p>
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span><span class="c"># Compile commands:</span>
+<span class="nv">$ </span>clang++ <span class="nt">-S</span> <span class="nt">-emit-llvm</span> <span class="k">*</span>.cpp       <span class="c"># Compile all .cpp file into .ll</span>
+<span class="nv">$ </span>llvm-link <span class="nt">-S</span> <span class="nt">-o</span> hpccg.ll <span class="k">*</span>.ll     <span class="c"># Link all .ll into a single IR</span>
+<span class="nv">$ </span><span class="c"># Optional:</span>
+<span class="nv">$ </span>clang++ hpccg.ll <span class="nt">-o</span> hpccg         <span class="c"># Compile to executable binary</span>
+<span class="nv">$ </span>./hpccg 64 64 64                  <span class="c"># check if its execution is normal</span>
+</code></pre></div></div>
+
+<p>You can follow this strategy to preprocess and compile other C/C++ projects before evaluating resilience.</p>
+
+<h3 id="per-instruction-fi">Per-Instruction FI</h3>
+<p>We provide an example of performing per-instruction FI experiments via LLFI. 
+The code of this example can be found at link [7]. 
+Note that the instruction here we mentioned are LLVM IR instruction.</p>
+
+<p><strong>STEP-1: Download and Prepare</strong></p>
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>git clone https://github.com/hyfshishen/LLFI-Quick-Start.git   <span class="c"># download code from github</span>
+<span class="nv">$ </span><span class="nb">cd </span>perInstFI                                                   <span class="c"># change directory to target folder</span>
+<span class="nv">$ </span>clang <span class="nt">-emit-llvm</span> <span class="nt">-S</span> <span class="k">*</span>.c                                        <span class="c"># compile demo C code to readable LLVM IR</span>
+</code></pre></div></div>
+
+<p><strong>STEP-2: Check input.yaml</strong></p>
+<div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="na">defaultTimeOut</span><span class="pi">:</span> <span class="m">500</span>             <span class="c1"># if program with injected fault execute more than 500 seconds</span>
+                                <span class="c1">#     it will be terminated and recorded as "hang".</span>
+<span class="na">compileOption</span><span class="pi">:</span>
+    <span class="na">instSelMethod</span><span class="pi">:</span>              <span class="c1"># how we select instruction to inject fault in each program execution</span>
+      <span class="pi">-</span> <span class="na">customInstselector</span><span class="pi">:</span>
+          <span class="na">include</span><span class="pi">:</span>
+            <span class="pi">-</span> <span class="s">llfiindex</span>
+          <span class="na">options</span><span class="pi">:</span>
+            <span class="pi">-</span> <span class="s">-injecttoindex=77</span> <span class="c1"># we inject faults to 77th instruction (indexed by llfiindex)</span>
+
+    <span class="na">regSelMethod</span><span class="pi">:</span> <span class="s">regloc</span>
+    <span class="na">regloc</span><span class="pi">:</span> <span class="s">dstreg</span>
+
+<span class="na">runOption</span><span class="pi">:</span>
+    <span class="pi">-</span> <span class="na">run</span><span class="pi">:</span>
+        <span class="na">numOfRuns</span><span class="pi">:</span> <span class="m">100</span>          <span class="c1"># 100 program executions with injected fault (1 fault for 1 program execution)</span>
+        <span class="na">fi_type</span><span class="pi">:</span> <span class="s">bitflip</span>        <span class="c1"># fault type is bit-flip (i.e. randomly flip one bit of target instruction's return value)</span>
+</code></pre></div></div>
+
+<p><strong>STEP-3: Execute LLFI Commands (Instrument-Profile-InjectFault)</strong></p>
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>instrument <span class="nt">--readable</span> sqrt.ll
+<span class="nv">$ </span>profile ./llfi/sqrt-profiling.exe             <span class="c"># no input augments in current program sqrt</span>
+<span class="nv">$ </span>injectfault ./llfi/sqrt-faultinjection.exe    <span class="c"># no input augments in current program sqrt</span>
+</code></pre></div></div>
+
+<h3 id="random-fi">Random FI</h3>
+<p>We provide an example of performing random FI experiments via LLFI. 
+The code of this example can be found at link [7]. 
+Note that the “instruction” here we mentioned are LLVM IR instruction.</p>
+
+<p><strong>STEP-1: Download and Prepare</strong></p>
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>git clone https://github.com/hyfshishen/LLFI-Quick-Start.git  <span class="c"># download code from github</span>
+<span class="nv">$ </span><span class="nb">cd </span>randomFI                                                   <span class="c"># change directory to target folder</span>
+<span class="nv">$ </span>clang <span class="nt">-emit-llvm</span> <span class="nt">-S</span> <span class="k">*</span>.c                                       <span class="c"># compile demo C code to readable LLVM IR</span>
+</code></pre></div></div>
+
+<p><strong>STEP-2: Check input.yaml</strong></p>
+<div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="na">defaultTimeOut</span><span class="pi">:</span> <span class="m">500</span>         <span class="c1"># if program with injected fault execute more than 500 seconds</span>
+                            <span class="c1">#     it will be terminated and recorded as "hang".</span>
+<span class="na">compileOption</span><span class="pi">:</span>
+    <span class="na">instSelMethod</span><span class="pi">:</span>          <span class="c1"># how we select instruction to inject fault in each program execution</span>
+      <span class="pi">-</span> <span class="na">insttype</span><span class="pi">:</span>
+          <span class="na">include</span><span class="pi">:</span>
+            <span class="pi">-</span> <span class="s">all</span>           <span class="c1"># the fault may occur at any instructions in current program</span>
+          <span class="na">exclude</span><span class="pi">:</span>          <span class="c1"># also, we don't inject fault to instructions with type:</span>
+            <span class="pi">-</span> <span class="s">ret</span>           <span class="c1">#     ret</span>
+            <span class="pi">-</span> <span class="s">alloca</span>        <span class="c1">#     alloca</span>
+            <span class="pi">-</span> <span class="s">call</span>          <span class="c1">#     call</span>
+            <span class="pi">-</span> <span class="s">phi</span>           <span class="c1">#     phi</span>
+
+    <span class="na">regSelMethod</span><span class="pi">:</span> <span class="s">regloc</span>
+    <span class="na">regloc</span><span class="pi">:</span> <span class="s">dstreg</span>
+
+<span class="na">runOption</span><span class="pi">:</span>
+    <span class="pi">-</span> <span class="na">run</span><span class="pi">:</span>
+        <span class="na">numOfRuns</span><span class="pi">:</span> <span class="m">100</span>      <span class="c1"># 100 program executions with injected fault (1 fault for 1 program execution)</span>
+        <span class="na">fi_type</span><span class="pi">:</span> <span class="s">bitflip</span>    <span class="c1"># fault type is bit-flip (i.e. randomly flip one bit of target instruction's return value)</span>
+</code></pre></div></div>
+
+<p>We routinely exclude <code class="language-plaintext highlighter-rouge">ret</code>, <code class="language-plaintext highlighter-rouge">alloca</code>, <code class="language-plaintext highlighter-rouge">call</code>, and <code class="language-plaintext highlighter-rouge">phi</code> instructions during random FI, because</p>
+
+<ul>
+  <li>Some do not have return values. In our commonly used fault model, we only inject fault to return value of an instruction.</li>
+  <li>Some appear only one time (or several times) for one program execution.</li>
+  <li>Some are defined only at LLVM IR instruction level, but not in assembly code.</li>
+  <li>Some will occupy too much space of main memory and will lead to system failure.</li>
+</ul>
+
+<p><strong>STEP-3: Execute LLFI Commands (Instrument-Profile-InjectFault)</strong></p>
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>instrument <span class="nt">--readable</span> sqrt.ll
+<span class="nv">$ </span>profile ./llfi/sqrt-profiling.exe             <span class="c"># no input augments in current program sqrt</span>
+<span class="nv">$ </span>injectfault ./llfi/sqrt-faultinjection.exe    <span class="c"># no input augments in current program sqrt</span>
+</code></pre></div></div>
+
+<h3 id="post-analysis">Post Analysis</h3>
+
+<p>The output structure of an IR that is injected with faults via LLFI can be checked as below. 
+We still use <code class="language-plaintext highlighter-rouge">sqrt.ll</code> here for example. 
+Before talking this, we have to make sure these following concepts are clear:</p>
+
+<ul>
+  <li><em>Numerical Program Input</em>: the input of a program is numerical and can be executed via command line (like <code class="language-plaintext highlighter-rouge">./hello-world -i 100</code>).</li>
+  <li><em>File Program Input</em>: the input of a program is a file (like <code class="language-plaintext highlighter-rouge">./hello-world -i ../yafan.txt</code>).</li>
+  <li><em>Standard Program Output</em>: program outputs that are printed in the terminal screen (like <code class="language-plaintext highlighter-rouge">printf("hello world!");</code> in C).</li>
+  <li><em>File Program Output</em>: program outputs that are written into a file (routinely via file I/O stream).</li>
+</ul>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code># More details about the following content can be checked at LLFI wiki [4].
+┌── sqrt.c                                  # Original C source code of target program.
+├── sqrt.ll                                 # Readable IR compiled from C source code. This is also the input of instrumentation phase.
+├── input.yaml                              # Defines what fault to inject, where/when to inject fault, and how many faults we inject in total.
+├── llfi.config.compiletime.txt             # Output of LLFI's llvm passes. We typically DON'T CHECK THIS in FI experiments.
+├── llfi.config.runtime.txt                 # Run-time option of LLFI.      We typically DON'T CHECK THIS in FI experiments.
+├── llfi.log.compilation.txt                # Compilation log with LLFI.    We typically DON'T CHECK THIS in FI experiments.
+├── llfi.stat.prof.txt                      # The total number of dynamic instruction counts of potential injection points.
+│                                           #     If we perform random FI, that will be dynamic instruction count of the whole program.
+│                                           #     If we perform per-instruction FI, that will be dynamic instruction count of the target instruction.
+├── llfi.stat.totalindex.txt                # The total number of static instructions labeled as candidates of fault injection.
+└── llfi
+    ├── baseline           # -&gt;  This folder contains results (both standard output and file output) generated from profile phase (fault-free program execution).
+    ├── error_output       # -&gt;  This folder contains error information (if program is "hang" or "crash") of each fault-injected program execution.
+    ├── llfi_stat_output   # -&gt;  This folder contains detaled injected fault information (e.g. instruction type where fault is injected) of each fault-injected program execution.
+    ├── prog_input         # -&gt;  If program has file inputs, they will be backed up in this folder.
+    ├── prog_output        # -&gt;  This folder contains file output for each fault-injected program execution.
+    ├── std_output         # -&gt;  This folder contains standard output for each fault-injected program execution.
+    ├── sqrt-llfi_index.ll                  # All its function is the same as sqrt.ll and each instruction in it is labeled with an LLFI index.
+    ├── sqrt-profiling.ll                   # Readable IR for profiling phase.
+    ├── sqrt-profiling.exe                  # Executable binary for profiling phase (compiled from above .ll).
+    ├── sqrt-faultinjection.ll              # Readable IR for fault-injection phase.
+    └── sqrt-faultinjection.exe             # Executable binary for fault-injection phase (compiled from above .ll).
+</code></pre></div></div>
+
+<p>Sometimes, program will have both file output and standard output. 
+We have to compare the meaningful outputs between profile and fault-injection phases. 
+Imagine there is one sorting program called <code class="language-plaintext highlighter-rouge">bubble-sort.c</code>, its outputs after one execution can be checked as below:</p>
+
+<ul>
+  <li><em>File output</em>: the sorting results can be checked at <code class="language-plaintext highlighter-rouge">result.txt</code>.</li>
+  <li><em>Standard output</em>: <code class="language-plaintext highlighter-rouge">Finish sorting!</code> will be printed through commandline.</li>
+</ul>
+
+<p>Clearly, to analyze the program’s resilience, we have to choose the main results that are more closely related to its functionality. 
+So we choose to compare file output in that scenario. 
+Note that this is very important for post-analysis after experiments with LLFI. 
+Otherwise, we may bring totally useless resilience analysis results.</p>
+
+<p>There are 4 types of results after comparing the outputs:</p>
+
+<ul>
+  <li><em>SDC</em>: Silent data corruption (SDC) means program exits normally but produces wrong results.</li>
+  <li><em>Benign</em>: Program exits normally and produces correct results.</li>
+  <li><em>Crash</em>: Program exits abnormally with exceptions.</li>
+  <li><em>Hang</em>: Program halts and executes longer than defaultTimeOut set in <code class="language-plaintext highlighter-rouge">input.yaml</code>.</li>
+</ul>
+
+<p>LLFI provides an official <code class="language-plaintext highlighter-rouge">Python3</code> script to measure those results, which can be found at: [8].</p>
+
+<h2 id="references">References</h2>
+<p>[1]  <strong>Yafan Huang: LLFI Tutorial Video</strong>: [<a href="https://youtu.be/41pk25OAees">Link</a>]<br />
+[2]  <strong>Github Repo: LLFI</strong>: [<a href="https://github.com/DependableSystemsLab/LLFI">Link</a>]<br />
+[3]  <strong>Quantifying the accuracy of High-Level Fault injection Techniques for Hardware Faults (DSN’14)</strong><br />
+[4]  <strong>LLFI WIKI</strong>: [<a href="https://github.com/DependableSystemsLab/LLFI/wiki/Get-Started-with-LLFI-Using-Command-Line">Link</a>]<br />
+[5]  <strong>Yafan Huang: LLVM Tutorial</strong>: [<a href="https://hyfshishen.github.io/blog/tutorial-llvm/">Link</a>]<br />
+[6]  <strong>Github Repo: LLFI-Complicated-Project</strong>: [<a href="https://github.com/hyfshishen/LLFI-Complicated-Project">Link</a>]<br />
+[7]  <strong>Github Repo: LLFI-Quick-Start</strong>: [<a href="https://github.com/hyfshishen/LLFI-Quick-Start">Link</a>]<br />
+[8]  <strong>LLFI Result Measurement Script</strong>: [<a href="https://github.com/DependableSystemsLab/LLFI/blob/master/tutorials/ISSRE19/1-sqrt/measure.py">Link</a>]</p>
+
+
+
+      <br>
+
+      
+      <p><small>Powered by Jekyll and <a href="https://github.com/yaoyao-liu/minimal-light" target="_blank" rel="noopener">Minimal Light</a> theme.</small></p>
+      
+
+      </section>
+      <footer>
+        
+      </footer>
+    </div>
+    <script src="/assets/js/scale.fix.js"></script>
+    
+    <script>
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+      ga('create', 'UA-111540567-4', 'auto');
+      ga('send', 'pageview');
+    </script>
+    
+  </body>
+</html>
