@@ -1,0 +1,10 @@
+@article{huang2021path,
+  title={Path-enhanced explainable recommendation with knowledge graphs},
+  author={Huang, Yafan and Zhao, Feng and Gui, Xiangyu and Jin, Hai},
+  journal={World Wide Web},
+  volume={24},
+  number={5},
+  pages={1769--1789},
+  year={2021},
+  publisher={Springer}
+}

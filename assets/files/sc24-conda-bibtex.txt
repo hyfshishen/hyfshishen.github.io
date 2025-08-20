@@ -1,0 +1,8 @@
+@inproceedings{huang2024versatile,
+  title={Versatile Datapath Soft Error Detection on the Cheap for HPC Applications},
+  author={Huang, Yafan and Di, Sheng and Zhang, Zhaorui and Lu, Xiaoyi and Li, Guanpeng},
+  booktitle={SC24: International Conference for High Performance Computing, Networking, Storage and Analysis},
+  pages={1--15},
+  year={2024},
+  organization={IEEE}
+}

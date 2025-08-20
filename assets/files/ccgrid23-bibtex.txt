@@ -1,0 +1,8 @@
+@inproceedings{huang2023towards,
+  title={Towards improving reverse time migration performance by high-speed lossy compression},
+  author={Huang, Yafan and Zhao, Kai and Di, Sheng and Li, Guanpeng and Dmitriev, Maxim and Tonellot, Thierry-Laurent D and Cappello, Franck},
+  booktitle={2023 IEEE/ACM 23rd International Symposium on Cluster, Cloud and Internet Computing (CCGrid)},
+  pages={651--661},
+  year={2023},
+  organization={IEEE}
+}

@@ -1,0 +1,8 @@
+@inproceedings{huang2022mitigating,
+  title={Mitigating silent data corruptions in HPC applications across multiple program inputs},
+  author={Huang, Yafan and Guo, Shengjian and Di, Sheng and Li, Guanpeng and Cappello, Franck},
+  booktitle={SC22: International Conference for High Performance Computing, Networking, Storage and Analysis},
+  pages={1--14},
+  year={2022},
+  organization={IEEE}
+}
