@@ -135,9 +135,354 @@
 
       
 
-      <h2 id="cmsc-828g-systems-for-machine-learning">CMSC 828G: Systems for Machine Learning</h2>
-<!-- This couse focuses on computer systems and parallel computing research for advancing machine learning, in particular, large language model (LLM) systems. Topics include GPU data compression, KV cache and memory management, profiling and parallel scaling of LLM workloads, kernel optimizations, optimizers, parallel training and inference, and hardware-software co-design. -->
+      <h2 id="cmsc828g-systems-for-machine-learning">CMSC828G: Systems for Machine Learning</h2>
 
+<p>This course focuses on computer systems and parallel computing research for advancing machine learning, in particular, large language model (LLM) systems. Topics include GPU data compression, KV cache and memory management, profiling and parallel scaling of LLM workloads, kernel optimizations, optimizers, parallel training and inference, and hardware-software co-design.</p>
+
+<h3 id="course-information">Course Information</h3>
+
+<!-- |  -------------------  | ------------------------------------------------- |
+| **Lectures**          | Tu, Th 2:00 PM–3:15 PM · CSI 1121                 |
+| **Instructor**        | Yafan Huang · IRB 5146                            |
+| **Office Hours**      | By appointment at my office.                      |
+| **Instructor Email**  | yafan-huang AT uiowa DOT edu*                     |
+| **TA**                | TBD*                                              |
+| **TA Office Hours**   | TBD*                                              |
+| **TA Email**          | TBD*                                              | -->
+
+<table style="width: 400px;">
+  <tr>
+    <td><strong>Lectures</strong></td>
+    <td>Tu, Th 2:00 PM–3:15 PM · CSI 1121</td>
+  </tr>
+  <tr>
+    <td><strong>Instructor</strong></td>
+    <td>Yafan Huang · IRB 5146</td>
+  </tr>
+  <tr>
+    <td><strong>Office Hours</strong></td>
+    <td>By appointment at my office.</td>
+  </tr>
+  <tr>
+    <td><strong>Instructor Email</strong></td>
+    <td>yafan-huang AT umd DOT edu*</td>
+  </tr>
+  <tr>
+    <td><strong>TA</strong></td>
+    <td>TBD*</td>
+  </tr>
+  <tr>
+    <td><strong>TA Office Hours</strong></td>
+    <td>TBD*</td>
+  </tr>
+  <tr>
+    <td><strong>TA Email</strong></td>
+    <td>TBD*</td>
+  </tr>
+</table>
+
+<p><em>*My UMD email and TA information will be updated soon</em>.</p>
+
+<p><strong>Prerequisites</strong> For graduate students: Familiarity with basic systems and machine learning concepts is recommended. Students may find prior coursework such as CMSC412, CMSC416, or CMSC422 helpful. For undergraduate students: Permission of the instructor is required.</p>
+
+<h3 id="course-overview">Course Overview</h3>
+
+<p>The goal of this course is to understand the systems challenges behind modern LLM training and inference, how high-performance and parallel computing techniques can address these challenges, and what open systems problems remain. 
+Students will learn to analyze the performance of LLM workloads and reason about the design tradeoffs across algorithms, software systems, and hardware.
+For each topic, the instructor will first provide one or two lectures introducing the key concepts and background, followed by student-led presentations and discussions of selected research papers.</p>
+
+<p>This course will cover below topics (subject to change):</p>
+<ul>
+  <li>Introduction to High-Performance Computing (HPC).</li>
+  <li>Programming with Triton and CUDA.</li>
+  <li>Introduction to LLM systems.</li>
+  <li>Challenges in high-performance LLM inference and training.</li>
+  <li>Distributed parallel training: data, model, and hybrid parallelism.</li>
+  <li>On-node optimizations: GPU kernel optimizations, ML compilers, memory offload.</li>
+  <li>KV cache and memory management: long context, quantization, data movement.</li>
+  <li>Hardware and software co-design for efficient LLM systems.</li>
+</ul>
+
+<p>Throughout the semester, each student will participate in <strong>paper readings</strong>, <strong>paper presentation</strong>, <strong>two midterm exams</strong>, and <strong>final project</strong>.
+Students are expected to attend class regularly and actively engage with lectures and presentation discussions.</p>
+
+<h3 id="textbook">Textbook</h3>
+<p>There is no required textbook for this course. Most lectures will be accompanied by readings from top-tier conference research papers, and a reading list with links to the relevant papers will be provided. The following books may be useful as optional references:</p>
+<ul>
+  <li>HPC: <a href="https://theartofhpc.com/">The Art of HPC</a> book by Victor Eijkhout.</li>
+  <li>Deep Learning (DL): <a href="https://www.deeplearningbook.org/">Deep Learning</a> book by Ian Goodfellow et al.</li>
+  <li>MLSys: <a href="https://mlsysbook.ai/">Introduction to Machine Learning System</a> books by Vijay Janapa Reddi.</li>
+  <li>GPU Programming: <a href="https://mlc.ai/modern-gpu-programming-for-mlsys/index.html#">Modern GPU Programming for MLSys</a> by MLC Community.</li>
+</ul>
+
+<h3 id="grading">Grading</h3>
+<p>Grade for each student will be determined as follows:</p>
+
+<table style="width: 400px;">
+  <tr>
+    <th>Component</th>
+    <th>Weight</th>
+  </tr>
+  <tr>
+    <td>Paper Readings</td>
+    <td>5%</td>
+  </tr>
+  <tr>
+    <td>Paper Presentation</td>
+    <td>15%</td>
+  </tr>
+  <tr>
+    <td>Midterm Exam 1</td>
+    <td>20%</td>
+  </tr>
+  <tr>
+    <td>Midterm Exam 2</td>
+    <td>20%</td>
+  </tr>
+  <tr>
+    <td>Final Project</td>
+    <td>40%</td>
+  </tr>
+</table>
+
+<p>More details for each component can be found in later sections.</p>
+
+<h3 id="tentative-schedule-subject-to-change">Tentative Schedule (Subject to Change)</h3>
+
+<table style="width: 600px;">
+  <tr>
+    <th>Date</th>
+    <th>Topic</th>
+    <th>Readings</th>
+  </tr>
+
+  <tr>
+    <td>Sep. 01 (Tuesday)</td>
+    <td>Course Overview</td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>Sep. 03 (Thursday)</td>
+    <td>Introduction to HPC</td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>Sep. 08 (Tuesday)</td>
+    <td>Introduction to HPC (contd.)</td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>Sep. 10 (Thursday)</td>
+    <td>CUDA and Triton</td>
+    <td></td>
+  </tr>
+
+  <tr>
+    <td>Sep. 15 (Tuesday)</td>
+    <td>CUDA and Triton (contd.)</td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>Sep. 17 (Thursday)</td>
+    <td>Transformer and Language Model</td>
+    <td></td>
+  </tr>
+
+  <tr>
+    <td>Sep. 22 (Tuesday)</td>
+    <td>Data and Tensor Parallel Training</td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>Sep. 24 (Thursday)</td>
+    <td>Pipeline and Hybrid Parallel Training</td>
+    <td>[Reading1], [Reading2]</td>
+  </tr>
+
+  <tr>
+    <td>Sep. 29 (Tuesday)</td>
+    <td>Sparsity in Training</td>
+    <td>[Reading1], [Reading2]</td>
+  </tr>
+  <tr>
+    <td>Oct. 01 (Thursday)</td>
+    <td colspan="2"><b>Midterm Exam 1</b></td>
+  </tr>
+
+  <tr>
+    <td>Oct. 06 (Tuesday)</td>
+    <td>Optimizing GPU Kernels</td>
+    <td>[Reading1], [Reading2]</td>
+  </tr>
+  <tr>
+    <td>Oct. 08 (Thursday)</td>
+    <td>Compilers and MLIR</td>
+    <td>[Reading1], [Reading2]</td>
+  </tr>
+
+  <tr>
+    <td>Oct. 13 (Tuesday)</td>
+    <td colspan="2"><i>No Class — Fall Break</i></td>
+  </tr>
+  <tr>
+    <td>Oct. 15 (Thursday)</td>
+    <td>LLM Inference Systems</td>
+    <td></td>
+  </tr>
+
+  <tr>
+    <td>Oct. 20 (Tuesday)</td>
+    <td colspan="2"><b>Final Project Pitch Presentations</b></td>
+  </tr>
+  <tr>
+    <td>Oct. 22 (Thursday)</td>
+    <td>Speculative Decoding</td>
+    <td>[Reading1], [Reading2]</td>
+  </tr>
+
+  <tr>
+    <td>Oct. 27 (Tuesday)</td>
+    <td>Attention Approximation</td>
+    <td>[Reading1], [Reading2]</td>
+  </tr>
+  <tr>
+    <td>Oct. 29 (Thursday)</td>
+    <td>Long Context Optimizations</td>
+    <td>[Reading1], [Reading2]</td>
+  </tr>
+
+  <tr>
+    <td>Nov. 03 (Tuesday)</td>
+    <td>Quantization</td>
+    <td>[Reading1], [Reading2]</td>
+  </tr>
+  <tr>
+    <td>Nov. 05 (Thursday)</td>
+    <td>KV Cache Compression I</td>
+    <td>[Reading1], [Reading2]</td>
+  </tr>
+
+  <tr>
+    <td>Nov. 10 (Tuesday)</td>
+    <td>KV Cache Compression II</td>
+    <td>[Reading1], [Reading2]</td>
+  </tr>
+  <tr>
+    <td>Nov. 12 (Thursday)</td>
+    <td>Mixture-of-Experts Inference</td>
+    <td>[Reading1], [Reading2]</td>
+  </tr>
+
+  <tr>
+    <td>Nov. 17 (Tuesday)</td>
+    <td colspan="2"><b>Midterm Exam 2</b></td>
+  </tr>
+  <tr>
+    <td>Nov. 19 (Thursday)</td>
+    <td>Reliable LLM Training</td>
+    <td>[Reading1], [Reading2]</td>
+  </tr>
+
+  <tr>
+    <td>Nov. 24 (Tuesday)</td>
+    <td>Reliable LLM Inference</td>
+    <td>[Reading1], [Reading2]</td>
+  </tr>
+  <tr>
+    <td>Nov. 26 (Thursday)</td>
+    <td colspan="2"><i>No Class — Thanksgiving Recess</i></td>
+  </tr>
+
+  <tr>
+    <td>Dec. 01 (Tuesday)</td>
+    <td>Emerging AI Chips</td>
+    <td>[Reading1], [Reading2]</td>
+  </tr>
+  <tr>
+    <td>Dec. 03 (Thursday)</td>
+    <td colspan="2"><b>Final Project Presentations</b></td>
+  </tr>
+
+  <tr>
+    <td>Dec. 08 (Tuesday)</td>
+    <td colspan="2"><b>Final Project Presentations</b></td>
+  </tr>
+  <tr>
+    <td>Dec. 10 (Thursday)</td>
+    <td colspan="2"><b>Final Project Presentations</b></td>
+  </tr>
+  <tr>
+    <td>Dec. 17 (Thursday)</td>
+    <td colspan="2"><b>Final Project Due</b></td>
+  </tr>
+</table>
+
+<p><strong>Note</strong>: Classes with papers listed in the Readings column include student paper presentations and require a paper reading report. Specific presentation assignments will be determined after the semester begins through a student sign-up process.</p>
+
+<h3 id="academic-conduct">Academic Conduct</h3>
+<p>All students are expected to adhere to the University of Maryland’s standards of academic integrity. 
+Academic dishonesty, including cheating, plagiarism, fabrication, and facilitation, is a violation of university policy and may result in disciplinary action. 
+Students are responsible for understanding and following the <a href="https://academiccatalog.umd.edu/undergraduate/registration-academic-requirements-regulations/academic-integrity-student-conduct-codes/">UMD Academic Code of Conduct</a>.</p>
+
+<p><strong>Collaboration</strong>. Discussion and collaboration with classmates are encouraged, particularly when reading papers and exploring course topics during lectures. However, paper readings, paper presentations, and midterm exams must be completed independently and reflect each student’s own understanding. Collaboration within your project team is only expected for the final project.</p>
+
+<p><strong>Use of Generative AI</strong>. Generative AI tools (e.g., ChatGPT and Claude) may be used as learning aids (e.g. to clarify concepts). However, submitted work must reflect your own understanding and intellectual contribution. Students must disclose substantive use of generative AI in submitted coursework and briefly describe how it was used. Generative AI tools are not permitted during midterm exams.</p>
+
+<h3 id="paper-readings">Paper Readings</h3>
+
+<p>For each class with assigned readings, students should choose <strong>one of the two assigned papers</strong> and submit a one-page reading report. 
+The report should briefly summarize the paper’s <em>motivation</em>, <em>key ideas</em>, <em>main results</em>, and your own <em>thoughts or questions</em>.
+Reports are due at <strong>10:00 PM the day before class</strong> (Monday for Tuesday classes and Wednesday for Thursday classes).
+Each student may skip up to three reading reports without penalty. No make-up submission is required for skipped reports.</p>
+
+<h3 id="paper-presentation">Paper Presentation</h3>
+
+<p>Each student will give <strong>one individual paper presentation</strong> on one of the assigned papers. Paper presentations will take place during the class meetings marked with assigned readings in the tentative course schedule. Specific presentation assignments will be determined after the semester begins through a student sign-up process.
+The presentation should be <em>approximately 20 minutes</em>, followed by a <em>5–7 minute Q&amp;A session</em>.
+Presentations will be evaluated based on <strong>technical understanding</strong>, <strong>clarity and organization</strong>, <strong>presentation quality</strong>, and <strong>Q&amp;A performance</strong>. Audience feedback will also be collected and considered, particularly regarding the clarity and effectiveness of the presentation.</p>
+
+<h3 id="midterm-exam">Midterm Exam</h3>
+
+<p>There will be two in-class written midterm exams.
+Midterm 1 will focus on <strong>LLM training</strong>, while Midterm 2 will focus on <strong>LLM inference</strong>. Both will also cover relevant HPC and GPU programming concepts.
+Both exams will be based on material covered in lectures and class discussions.</p>
+
+<h3 id="final-project">Final Project</h3>
+
+<p>Students will work in groups of <strong>2–3</strong> on a course project related to systems for machine learning. Individual projects are allowed with <strong>instructor permission</strong>. Important project dates are listed in the tentative course schedule.
+Each group will give a <strong>Final Project Pitch Presentation</strong> during the semester to introduce the project motivation, proposed approach, and project plan.
+At the end of the semester, each group is expected to give a <strong>Final Project Presentation</strong>. The final deliverables include:</p>
+<ul>
+  <li><strong>Final Presentation Slides</strong>: Submit the slides for Final Project Presentation.</li>
+  <li><strong>Implementation</strong>: Submit the implementation developed for the project.</li>
+  <li><strong>Final Report</strong>: Submit a report written in the <a href="https://media.mlsys.org/Conferences/MLSYS2025/mlsys2025style.zip">MLSys paper format</a>, including <em>Introduction</em>, <em>Background</em>, <em>Methodology</em>, <em>Results</em>, and <em>Conclusion</em>.</li>
+</ul>
+
+<p>Some example project topics (including projects from past offerings) are:</p>
+<ul>
+  <li>Customized GPU Compression Kernels for KV Cache Management</li>
+  <li>Anatomy and Performance Analysis of RadixAttention in SGLang</li>
+  <li>Understanding and Characterizing KV Connector in vLLM</li>
+  <li>Explore Lossless Compression for Communication in LLM Training</li>
+  <li>Profiling and Optimizing KV Caching and Prefix Caching in LLM Inference</li>
+  <li>Efficient Implementation of LLMs on Handheld Edge Devices</li>
+  <li>Efficient LLM Inference on Heterogeneous GPUs</li>
+  <li>Accelerating Distributed LLM Inference on FPGAs</li>
+  <li>Modeling Error Proapgation in LLM Inference or Training</li>
+</ul>
+
+<!-- Some backup notes:
+In Transformer and Language Model, first mention DL as Abhinav, mention interconnect mechanisms. Since Transformer because larger and larger, then to language model, then to interconnect with some details (and at last mention it is still an active ongoing research, with more AI chip interesting things).
+In GPU Kernel Optimzation, mention cuSZp2.
+In LLM inference systems, mention vLLM/SGLang, mention disaggregation or PD disaggregation, mention RAG as well. -->
+
+<h3 id="university-and-course-policies">University and Course Policies</h3>
+<p>Students are responsible for reviewing the University of Maryland’s Course-Related Policies and Resources, including policies regarding academic accommodations, excused absences, religious observances, academic integrity, and other course-related matters.</p>
+
+<!-- ### Copyright
+All course materials are copyright UMD, Department of Computer Science © 2026. All rights reserved. Students are permitted to use course materials for their own personal use only. Course materials may not be distributed publicly or provided to others (excepting other students in the course), in any way or format. -->
+
+<p><a href="https://www.umd.edu/web-accessibility" title="UMD Web Accessibility">Web Accessibility</a></p>
 
 
       <br>
